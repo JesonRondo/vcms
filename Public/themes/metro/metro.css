@@ -1,0 +1,312 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+code,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1 Helvetica, Tahoma, Arial, 'SimSun', sans-serif;
+}
+
+input,
+select,
+button,
+textarea {
+    font-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+em,
+strong {
+    font-style: normal;
+    font-weight: normal;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html,
+body,
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    height: 0;
+    content: '\200B';
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background: #5DB2FF;
+    z-index: 2;
+    min-width: 980px;
+}
+
+.logo_c {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.logo_c:hover {
+    background: #57A6EF;
+}
+
+.logo {
+    float: left;
+    width: 140px;
+    height: 40px;
+    background: url(images/logo.png) 0 0 no-repeat;
+    text-indent: -999999px;
+}
+
+.logo:hover {
+    background-color: #4C91D2;
+}
+
+.logo_sp {
+    float: left;
+    margin-top: 10px;
+    border-left: 1px solid rgba(255, 255, 255, .7);
+    line-height: 20px;
+    text-indent: -999999px;
+}
+
+.logo_o_menu {
+    float: left;
+    width: 24px;
+    height: 40px;
+    background: url(images/split.png) 0 0 no-repeat;
+    text-indent: -999999px;
+}
+
+.logo_o_menu:hover {
+    background-color: #4C91D2;
+}
+
+.user_c {
+    float: right;
+    margin: 0 15px;
+}
+
+.user_c_u {
+    display: inline-block;
+    position: relative;
+    padding: 0 40px 0 10px;
+    color: #FFF;
+    font: normal 12px/40px 'Microsoft YaHei';
+}
+
+.user_c_u:hover {
+    background-color: #4C91D2;
+    text-decoration: none;
+}
+
+.user_c_u_avatar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FFF;
+}
+
+.menu {
+    position: absolute;
+    top: -190px;
+    width: 100%;
+    background: #1D1D1D;
+    z-index: 3;
+}
+
+.menu_animate {
+    -webkit-transition: top .15s ease-out;
+}
+
+.menu_show {
+    top: 0;
+}
+
+.menu_inner {
+    padding: 37px;
+}
+
+.menu_list li {
+    display: inline-block;
+}
+
+.menu_list_btn {
+    display: block;
+    width: 110px;
+    height: 22px;
+    margin: 3px;
+    padding: 88px 0 0 10px;
+    background: url(images/menu.png);
+    color: #FFF;
+    font: normal 12px/12px 'Microsoft YaHei';
+}
+
+.menu_list_btn:hover {
+    margin: 0;
+    border: 3px solid #4A4A4A;
+}
+
+.menu_list_btn:active {
+    margin: 0;
+    border: 3px solid #FFF;
+}
+
+.menu_list_btn_ico1 {
+    background-color: #5DB2FF;
+    background-position: 0 0;
+}
+
+.menu_list_btn_ico2 {
+    background-color: #5133AB;
+    background-position: -122px 0;
+}
+
+.aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 100%;
+    background: #F3F3F3;
+    z-index: 1;
+}
+
+.aside_inner {
+    padding: 50px 0 10px;
+}
+
+.nav {
+    padding: 10px 0;
+}
+
+.nav_h1 {
+    display: block;
+    padding-right: 25px;
+    color: #666;
+    font: normal 18px/34px 'Microsoft YaHei';
+    text-align: right;
+    -webkit-transition: all .1s ease-in-out;
+}
+
+.nav_h1:hover {
+    padding-right: 30px;
+    text-decoration: none;
+}
+
+.nav_subnav {
+    padding: 5px 0;
+    display: none;
+    opacity: 0;
+    margin-right: -30px;
+    -webkit-transition: opacity .15s ease-in-out, margin-right .15s ease-in-out;
+}
+
+.nav_subnav_show {
+    opacity: 1;
+    margin-right: 0;
+}
+
+.nav_subnav_h2 {
+    display: block;
+    padding-right: 30px;
+    color: #666;
+    font: normal 12px/30px 'Microsoft YaHei';
+    text-align: right;
+    -webkit-transition: color .1s ease-in-out;
+}
+
+.nav_subnav_h2_select {
+    background: #D4D4D4;
+}
+
+.nav_subnav_h2:hover {
+    background: #E7E7E7;
+}
+
+.nav_subnav_h2_select,
+.nav_subnav_h2:active {
+    background: #D4D4D4;
+}
+
+.nav_subnav_h2_select:hover {
+    background: #D4D4D4;
+}
+
+.main_inner {
+    padding: 50px 10px 46px 190px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    color: #999;
+    font: normal 12px/36px 'Arial';
+    text-align: center;
+}
