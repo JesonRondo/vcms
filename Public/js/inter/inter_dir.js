@@ -1,5 +1,9 @@
 define(function(require, exports, module) {
     var $ = require('jquery');
+    var btnDisWord = {
+        'del_btn'       : 'Del',
+        'del_btn_alarm' : 'Sure'
+    };
 
     var closeEditBox = function() {
         var $dir_editbox = $('#dir_editbox');
@@ -29,13 +33,58 @@ define(function(require, exports, module) {
             } else {
                 $('.cate_list_select').removeClass('cate_list_select');
                 $(this).addClass('cate_list_select');
+                $('#edit_btn, #del_btn').removeClass('m_btn_disable');
+                restoreDelStatus();
             }
         });
     };
 
+    var addFunc = function() {
+        restoreDelStatus();
+        openEditBox();
+    };
+
+    var editFunc = function() {
+        var $this = $(this);
+        if ($this.hasClass('m_btn_disable')) {
+            return;
+        } else {
+            restoreDelStatus();
+            openEditBox();
+        }
+    };
+
+    var resetDelBtn = function() {
+        $('#del_btn').removeClass('m_btn_alarm').html(btnDisWord['del_btn']);
+    };
+
+    var restoreDelStatus = function() {
+        resetDelBtn();
+        $('.cate_list_alarm').removeClass('cate_list_alarm');
+    };
+
+    var deleteStatus = function() {
+        var $this = $(this);
+        if ($this.hasClass('m_btn_disable')) {
+            return;
+        } else if ($this.hasClass('m_btn_alarm')) {
+            var $this = $('.cate_list_alarm');
+            $this.addClass('cate_list_close');
+            setTimeout(function() {
+                $this.remove();
+                restoreDelStatus();
+                $('#edit_btn, #del_btn').addClass('m_btn_disable');
+            }, 500);
+        } else {
+            $this.addClass('m_btn_alarm').html(btnDisWord['del_btn_alarm']);
+            $('.cate_list_select').addClass('cate_list_alarm');
+        }
+    };
+
     var btnEvent = function() {
-        $('#add_btn').off('click').on('click', openEditBox);
-        $('#edit_btn').off('click').on('click', openEditBox);
+        $('#add_btn').off('click').on('click', addFunc);
+        $('#edit_btn').off('click').on('click', editFunc);
+        $('#del_btn').off('click').on('click', deleteStatus);
     };
 
     exports.initEvent = function() {

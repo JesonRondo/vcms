@@ -395,6 +395,28 @@ a {
     color: #FFF;
 }
 
+.m_btn_alarm {
+    background: #f66;
+    color: #fff;
+    border: 1px solid #f00;
+}
+
+.m_btn_alarm:hover {
+    background: red;
+    border: 1px solid #f00;
+}
+
+.m_btn_disable {
+    opacity: .5;
+    cursor: default;
+}
+
+.m_btn_disable:hover {
+    background: #EEE;
+    color: #666;
+    border: 1px solid #999;
+}
+
 .hr_line {
     display: block;
     margin: 30px 0;
@@ -508,11 +530,18 @@ a {
     bottom: 0;
     left: 20px;
     width: 100%;
+    opacity: 0;
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(243, 243, 243, 1) 30%);
+}
+
+.d_box_show .d_box_bottom_panel {
+    opacity: 1;
+    -webkit-animation: d_box_show_opacity .6s ease-out;
 }
 
 .m_btn_panel_right {
     position: fixed;
+    width: 80px;
     top: 122px;
     right: 20px;
 }
@@ -523,6 +552,7 @@ a {
 
 .cate_list {
     color: #666;
+    height: 18px;
     margin-right: 300px;
     padding-left: 20px;
     font: normal 12px/18px 'SimSun';
@@ -542,4 +572,40 @@ a {
 .cate_list_select:hover {
     background: #666;
     color: #fff;
+}
+
+.cate_list_alarm {
+    background: red;
+    color: #fff;
+}
+
+.cate_list_alarm:hover {
+    background: red;
+    color: #fff;
+}
+
+@-webkit-keyframes cate_list_close_animate {
+    0% {
+        opacity: 1;
+        margin-left: 0;
+        height: 18px;
+    }
+    
+    40% {
+        opacity: 0;
+        margin-left: -20px;
+        height: 18px;
+    }
+
+    100% {
+        opacity: 0;
+        margin-left: -20px;
+        height: 0;
+    }
+}
+
+.cate_list_close {
+    height: 0;
+    margin-left: -20px;
+    -webkit-animation: cate_list_close_animate .5s linear;
 }
