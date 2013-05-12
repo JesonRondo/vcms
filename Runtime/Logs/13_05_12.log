@@ -89,3 +89,30 @@ INFO: [ view_end ] --END-- [ RunTime:0.001626s ]
 [ 2013-05-12T19:52:48+08:00 ] ERR: (ThinkException) 无法加载模块:favicon
 [ 2013-05-12T19:52:55+08:00 ] ERR: (ThinkException) 无法加载模块:favicon
 [ 2013-05-12T19:54:31+08:00 ] ERR: (ThinkException) 无法加载模块:favicon
+[ 2013-05-12T21:02:48+08:00 ] 127.0.0.1 /
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001047s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001130s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000713s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000933s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001010s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.010569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010667s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000600s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000619s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000397s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000618s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002394s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000737s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000787s ]
+
+[ 2013-05-12T21:02:49+08:00 ] ERR: (ThinkException) 无法加载模块:favicon
+[ 2013-05-12T21:02:54+08:00 ] ERR: (ThinkException) 无法加载模块:dir
+[ 2013-05-12T21:02:54+08:00 ] ERR: (ThinkException) 无法加载模块:favicon
+[ 2013-05-12T21:06:16+08:00 ] ERR: (ThinkException) 无法加载模块:Favicon

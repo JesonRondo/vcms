@@ -2,6 +2,7 @@
 return array(
     // url
     'URL_MODEL' => 2,
+    'URL_CASE_INSENSITIVE' => true,
 
     // public
     'TMPL_PARSE_STRING' => array(
