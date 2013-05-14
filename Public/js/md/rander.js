@@ -41,6 +41,7 @@ define(function(require, exports, module) {
                 require.async('/tpl/dir_info.html', function(tpl) {
                     sildeContain(tpl, function() {
                         require.async('inter_dir', function(inter_dir) {
+                            inter_dir.initData();
                             inter_dir.initEvent();
                         });
                     });

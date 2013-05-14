@@ -5,6 +5,7 @@ class DirAction extends Action {
     }
 
     private $codes = array(
+        0 => 'ok',
         10001 => 'error params',
         10002 => 'parent not exist',
         10003 => 'db control error',
@@ -27,6 +28,15 @@ class DirAction extends Action {
             $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
         }
 
-        $this->ajaxReturn(null, 'ok', 0);
+        $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+    }
+
+    public function get() {
+        import('@.Util.Util');
+
+        $origin_info = DirHelper::get_dir_info();
+        $origin_info = Util::pushNodeToTree($origin_info);
+
+        $this->ajaxReturn($origin_info, $this->codes[0], 0);
     }
 }

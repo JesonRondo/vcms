@@ -5,6 +5,8 @@ define(function(require, exports, module) {
         'del_btn_alarm' : 'Sure'
     };
 
+    var $option = ''; // option cache
+
     var closeEditBox = function() {
         var $dir_editbox = $('#dir_editbox');
         if ($dir_editbox.length === 0) return;
@@ -19,6 +21,7 @@ define(function(require, exports, module) {
         var editbox_tpl = require.async('/tpl/mbox/dir_editbox.html', function(tpl) {
             $('#page').append(tpl);
             $('#dir_editbox').addClass('d_box_show');
+            $('#belong').html($options);
 
             $('#dir_editbox_close_btn').on('click', closeEditBox);
             $('#dir_editbox_cancel_btn').on('click', closeEditBox);
@@ -26,7 +29,7 @@ define(function(require, exports, module) {
     };
 
     var listEvent = function() {
-        $('.cate_list').off('click').on('click', function() {
+        $('#cate_list_box').off('click').on('click', '.cate_list', function() {
             closeEditBox();
             if ($(this).hasClass('cate_list_select')) {
                 return;
@@ -85,6 +88,29 @@ define(function(require, exports, module) {
         $('#add_btn').off('click').on('click', addFunc);
         $('#edit_btn').off('click').on('click', editFunc);
         $('#del_btn').off('click').on('click', deleteStatus);
+    };
+
+    var reloadList = function() {
+        var url = '/dir/get';
+        $.ajax({
+            url: url,
+            data: null,
+            success: function(json) {
+                if (json.status === 0) {
+                    var $list = '';
+                    $options = '';
+                    for (var i in json.data) {
+                        $list += '<p class="cate_list">' + json.data[i].dis_name + '</p>';
+                        $options += '<option value="' + json.data[i].did + '">' + json.data[i].dis_name + '</option>';
+                    }
+                    $('#cate_list_box').html($list);
+                }
+            }
+        });
+    };
+
+    exports.initData = function() {
+        reloadList();
     };
 
     exports.initEvent = function() {

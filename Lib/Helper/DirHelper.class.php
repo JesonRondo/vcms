@@ -35,5 +35,16 @@ class DirHelper {
 
         return 0;
     }
+
+    public static function get_dir_info() {
+        $m = M('dir_info');
+
+        $filter = array(
+            'status' => 0
+        );
+        $ret = $m->where($filter)->select();
+
+        return $ret;
+    }
 }
 ?>
