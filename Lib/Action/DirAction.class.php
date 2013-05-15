@@ -13,6 +13,8 @@ class DirAction extends Action {
 
     public function add() {
         $data = $_REQUEST;
+        $data['name'] = htmlspecialchars($data['name']);
+        $data['name_alias'] = htmlspecialchars($data['name_alias']);
         $needed_params = ['name', 'name_alias', 'parent'];
 
         if (!DirHelper::check_params($data, $needed_params)) {

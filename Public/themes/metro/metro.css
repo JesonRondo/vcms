@@ -350,10 +350,18 @@ a {
     background: #f9f9f9;
 }
 
+.m_text_error {
+    border: 1px solid #f00;
+}
+
 .m_text:focus {
     border: 1px solid #333;
     background: #fff;
     color: #666;
+}
+
+.m_text_error:focus {
+    border: 1px solid #f00;
 }
 
 ::-webkit-input-placeholder {
