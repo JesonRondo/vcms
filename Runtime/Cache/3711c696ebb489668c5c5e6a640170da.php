@@ -15,10 +15,11 @@
     <span class="user_c">
         <a href="javascript:;" class="user_c_u">
             Vic
-            <img src="https://secure.gravatar.com/avatar/8543003c7c8e4fe7ebe7413d2ddc6e41" class="user_c_u_avatar" width="20" height="20" alt="" />
+            <img src="/themes/metro/images/nga_87011.jpg" class="user_c_u_avatar" width="20" height="20" alt="" />
         </a>
     </span>
 </header>
+
     <div class="menu" id="menu">
     <div class="menu_inner">
         <ul class="menu_list">

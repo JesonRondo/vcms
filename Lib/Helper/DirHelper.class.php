@@ -2,7 +2,7 @@
 class DirHelper {
     public static function check_params($data, $params_key) {
         foreach($params_key as $k => $v) {
-            if (!isset($data[$v])) return false;
+            if (!isset($data[$v]) || $data[$v] === '') return false;
         }
         return true;
     }
@@ -45,6 +45,27 @@ class DirHelper {
         $ret = $m->where($filter)->select();
 
         return $ret;
+    }
+
+    public static function del_dir_info($dids_str) {
+        $m = M('dir_info');
+
+        // except root, unable to delete
+        $dids = array_unique(split(',', $dids_str));
+        for ($i = 0, $len = count($dids); $i < $len; $i++) {
+            if ($dids[$i] == 0) {
+                unset($dids[$i]);
+                $dids_str = join(',', $dids);
+                break;
+            }
+        }
+
+        $data = array(
+            'status' => 1
+        );
+
+        $m->where("did in ($dids_str)")->data($data)->save();
+        return 0;
     }
 }
 ?>

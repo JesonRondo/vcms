@@ -89,8 +89,18 @@ define(function(require, exports, module) {
                 }, 500);
             } else {
                 $this.addClass('m_btn_alarm').html(PanelFunc.btnDisWord['del_btn_alarm']);
-                $('.cate_list_select').addClass('cate_list_alarm');
-            }   
+                var $cate_list_cur = $('.cate_list_select').eq(0);
+                var s_parent = $cate_list_cur.addClass('cate_list_alarm').attr('data-parent');
+                do {
+                    $cate_list_cur = $cate_list_cur.next();
+                    if ($cate_list_cur.length > 0 
+                     && $cate_list_cur.attr('data-parent') !== s_parent) {
+                        $cate_list_cur.addClass('cate_list_alarm');
+                    } else {
+                        break;
+                    }
+                } while (true);
+            }
         },
         resetDelBtn: function() {
             $('#del_btn').removeClass('m_btn_alarm').html(PanelFunc.btnDisWord['del_btn']);
@@ -131,7 +141,7 @@ define(function(require, exports, module) {
                     var $list = '';
                     EditBox.$options = '';
                     for (var i in json.data) {
-                        $list += '<p class="cate_list" data-id="' + json.data[i].did + '">' + json.data[i].dis_name + '</p>';
+                        $list += '<p class="cate_list" data-id="' + json.data[i].did + '" data-parent="' + json.data[i].parent + '">' + json.data[i].dis_name + '</p>';
                         EditBox.$options += '<option value="' + json.data[i].did + '">' + json.data[i].dis_name + '</option>';
                     }
                     $('#cate_list_box').html($list);

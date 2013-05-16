@@ -25,7 +25,8 @@ class Util {
         }
 
         for ($i = 0, $len = count($children); $i < $len; $i++) {
-            $new_ary = Util::pushChildren($new_ary, $children[$i], $index_ary, $flag . '&nbsp;&nbsp;|-- ');
+            if (isset($index_ary[$children[$i]]))
+                $new_ary = Util::pushChildren($new_ary, $children[$i], $index_ary, $flag . '&nbsp;&nbsp;|-- ');
         }
 
         return $new_ary;

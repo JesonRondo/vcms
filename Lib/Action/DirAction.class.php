@@ -6,6 +6,7 @@ class DirAction extends Action {
 
     private $codes = array(
         0 => 'ok',
+        10000 => 'unknow error',
         10001 => 'error params',
         10002 => 'parent not exist',
         10003 => 'db control error',
@@ -15,7 +16,7 @@ class DirAction extends Action {
         $data = $_REQUEST;
         $data['name'] = htmlspecialchars($data['name']);
         $data['name_alias'] = htmlspecialchars($data['name_alias']);
-        $needed_params = ['name', 'name_alias', 'parent'];
+        $needed_params = array('name', 'name_alias', 'parent');
 
         if (!DirHelper::check_params($data, $needed_params)) {
             $ret_code = 10001;
@@ -26,9 +27,7 @@ class DirAction extends Action {
 
         $ret_code = DirHelper::add_dir_info($data);
 
-        if (isset($this->codes[$ret_code])) {   // error code
-            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
-        }
+        if (!isset($this->codes[$ret_code])) $ret_code = 10000;
 
         $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
     }
@@ -40,5 +39,22 @@ class DirAction extends Action {
         $origin_info = Util::pushNodeToTree($origin_info);
 
         $this->ajaxReturn($origin_info, $this->codes[0], 0);
+    }
+
+    public function del() {
+        $data = $_REQUEST;
+        $data['dids'] = htmlspecialchars($data['dids']);
+        $needed_params = array('dids');
+
+        if (!DirHelper::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $ret_code = DirHelper::del_dir_info($data['dids']);
+
+        if (!isset($this->codes[$ret_code])) $ret_code = 10000;
+
+        $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
     }
 }
