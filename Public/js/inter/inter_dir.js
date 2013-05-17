@@ -80,21 +80,41 @@ define(function(require, exports, module) {
             if ($this.hasClass('m_btn_disable')) {
                 return;
             } else if ($this.hasClass('m_btn_alarm')) {
-                var $this = $('.cate_list_alarm');
-                $this.addClass('cate_list_close');
-                setTimeout(function() {
-                    $this.remove();
-                    PanelFunc.restoreDelStatus();
-                    $('#edit_btn, #del_btn').addClass('m_btn_disable');
-                }, 500);
+                var $this = $('.cate_list_alarm:not([data-id=0])');
+                var del_nodes = [];
+                $this.each(function() {
+                    del_nodes.push($(this).attr('data-id'));
+                });
+
+                var url = '/dir/del';
+                $.ajax({
+                    url: url,
+                    data: {
+                        dids: del_nodes.join(',')
+                    },
+                    success: function(json) {
+                        if (json.status === 0) {
+                            $this.addClass('cate_list_close');
+                            setTimeout(function() {
+                                $this.remove();
+                                PanelFunc.restoreDelStatus();
+                                $('#edit_btn, #del_btn').addClass('m_btn_disable');
+                            }, 500);
+                        }
+                    }
+                });
             } else {
                 $this.addClass('m_btn_alarm').html(PanelFunc.btnDisWord['del_btn_alarm']);
                 var $cate_list_cur = $('.cate_list_select').eq(0);
-                var s_parent = $cate_list_cur.addClass('cate_list_alarm').attr('data-parent');
+                var arr_del_nodes = [];
+
+                arr_del_nodes.push($cate_list_cur.attr('data-id'));
+                $cate_list_cur.addClass('cate_list_alarm');
+
                 do {
                     $cate_list_cur = $cate_list_cur.next();
-                    if ($cate_list_cur.length > 0 
-                     && $cate_list_cur.attr('data-parent') !== s_parent) {
+                    if ($cate_list_cur.length !== 0 && $.inArray($cate_list_cur.attr('data-parent'), arr_del_nodes) !== -1) {
+                        arr_del_nodes.push($cate_list_cur.attr('data-id'));
                         $cate_list_cur.addClass('cate_list_alarm');
                     } else {
                         break;
