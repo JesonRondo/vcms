@@ -488,7 +488,7 @@ a {
 
 .d_box_show {
     right: 0;
-    -webkit-animation: d_box_show .6s ease-out;
+    -webkit-animation: d_box_show 1s ease-out;
 }
 
 .d_box_close {
@@ -499,26 +499,21 @@ a {
 .d_box_inner {
     position: relative;
     margin: 60px 20px;
-    opacity: 0;
 }
 
-@-webkit-keyframes d_box_show_opacity {
+@-webkit-keyframes d_box_show_inner {
     0% {
-        opacity: 0;
+        padding-left: 100px;
     }
     
-    60% {
-        opacity: 0;
-    }
-
     100% {
-        opacity: 1;
+        padding-left: 0;
     }
 }
 
 .d_box_show .d_box_inner {
-    opacity: 1;
-    -webkit-animation: d_box_show_opacity .6s ease-out;
+    padding-left: 0;
+    -webkit-animation: d_box_show_inner 1s ease-out;
 }
 
 .d_box_close_btn {

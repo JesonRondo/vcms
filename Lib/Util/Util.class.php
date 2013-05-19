@@ -31,5 +31,40 @@ class Util {
 
         return $new_ary;
     }
+
+    /**
+     * add id to id str
+     */
+    public static function addIdToIdstr($idstr, $id) {
+        if ($idstr !== '') {
+            $id_ary = split(',', $idstr);
+        } else {
+            $id_ary = array();
+        }
+        array_push($id_ary, $id);
+        $id_ary = array_unique($id_ary);
+        sort($id_ary);
+
+        return join(',', $id_ary);
+    }
+
+    /**
+     * del id from id str
+     */
+    public static function delIdFromIdstr($idstr, $id) {
+        if ($idstr !== '') {
+            $id_ary = split(',', $idstr);
+        } else {
+            $id_ary = array();
+        }
+        for ($i = 0, $len = count($id_ary); $i < $len; $i++) {
+            if ($id_ary[$i] == $id) {
+                unset($id_ary[$i]);
+                break;
+            }
+        }
+
+        return join(',', $id_ary);
+    }
 }
 ?>

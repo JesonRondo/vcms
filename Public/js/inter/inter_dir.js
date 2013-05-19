@@ -6,8 +6,8 @@ define(function(require, exports, module) {
         addDirSubmit: function() {
             var form = {
                 belong: $('#belong').val(),
-                input_dir: $('#input_dir').val(),
-                input_dir_alias: $('#input_dir_alias').val()
+                input_dir: $.trim($('#input_dir').val()),
+                input_dir_alias: $.trim($('#input_dir_alias').val())
             };
 
             // params check
@@ -31,6 +31,40 @@ define(function(require, exports, module) {
                     if (json.status === 0) {
                         EditBox.closeEditBox();
                         reloadList();
+                        $('#edit_btn, #del_btn').addClass('m_btn_disable');
+                    }
+                }
+            });
+        },
+        editDirSubmit: function() {
+            var form = {
+                did: $('.cate_list_select').eq(0).attr('data-id'),
+                input_dir: $.trim($('#input_dir').val()),
+                input_dir_alias: $.trim($('#input_dir_alias').val())
+            };
+
+            // params check
+            $('#dir_editbox').find('.m_text_error').removeClass('m_text_error');
+            for (var k in form) {
+                if (form[k] === '') {
+                    $('#' + k).addClass('m_text_error').focus();
+                    return false;
+                }
+            }
+
+            var url = '/dir/edit';
+            $.ajax({
+                url: url,
+                data: {
+                    did         : form.did,
+                    name        : form.input_dir,
+                    name_alias  : form.input_dir_alias
+                },
+                success: function(json) {
+                    if (json.status === 0) {
+                        EditBox.closeEditBox();
+                        reloadList();
+                        $('#edit_btn, #del_btn').addClass('m_btn_disable');
                     }
                 }
             });
@@ -44,13 +78,49 @@ define(function(require, exports, module) {
                 $dir_editbox.remove();
             }, 100);
         },
-        openEditBox: function() {
+        openEditBox: function(method) { // method: add, edit
+            var methods = ['add', 'edit'];
+            if (method === undefined && $.inArray(method, methods) === -1)
+                method = 'add';
+
             require.async('/tpl/mbox/dir_editbox.html', function(tpl) {
                 $('#page').append(tpl);
                 $('#dir_editbox').addClass('d_box_show');
                 $('#belong').html(EditBox.$options);
 
-                $('#dir_editbox_ok_btn').on('click', EditBox.addDirSubmit);
+                // auto select
+                var $select = $('.cate_list_select').eq(0);
+                if ($select.length !== 0) {
+                    var id = $select.attr('data-id');
+                    $('#belong').val(id);
+                }
+
+                switch(method) {
+                    case 'add':
+                        $('#dir_editbox_ok_btn').on('click', EditBox.addDirSubmit);
+                        break;
+                    case 'edit':
+                        try {
+                            var url = '/dir/get';
+                            $.ajax({
+                                url: url,
+                                data: {
+                                    did: id
+                                },
+                                success: function(json) {
+                                    if (json.status === 0) {
+                                        $('#input_dir').val(json.data.name);
+                                        $('#input_dir_alias').val(json.data.name_alias);
+                                    }
+                                }
+                            });               
+                        } catch (e) {
+                            
+                        }
+
+                        $('#dir_editbox_ok_btn').on('click', EditBox.editDirSubmit);
+                        break;
+                }
                 $('#dir_editbox_close_btn').on('click', EditBox.closeEditBox);
                 $('#dir_editbox_cancel_btn').on('click', EditBox.closeEditBox);
             });
@@ -64,7 +134,7 @@ define(function(require, exports, module) {
         },
         addFunc: function() {
             PanelFunc.restoreDelStatus();
-            EditBox.openEditBox();
+            EditBox.openEditBox('add');
         },
         editFunc: function() {
             var $this = $(this);
@@ -72,7 +142,7 @@ define(function(require, exports, module) {
                 return;
             } else {
                 PanelFunc.restoreDelStatus();
-                EditBox.openEditBox();
+                EditBox.openEditBox('edit');
             }
         },
         deleteStatus: function() {

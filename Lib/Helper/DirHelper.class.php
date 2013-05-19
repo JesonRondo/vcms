@@ -22,13 +22,9 @@ class DirHelper {
         if (!$id) return 10003;
         
         // updata parent's children
-        if ($top_ret['children'] !== '') {
-            $parent_s_children = split(',', $top_ret['children']);
-        } else {
-            $parent_s_children = array();
-        }
-        array_push($parent_s_children, $id);
-        $update_children['children'] = join(',', $parent_s_children);
+        import('@.Util.Util');
+
+        $update_children['children'] = Util::addIdToIdstr($top_ret['children'], $id);
         $update_ret = $m->where($parent_filter)->data($update_children)->save();
 
         if (!$update_ret) return 10003;
@@ -36,12 +32,14 @@ class DirHelper {
         return 0;
     }
 
-    public static function get_dir_info() {
+    public static function get_dir_info($id = null) {
         $m = M('dir_info');
 
-        $filter = array(
-            'status' => 0
-        );
+        $filter['status'] = 0;
+        if ($id !== null) {
+            $filter['did'] = $id;
+        }
+
         $ret = $m->where($filter)->select();
 
         return $ret;
@@ -65,6 +63,19 @@ class DirHelper {
         );
 
         $m->where("did in ($dids_str)")->data($data)->save();
+        return 0;
+    }
+
+    public static function edit_dir_info($data) {
+        $m = M('dir_info');
+
+        // get old info
+        $old_info = $m->where(array('did' => $data['did']))->select();
+        if (!$old_info) return 10004;
+
+        // update new info
+        $m->where(array('did' => $data['did']))->data($data)->save();
+        
         return 0;
     }
 }
