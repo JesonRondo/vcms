@@ -493,7 +493,7 @@ a {
 
 .d_box_close {
     right: -300px;
-    -webkit-animation: d_box_close .1s ease-out;
+    -webkit-animation: d_box_close .3s ease-in-out;
 }
 
 .d_box_inner {

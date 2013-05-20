@@ -76,7 +76,7 @@ define(function(require, exports, module) {
             $dir_editbox.addClass('d_box_close');
             setTimeout(function() {
                 $dir_editbox.remove();
-            }, 100);
+            }, 400);
         },
         openEditBox: function(method) { // method: add, edit
             var methods = ['add', 'edit'];
@@ -97,9 +97,11 @@ define(function(require, exports, module) {
 
                 switch(method) {
                     case 'add':
+                        $('#belong').removeAttr('disabled');
                         $('#dir_editbox_ok_btn').on('click', EditBox.addDirSubmit);
                         break;
                     case 'edit':
+                        $('#belong').attr('disabled', 'true');
                         try {
                             var url = '/dir/get';
                             $.ajax({
@@ -221,11 +223,10 @@ define(function(require, exports, module) {
         });
     };
 
-    var reloadList = function() {
-        var url = '/dir/get';
+    var reloadList = function(type) {
         $.ajax({
-            url: url,
-            data: null,
+            url: 'dir/get',
+            data: {type: type},
             success: function(json) {
                 if (json.status === 0) {
                     var $list = '';
@@ -240,8 +241,10 @@ define(function(require, exports, module) {
         });
     };
 
-    exports.initData = function() {
-        reloadList();
+    exports.initData = function(type) {
+        if (type === undefined || type === '')
+            type = 'info';
+        reloadList(type);
     };
 
     exports.initEvent = function() {

@@ -32,8 +32,15 @@ class DirHelper {
         return 0;
     }
 
-    public static function get_dir_info($id = null) {
-        $m = M('dir_info');
+    public static function get_dir($type, $id = null) {
+        switch($type) {
+            case 'info':
+                $m = M('dir_info');
+                break;
+            case 'article':
+                $m = M('dir_article');
+                break;
+        }
 
         $filter['status'] = 0;
         if ($id !== null) {

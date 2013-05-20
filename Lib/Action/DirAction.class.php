@@ -13,6 +13,8 @@ class DirAction extends Action {
         10004 => 'this node not exist',
     );
 
+    private $dir_type = array('info', 'article');
+
     public function add() {
         $data = $_REQUEST;
         $data['name'] = htmlspecialchars($data['name']);
@@ -35,20 +37,26 @@ class DirAction extends Action {
 
     public function get() {
         import('@.Util.Util');
-        
+       
+        if (!isset($_REQUEST['type']) || !in_array($_REQUEST['type'], $this->dir_type)) {
+            $type = $this->dir_type[0];
+        } else {
+            $type = $_REQUEST['type'];
+        }
+
         if (!isset($_REQUEST['did'])) {
             // fetch all
-            $origin_info = DirHelper::get_dir_info();
-            $origin_info = Util::pushNodeToTree($origin_info);
+            $origin = DirHelper::get_dir($type);
+            $origin = Util::pushNodeToTree($origin);
 
-            $this->ajaxReturn($origin_info, $this->codes[0], 0);
+            $this->ajaxReturn($origin, $this->codes[0], 0);
         } else {
             // fetch did
             $id = htmlspecialchars($_REQUEST['did']);
-            $info = DirHelper::get_dir_info($id);
+            $origin = DirHelper::get_dir($type, $id);
             
-            if ($info) {
-                $this->ajaxReturn($info[0], $this->codes[0], 0);
+            if ($origin) {
+                $this->ajaxReturn($origin[0], $this->codes[0], 0);
             } else {
                 $this->ajaxReturn(null, $this->codes[10004], 10004);
             }
