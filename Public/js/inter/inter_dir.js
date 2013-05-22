@@ -1,8 +1,9 @@
 define(function(require, exports, module) {
     var $ = require('jquery');
+    var page_type = null;
 
     var EditBox = {
-        $option: '', // option cache
+        $option: [], // option cache
         addDirSubmit: function() {
             var form = {
                 belong: $('#belong').val(),
@@ -25,7 +26,8 @@ define(function(require, exports, module) {
                 data: {
                     parent      : form.belong,
                     name        : form.input_dir,
-                    name_alias  : form.input_dir_alias
+                    name_alias  : form.input_dir_alias,
+                    type        : page_type
                 },
                 success: function(json) {
                     if (json.status === 0) {
@@ -58,7 +60,8 @@ define(function(require, exports, module) {
                 data: {
                     did         : form.did,
                     name        : form.input_dir,
-                    name_alias  : form.input_dir_alias
+                    name_alias  : form.input_dir_alias,
+                    type        : page_type
                 },
                 success: function(json) {
                     if (json.status === 0) {
@@ -86,7 +89,7 @@ define(function(require, exports, module) {
             require.async('/tpl/mbox/dir_editbox.html', function(tpl) {
                 $('#page').append(tpl);
                 $('#dir_editbox').addClass('d_box_show');
-                $('#belong').html(EditBox.$options);
+                $('#belong').html(EditBox.$options.join(''));
 
                 // auto select
                 var $select = $('.cate_list_select').eq(0);
@@ -107,7 +110,8 @@ define(function(require, exports, module) {
                             $.ajax({
                                 url: url,
                                 data: {
-                                    did: id
+                                    did: id,
+                                    type: page_type
                                 },
                                 success: function(json) {
                                     if (json.status === 0) {
@@ -155,14 +159,17 @@ define(function(require, exports, module) {
                 var $this = $('.cate_list_alarm:not([data-id=0])');
                 var del_nodes = [];
                 $this.each(function() {
-                    del_nodes.push($(this).attr('data-id'));
+                    var data_id = $(this).attr('data-id');
+                    del_nodes.push(data_id);
+                    EditBox.$options[data_id] = undefined;
                 });
 
                 var url = '/dir/del';
                 $.ajax({
                     url: url,
                     data: {
-                        dids: del_nodes.join(',')
+                        dids: del_nodes.join(','),
+                        type: page_type
                     },
                     success: function(json) {
                         if (json.status === 0) {
@@ -223,17 +230,17 @@ define(function(require, exports, module) {
         });
     };
 
-    var reloadList = function(type) {
+    var reloadList = function() {
         $.ajax({
             url: 'dir/get',
-            data: {type: type},
+            data: {type: page_type},
             success: function(json) {
                 if (json.status === 0) {
                     var $list = '';
-                    EditBox.$options = '';
+                    EditBox.$options = [];
                     for (var i in json.data) {
                         $list += '<p class="cate_list" data-id="' + json.data[i].did + '" data-parent="' + json.data[i].parent + '">' + json.data[i].dis_name + '</p>';
-                        EditBox.$options += '<option value="' + json.data[i].did + '">' + json.data[i].dis_name + '</option>';
+                        EditBox.$options[json.data[i].did] = '<option value="' + json.data[i].did + '">' + json.data[i].dis_name + '</option>';
                     }
                     $('#cate_list_box').html($list);
                 }
@@ -241,14 +248,22 @@ define(function(require, exports, module) {
         });
     };
 
-    exports.initData = function(type) {
-        if (type === undefined || type === '')
-            type = 'info';
-        reloadList(type);
+    initData = function() {
+        reloadList();
     };
 
-    exports.initEvent = function() {
+    initEvent = function() {
         listEvent();
         btnEvent();
+    };
+
+    exports.init = function(type) {
+        if (type === undefined || type === '')
+            page_type = 'info';
+        else
+            page_type = type;
+        
+        initData();
+        initEvent();
     };
 });

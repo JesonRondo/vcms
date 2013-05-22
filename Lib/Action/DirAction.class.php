@@ -16,6 +16,12 @@ class DirAction extends Action {
     private $dir_type = array('info', 'article');
 
     public function add() {
+        if (!isset($_REQUEST['type']) || !in_array($_REQUEST['type'], $this->dir_type)) {
+            $type = $this->dir_type[0];
+        } else {
+            $type = $_REQUEST['type'];
+        }
+
         $data = $_REQUEST;
         $data['name'] = htmlspecialchars($data['name']);
         $data['name_alias'] = htmlspecialchars($data['name_alias']);
@@ -28,7 +34,7 @@ class DirAction extends Action {
 
         $data['children'] = '';
 
-        $ret_code = DirHelper::add_dir_info($data);
+        $ret_code = DirHelper::add_dir($type, $data);
 
         if (!isset($this->codes[$ret_code])) $ret_code = 10000;
 
@@ -64,6 +70,12 @@ class DirAction extends Action {
     }
 
     public function del() {
+        if (!isset($_REQUEST['type']) || !in_array($_REQUEST['type'], $this->dir_type)) {
+            $type = $this->dir_type[0];
+        } else {
+            $type = $_REQUEST['type'];
+        }
+
         $data = $_REQUEST;
         $data['dids'] = htmlspecialchars($data['dids']);
         $needed_params = array('dids');
@@ -73,7 +85,7 @@ class DirAction extends Action {
             $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
         }
 
-        $ret_code = DirHelper::del_dir_info($data['dids']);
+        $ret_code = DirHelper::del_dir($type, $data['dids']);
 
         if (!isset($this->codes[$ret_code])) $ret_code = 10000;
 
@@ -81,6 +93,12 @@ class DirAction extends Action {
     }
 
     public function edit() {
+        if (!isset($_REQUEST['type']) || !in_array($_REQUEST['type'], $this->dir_type)) {
+            $type = $this->dir_type[0];
+        } else {
+            $type = $_REQUEST['type'];
+        }
+
         $data = $_REQUEST;
         $data['name'] = htmlspecialchars($data['name']);
         $data['name_alias'] = htmlspecialchars($data['name_alias']);
@@ -92,7 +110,7 @@ class DirAction extends Action {
             $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
         }
 
-        $ret_code = DirHelper::edit_dir_info($data);
+        $ret_code = DirHelper::edit_dir($type, $data);
 
         if (!isset($this->codes[$ret_code])) $ret_code = 10000;
 

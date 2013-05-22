@@ -7,8 +7,18 @@ class DirHelper {
         return true;
     }
 
-    public static function add_dir_info($data) {
-        $m = M('dir_info');
+    public static function add_dir($type, $data) {
+        switch($type) {
+            case 'info':
+                $m = M('dir_info');
+                break;
+            case 'article':
+                $m = M('dir_article');
+                break;
+            default:
+                return 10003;
+                break;
+        }
 
         $parent_filter['did'] = $data['parent'];
         $top_ret = $m->where($parent_filter)->select();
@@ -40,6 +50,9 @@ class DirHelper {
             case 'article':
                 $m = M('dir_article');
                 break;
+            default:
+                return 10003;
+                break;
         }
 
         $filter['status'] = 0;
@@ -52,8 +65,18 @@ class DirHelper {
         return $ret;
     }
 
-    public static function del_dir_info($dids_str) {
-        $m = M('dir_info');
+    public static function del_dir($type, $dids_str) {
+        switch($type) {
+            case 'info':
+                $m = M('dir_info');
+                break;
+            case 'article':
+                $m = M('dir_article');
+                break;
+            default:
+                return 10003;
+                break;
+        }
 
         // except root, unable to delete
         $dids = array_unique(split(',', $dids_str));
@@ -73,14 +96,24 @@ class DirHelper {
         return 0;
     }
 
-    public static function edit_dir_info($data) {
-        $m = M('dir_info');
+    public static function edit_dir($type, $data) {
+        switch($type) {
+            case 'info':
+                $m = M('dir_info');
+                break;
+            case 'article':
+                $m = M('dir_article');
+                break;
+            default:
+                return 10003;
+                break;
+        }
 
-        // get old info
-        $old_info = $m->where(array('did' => $data['did']))->select();
-        if (!$old_info) return 10004;
+        // get old
+        $old = $m->where(array('did' => $data['did']))->select();
+        if (!$old) return 10004;
 
-        // update new info
+        // update new
         $m->where(array('did' => $data['did']))->data($data)->save();
         
         return 0;
