@@ -217,15 +217,23 @@ define(function(require, exports, module) {
     };
 
     var listEvent = function() {
-        $('#cate_list_box').off('click').on('click', '.cate_list', function() {
-            EditBox.closeEditBox();
-            if ($(this).hasClass('cate_list_select')) {
-                return;
+        $('#cate_list_box').off('click').on('click', '.cate_list', function(e) {
+            var $this = $(this);
+
+            if (e.ctrlKey === true) { // enter detail
+                var dir_id = $this.attr('data-id');
+                var ohash = location.hash;
+                location.hash = ohash + '_' + dir_id;
             } else {
-                $('.cate_list_select').removeClass('cate_list_select');
-                $(this).addClass('cate_list_select');
-                $('#edit_btn, #del_btn').removeClass('m_btn_disable');
-                PanelFunc.restoreDelStatus();
+                EditBox.closeEditBox();
+                if ($this.hasClass('cate_list_select')) {
+                    return;
+                } else {
+                    $('.cate_list_select').removeClass('cate_list_select');
+                    $this.addClass('cate_list_select');
+                    $('#edit_btn, #del_btn').removeClass('m_btn_disable');
+                    PanelFunc.restoreDelStatus();
+                }
             }
         });
     };
