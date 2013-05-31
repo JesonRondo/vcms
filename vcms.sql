@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-05-31 23:03:12
+Date: 2013-06-01 00:06:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -151,7 +151,8 @@ CREATE TABLE `v_info` (
 DROP TABLE IF EXISTS `v_info_alias`;
 CREATE TABLE `v_info_alias` (
   `id` int(10) NOT NULL,
-  `vid` int(10) NOT NULL,
+  `did` int(10) NOT NULL,
+  `len` int(2) NOT NULL DEFAULT '30',
   `field1` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field1',
   `field2` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field2',
   `field3` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field3',
@@ -188,3 +189,4 @@ CREATE TABLE `v_info_alias` (
 -- ----------------------------
 -- Records of v_info_alias
 -- ----------------------------
+INSERT INTO `v_info_alias` VALUES ('0', '7', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
