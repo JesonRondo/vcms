@@ -613,3 +613,16 @@ a {
     margin-left: -20px;
     -webkit-animation: cate_list_close_animate .5s linear;
 }
+
+.infotable th,
+.infotable td{
+    padding: 5px;
+    text-align: center;
+}
+
+.h1_edit:hover {
+    cursor: pointer;
+}
+.h1_edit:hover:after {
+    content: '';
+}

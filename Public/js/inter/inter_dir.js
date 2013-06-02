@@ -3,6 +3,7 @@ define(function(require, exports, module) {
     var page_type = null;
 
     var EditBox = {
+        keys: {}, // map key to $option array index
         $option: [], // option cache
         addDirSubmit: function() {
             var form = {
@@ -20,9 +21,8 @@ define(function(require, exports, module) {
                 }
             }
 
-            var url = '/dir/add';
             $.ajax({
-                url: url,
+                url: '/dir/add',
                 data: {
                     parent      : form.belong,
                     name        : form.input_dir,
@@ -54,9 +54,8 @@ define(function(require, exports, module) {
                 }
             }
 
-            var url = '/dir/edit';
             $.ajax({
-                url: url,
+                url: '/dir/edit',
                 data: {
                     did         : form.did,
                     name        : form.input_dir,
@@ -106,9 +105,8 @@ define(function(require, exports, module) {
                     case 'edit':
                         $('#belong').attr('disabled', 'true');
                         try {
-                            var url = '/dir/get';
                             $.ajax({
-                                url: url,
+                                url: '/dir/get',
                                 data: {
                                     did: id,
                                     type: page_type
@@ -161,12 +159,11 @@ define(function(require, exports, module) {
                 $this.each(function() {
                     var data_id = $(this).attr('data-id');
                     del_nodes.push(data_id);
-                    EditBox.$options[data_id] = undefined;
+                    EditBox.$options[EditBox.keys[data_id]] = undefined;
                 });
 
-                var url = '/dir/del';
                 $.ajax({
-                    url: url,
+                    url: '/dir/del',
                     data: {
                         dids: del_nodes.join(','),
                         type: page_type
@@ -240,15 +237,18 @@ define(function(require, exports, module) {
 
     var reloadList = function() {
         $.ajax({
-            url: 'dir/get',
+            url: '/dir/get',
             data: {type: page_type},
             success: function(json) {
                 if (json.status === 0) {
                     var $list = '';
+                    EditBox.keys = {};
                     EditBox.$options = [];
                     for (var i in json.data) {
                         $list += '<p class="cate_list" data-id="' + json.data[i].did + '" data-parent="' + json.data[i].parent + '">' + json.data[i].dis_name + '</p>';
-                        EditBox.$options[json.data[i].did] = '<option value="' + json.data[i].did + '">' + json.data[i].dis_name + '</option>';
+                        // reset
+                        EditBox.keys[json.data[i].did] = i;
+                        EditBox.$options[i] = '<option value="' + json.data[i].did + '">' + json.data[i].dis_name + '</option>';
                     }
                     $('#cate_list_box').html($list);
                 }

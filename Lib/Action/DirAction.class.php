@@ -1,6 +1,7 @@
 <?php
 class DirAction extends Action {
     function _initialize() {
+        import('@.Util.Util');
         import('@.Helper.DirHelper');
     }
 
@@ -27,7 +28,7 @@ class DirAction extends Action {
         $data['name_alias'] = htmlspecialchars($data['name_alias']);
         $needed_params = array('name', 'name_alias', 'parent');
 
-        if (!DirHelper::check_params($data, $needed_params)) {
+        if (!Util::check_params($data, $needed_params)) {
             $ret_code = 10001;
             $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
         }
@@ -42,8 +43,6 @@ class DirAction extends Action {
     }
 
     public function get() {
-        import('@.Util.Util');
-       
         if (!isset($_REQUEST['type']) || !in_array($_REQUEST['type'], $this->dir_type)) {
             $type = $this->dir_type[0];
         } else {
@@ -80,7 +79,7 @@ class DirAction extends Action {
         $data['dids'] = htmlspecialchars($data['dids']);
         $needed_params = array('dids');
 
-        if (!DirHelper::check_params($data, $needed_params)) {
+        if (!Util::check_params($data, $needed_params)) {
             $ret_code = 10001;
             $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
         }
@@ -105,7 +104,7 @@ class DirAction extends Action {
         unset($data['parent']);
         $needed_params = array('did', 'name', 'name_alias');
 
-        if (!DirHelper::check_params($data, $needed_params)) {
+        if (!Util::check_params($data, $needed_params)) {
             $ret_code = 10001;
             $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
         }

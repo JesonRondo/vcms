@@ -1,6 +1,7 @@
 <?php
 class VAction extends Action {
     function _initialize() {
+        import('@.Util.Util');
         import('@.Helper.VHelper');
     }
 
@@ -14,7 +15,15 @@ class VAction extends Action {
     );
 
     public function get_info() {
-        $data = VHelper::get_info('7');
+        $data = $_REQUEST;
+        $needed_params = array('id');
+
+        if (!Util::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $data = VHelper::get_info($data['id']);
 
         if (gettype($data) === 'integer') { // error code
             $code = $data;

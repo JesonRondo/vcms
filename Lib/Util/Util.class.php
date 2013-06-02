@@ -66,5 +66,15 @@ class Util {
 
         return join(',', $id_ary);
     }
+
+    /**
+     * check param able
+     */
+    public static function check_params($data, $params_key) {
+        foreach($params_key as $k => $v) {
+            if (!isset($data[$v]) || $data[$v] === '') return false;
+        }
+        return true;
+    }
 }
 ?>
