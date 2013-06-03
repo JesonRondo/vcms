@@ -454,11 +454,13 @@ a {
 }
 
 .d_box {
+    box-sizing: border-box;
     position: fixed;
     top: 0;
     right: -300px;
     width: 300px;
     height: 100%;
+    padding: 80px 0 50px 0;
     background: #F3F3F3;
     z-index: 1;
 }
@@ -499,30 +501,33 @@ a {
 
 .d_box_inner {
     position: relative;
-    margin: 60px 20px;
+    padding: 0 20px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 @-webkit-keyframes d_box_show_inner {
     0% {
-        padding-left: 100px;
+        padding-left: 120px;
     }
     
     100% {
-        padding-left: 0;
+        padding-left: 20px;
     }
 }
 
 .d_box_show .d_box_inner {
-    padding-left: 0;
+    padding-left: 20px;
     -webkit-animation: d_box_show_inner 1s ease-out;
 }
 
 .d_box_close_btn {
     position: absolute;
-    top: 0;
-    right: -5px;
+    top: 50px;
+    right: 15px;
     color: #999;
     font: normal 24px/24px 'Arial';
+    z-index: 5;
 }
 
 .d_box_close_btn:hover {
@@ -530,9 +535,11 @@ a {
 }
 
 .d_box_bottom_panel {
+    box-sizing: border-box;
     position: absolute;
     bottom: 0;
-    left: 20px;
+    left: 0;
+    padding-left: 20px;
     width: 100%;
     opacity: 0;
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(243, 243, 243, 1) 30%);

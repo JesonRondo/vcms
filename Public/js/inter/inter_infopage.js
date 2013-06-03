@@ -1,6 +1,32 @@
 define(function(require, exports, module) {
     var $ = require('jquery');
 
+    var EditBox = {
+        openEditBox: function() {
+            require.async('/tpl/mbox/alias_editbox.html', function(tpl) {
+                $('#page').append(tpl);
+                $('#alias_editbox').addClass('d_box_show');
+
+                // event
+                $('#alias_editbox_close_btn').on('click', EditBox.closeEditBox);
+                $('#alias_editbox_cancel_btn').on('click', EditBox.closeEditBox);
+            });
+        },
+        closeEditBox: function() {
+            var $editbox = $('#alias_editbox');
+            if ($editbox.length === 0) return;
+
+            $editbox.addClass('d_box_close');
+            setTimeout(function() {
+                $editbox.remove();
+            }, 400);
+        }
+    };
+
+    var btnEvent = function() {
+        $('#info_tit').off('click').on('click', EditBox.openEditBox);
+    };
+
     var initPage = function(did) {
         $.ajax({
             url: '/v/get_info',
@@ -42,7 +68,13 @@ define(function(require, exports, module) {
         });
     };
 
+    var initEvent = function() {
+        btnEvent();
+    };
+
     exports.init = function(did) {
         initPage(did);
+
+        initEvent();
     };
 });

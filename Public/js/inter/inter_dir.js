@@ -256,11 +256,11 @@ define(function(require, exports, module) {
         });
     };
 
-    initData = function() {
+    var initData = function() {
         reloadList();
     };
 
-    initEvent = function() {
+    var initEvent = function() {
         listEvent();
         btnEvent();
     };
