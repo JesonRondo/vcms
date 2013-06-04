@@ -1,15 +1,60 @@
 define(function(require, exports, module) {
     var $ = require('jquery');
 
-    var EditBox = {
+    var did = '';
+
+    var AliasBox = {
         openEditBox: function() {
             require.async('/tpl/mbox/alias_editbox.html', function(tpl) {
                 $('#page').append(tpl);
                 $('#alias_editbox').addClass('d_box_show');
 
                 // event
-                $('#alias_editbox_close_btn').on('click', EditBox.closeEditBox);
-                $('#alias_editbox_cancel_btn').on('click', EditBox.closeEditBox);
+                $('#alias_editbox_close_btn').on('click', AliasBox.closeEditBox);
+                $('#alias_editbox_cancel_btn').on('click', AliasBox.closeEditBox);
+
+                $.ajax({
+                    url: '/v/get_info',
+                    data: {
+                        id  : did,
+                        type: 'columns'
+                    },
+                    success: function(json) {
+                        if (json.status === 0) {
+                            var data = json.data;
+                            var columns = data.column;
+
+                            $('#len').val(data.column_len);
+                            for (var k in columns) {
+                                $('#' + k).val(columns[k]);
+                            }
+                            $('#alias_editbox_ok_btn').on('click', AliasBox.submitEditBox);
+                        }
+                    }
+                });
+            });
+        },
+        submitEditBox: function() {
+            var data = {};
+            var field_num = 30;
+
+            data['id'] = did;
+            data['len'] = $('#len').val();
+
+            for (var i = 0; i < field_num; i++) {
+                var k = 'field' + (i + 1);
+                data[k] = $('#' + k).val();
+            }
+
+            $.ajax({
+                url: '/v/edit_alias',
+                data: data,
+                success: function(json) {
+                    if (json.status === 0) {
+                        AliasBox.closeEditBox();
+                        initPage();
+                    }
+                }
             });
         },
         closeEditBox: function() {
@@ -24,10 +69,10 @@ define(function(require, exports, module) {
     };
 
     var btnEvent = function() {
-        $('#info_tit').off('click').on('click', EditBox.openEditBox);
+        $('#info_tit').off('click').on('click', AliasBox.openEditBox);
     };
 
-    var initPage = function(did) {
+    var initPage = function() {
         $.ajax({
             url: '/v/get_info',
             data: {id: did},
@@ -37,6 +82,7 @@ define(function(require, exports, module) {
                     $('#info_tit').html(data.name);
 
                     var len = data.column_len;
+                    if (len > 30) len = 30; // max 30
 
                     // tablehead
                     var $column = [];
@@ -72,9 +118,10 @@ define(function(require, exports, module) {
         btnEvent();
     };
 
-    exports.init = function(did) {
-        initPage(did);
+    exports.init = function(id) {
+        did = id;
 
+        initPage();
         initEvent();
     };
 });
