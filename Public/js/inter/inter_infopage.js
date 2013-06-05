@@ -98,15 +98,15 @@ define(function(require, exports, module) {
 
                     // tablebody
                     var $rows = [];
-                    $rows.push('<tr>');
                     var rows = data.rows;
                     for (var i = 0, l = rows.length; i < l; i++) {
+                        $rows.push('<tr>');
                         $rows.push('<td>' + rows[i]['vid'] + '</td>');
                         for (var j = 0; j < len; j++) {
                             $rows.push('<td>' + rows[i]['field' + (j + 1)] + '</td>');
                         }
+                        $rows.push('</tr>');
                     }
-                    $rows.push('</tr>');
                     $column.join('');
                     $('#info_rows').html($rows);
                 }
