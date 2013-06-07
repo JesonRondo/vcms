@@ -621,10 +621,29 @@ a {
     -webkit-animation: cate_list_close_animate .5s linear;
 }
 
+.infotable_outer {
+    overflow-x: auto;
+    margin-right: 150px;
+    padding-bottom: 10px;
+}
+
 .infotable th,
 .infotable td {
     padding: 5px;
+    white-space: nowrap;
     text-align: center;
+}
+
+.infotable td a {
+    color: #37A;
+}
+
+.infotable td a:hover {
+    text-decoration: underline;
+}
+
+.infotable_ctrlbtn {
+    padding: 0 8px;
 }
 
 .h1_edit:hover {

@@ -3,6 +3,51 @@ define(function(require, exports, module) {
 
     var did = '';
 
+    var InfoBox = {
+        openEditBox: function() {
+            require.async('/tpl/mbox/info_editbox.html', function(tpl) {
+                $('#page').append(tpl);
+                $('#info_editbox').addClass('d_box_show');
+
+                // event
+                $('#info_editbox_close_btn').on('click', InfoBox.closeEditBox);
+                $('#info_editbox_cancel_btn').on('click', InfoBox.closeEditBox);
+
+                $.ajax({
+                    url: '/v/get_info',
+                    data: {
+                        id  : did,
+                        type: 'columns'
+                    },
+                    success: function(json) {
+                        if (json.status === 0) {
+                            var data = json.data;
+                            var columns = data.column;
+                            var len = data.column_len;
+
+                            var $form = [];
+                            for (var i = 1; i <= len; i++) {
+                                $form.push('<label class="m_label">' + columns['field' + i] + '</label>');
+                                $form.push('<input type="text" id="field' + i + '" class="m_text m_text_full" placeholder="' + columns['field' + i] + '" />');
+                            }
+                            $form = $form.join('');
+                            $('#info_edit_form').html($form);
+                        }
+                    }
+                });
+            });
+        },
+        closeEditBox: function() {
+            var $editbox = $('#info_editbox');
+            if ($editbox.length === 0) return;
+
+            $editbox.addClass('d_box_close');
+            setTimeout(function() {
+                $editbox.remove();
+            }, 400);
+        }
+    };
+
     var AliasBox = {
         openEditBox: function() {
             require.async('/tpl/mbox/alias_editbox.html', function(tpl) {
@@ -70,6 +115,7 @@ define(function(require, exports, module) {
 
     var btnEvent = function() {
         $('#info_tit').off('click').on('click', AliasBox.openEditBox);
+        $('#add_btn').off('click').on('click', InfoBox.openEditBox);
     };
 
     var initPage = function() {
@@ -88,12 +134,13 @@ define(function(require, exports, module) {
                     var $column = [];
                     $column.push('<tr>');
                     $column.push('<th>ID</th>');
+                    $column.push('<th>Control</th>');
                     var column = data.column;
                     for (var i = 0; i < len; i++) {
                         $column.push('<th>' + column['field' + (i + 1)] + '</th>');
                     }
                     $column.push('</tr>');
-                    $column.join('');
+                    $column = $column.join('');
                     $('#info_column').html($column);
 
                     // tablebody
@@ -102,12 +149,16 @@ define(function(require, exports, module) {
                     for (var i = 0, l = rows.length; i < l; i++) {
                         $rows.push('<tr>');
                         $rows.push('<td>' + rows[i]['vid'] + '</td>');
+                        $rows.push('<td>')
+                        $rows.push('<a href="javascript:;" class="infotable_ctrlbtn">edit</a>')
+                        $rows.push('<a href="javascript:;" class="infotable_ctrlbtn">delete</a>')
+                        $rows.push('</td>');
                         for (var j = 0; j < len; j++) {
                             $rows.push('<td>' + rows[i]['field' + (j + 1)] + '</td>');
                         }
                         $rows.push('</tr>');
                     }
-                    $column.join('');
+                    $rows = $rows.join('');
                     $('#info_rows').html($rows);
                 }
             }

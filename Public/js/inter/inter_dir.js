@@ -217,7 +217,7 @@ define(function(require, exports, module) {
         $('#cate_list_box').off('click').on('click', '.cate_list', function(e) {
             var $this = $(this);
 
-            if (e.ctrlKey === true) { // enter detail
+            if (e.ctrlKey !== true) { // enter detail
                 var dir_id = $this.attr('data-id');
                 var ohash = location.hash;
                 location.hash = ohash + '_' + dir_id;

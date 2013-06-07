@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-06-02 15:02:46
+Date: 2013-06-07 23:05:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -58,7 +58,7 @@ CREATE TABLE `dir_info` (
 INSERT INTO `dir_info` VALUES ('0', 'root', 'root', '0', '7,8,14', '0');
 INSERT INTO `dir_info` VALUES ('7', 'sub2', 'sub_alias', '0', '9,10,11', '0');
 INSERT INTO `dir_info` VALUES ('8', 'sub2', 'sub_alias', '0', '12,19', '1');
-INSERT INTO `dir_info` VALUES ('9', 'sub33', 'sub33_alias', '7', '21', '0');
+INSERT INTO `dir_info` VALUES ('9', '目录3', 'sub33_alias', '7', '21', '0');
 INSERT INTO `dir_info` VALUES ('10', 'sub44', 'sub44_alias', '7', '13,16,26', '0');
 INSERT INTO `dir_info` VALUES ('11', 'sub4', 'sub4_alias', '7', '22,23', '1');
 INSERT INTO `dir_info` VALUES ('12', 'longzhou', 'lz', '8', '', '1');
@@ -143,12 +143,13 @@ CREATE TABLE `v_info` (
   `field29` text COLLATE utf8_unicode_ci,
   `field30` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`vid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of v_info
 -- ----------------------------
 INSERT INTO `v_info` VALUES ('1', '7', '0', 'test2', 'test1', 'test4', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `v_info` VALUES ('2', '7', '0', 'test1', 'test3', '测试', '测试2', '测试3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for v_info_alias
@@ -189,13 +190,16 @@ CREATE TABLE `v_info_alias` (
   `field29` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field29',
   `field30` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field30',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of v_info_alias
 -- ----------------------------
-INSERT INTO `v_info_alias` VALUES ('1', '7', '10', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
+INSERT INTO `v_info_alias` VALUES ('1', '7', '13', '文案', '链接', '图片', '埋点', '类别', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
 INSERT INTO `v_info_alias` VALUES ('2', '9', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
 INSERT INTO `v_info_alias` VALUES ('3', '13', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
 INSERT INTO `v_info_alias` VALUES ('4', '18', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
 INSERT INTO `v_info_alias` VALUES ('5', '26', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
+INSERT INTO `v_info_alias` VALUES ('6', '10', '4', '文案', '链接', '图片', 'hot', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
+INSERT INTO `v_info_alias` VALUES ('7', '0', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
+INSERT INTO `v_info_alias` VALUES ('8', '17', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
