@@ -1,18 +1,13 @@
 <?php
 class DirAction extends Action {
+    private $codes;
+
     function _initialize() {
         import('@.Util.Util');
         import('@.Helper.DirHelper');
-    }
 
-    private $codes = array(
-        0 => 'ok',
-        10000 => 'unknow error',
-        10001 => 'error params',
-        10002 => 'parent not exist',
-        10003 => 'db control error',
-        10004 => 'this node not exist',
-    );
+        $this->codes = C('codes');
+    }
 
     private $dir_type = array('info', 'article');
 

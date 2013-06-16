@@ -1,18 +1,13 @@
 <?php
 class VAction extends Action {
+    private $codes;
+
     function _initialize() {
         import('@.Util.Util');
         import('@.Helper.VHelper');
-    }
 
-    private $codes = array(
-        0 => 'ok',
-        10000 => 'unknow error',
-        10001 => 'error params',
-        10002 => 'parent not exist',
-        10003 => 'db control error',
-        10004 => 'this node not exist',
-    );
+        $this->codes = C('codes');
+    }
 
     public function get_info() {
         $data = $_REQUEST;
@@ -54,5 +49,31 @@ class VAction extends Action {
 
         $code = VHelper::edit_alias($data);
         $this->ajaxReturn($data, $this->codes[$code], $code);
+    }
+
+    public function add_info() {
+        $data = $_REQUEST;
+        $needed_params = array('did');
+
+        if (!Util::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $code = VHelper::add_info($data);
+        $this->ajaxReturn(null, $this->codes[$code], $code);
+    }
+
+    public function del_info() {
+        $data = $_REQUEST;
+        $needed_params = array('vid');
+
+        if (!Util::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $code = VHelper::del_info($data['vid']);
+        $this->ajaxReturn(null, $this->codes[$code], $code);
     }
 }

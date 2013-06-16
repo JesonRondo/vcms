@@ -80,5 +80,25 @@ class VHelper {
         
         return 0;
     }
+
+    public static function add_info($data) {
+        $m = M('v_info');
+        $data['status'] = 0;
+
+        $id = $m->data($data)->add();
+
+        if (!$id) return 10003;
+
+        return 0;
+    }
+
+    public static function del_info($id) {
+        $m = M('v_info');
+        $filter['vid'] = $id;
+        $data['status'] = 1;
+
+        $ret = $m->where($filter)->data($data)->save();
+        return 0;
+    }
 }
 ?>
