@@ -76,4 +76,49 @@ class VAction extends Action {
         $code = VHelper::del_info($data['vid']);
         $this->ajaxReturn(null, $this->codes[$code], $code);
     }
+
+    public function edit_info() {
+        $data = $_REQUEST;
+        $needed_params = array('vid');
+
+        if (!Util::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $code = VHelper::edit_info($data);
+        $this->ajaxReturn(null, $this->codes[$code], $code);
+    }
+
+    public function get_sinfo() {
+        $data = $_REQUEST;
+        $needed_params = array('vid');
+
+        if (!Util::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $data = VHelper::get_sinfo($data['vid']);
+
+        if (gettype($data) === 'integer') { // error code
+            $code = $data;
+            $this->ajaxReturn(null, $this->codes[$code], $code);
+        }
+
+        $this->ajaxReturn($data, $this->codes[0], 0);
+    }
+
+    public function exchange_info() {
+        $data = $_REQUEST;
+        $needed_params = array('vid1', 'vid2');
+
+        if (!Util::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $code = VHelper::exchange_info($data['vid1'], $data['vid2']);
+        $this->ajaxReturn(null, $this->codes[$code], $code);
+    }
 }

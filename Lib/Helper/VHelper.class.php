@@ -100,5 +100,47 @@ class VHelper {
         $ret = $m->where($filter)->data($data)->save();
         return 0;
     }
+
+    public static function edit_info($data) {
+        $m = M('v_info');
+
+        $filter['vid'] = $data['vid'];
+        unset($data['vid']);
+
+        $ret = $m->where($filter)->data($data)->save();
+        return 0;
+    }
+
+    public static function get_sinfo($vid) {
+        $m = M('v_info');
+        $filter['vid'] = $vid;
+
+        $ret = $m->where($filter)->select();
+
+        if (!$ret) return 10004;
+        return $ret[0];
+    }
+
+    public static function exchange_info($id1, $id2) {
+        $m = M('v_info');
+        $f1['vid'] = $id1;
+        $f2['vid'] = $id2;
+
+        $r1 = $m->where($f1)->select();
+        $r2 = $m->where($f2)->select();
+
+        if (!($r1 && $r2)) return 10004;
+
+        $data1 = $r1[0];
+        $data2 = $r2[0];
+        unset($data1['vid']);
+        unset($data2['vid']);
+
+        $r1 = $m->where($f1)->data($data2)->save();
+        $r2 = $m->where($f2)->data($data1)->save();
+
+        if (!($r1 && $r2)) return 10003;
+        return 0;
+    }
 }
 ?>
