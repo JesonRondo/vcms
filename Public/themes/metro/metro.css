@@ -643,7 +643,14 @@ a {
 }
 
 .infotable_ctrlbtn {
-    padding: 0 8px;
+    padding: 0 5px;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.s_deling {
+    background: red;
+    color: white!important;
+    text-decoration: none!important;
 }
 
 .h1_edit:hover {
