@@ -64,7 +64,9 @@ define(function(require, exports, module) {
                 if (hash.indexOf('#dir_article_') === 0 && !isNaN(hash.substr(13))) {
                     var article_id = hash.substr(13);
                     sildeContain('/tpl/info.html', function() {
-                        $('#info_tit').html(article_id);
+                        require.async('inter_articlepage', function(inter_articlepage) {
+                            inter_articlepage.init(article_id);
+                        });
                     });
                 }
 

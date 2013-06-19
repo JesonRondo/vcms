@@ -142,5 +142,72 @@ class VHelper {
         if (!($r1 && $r2)) return 10003;
         return 0;
     }
+
+    public static function get_articles($did) {
+        // column
+        $filter['did'] = $did;
+
+        $m1 = M('dir_article');
+        $ret1 = $m1->where($filter)->select();
+
+        if (!$ret1) return 10004;
+        $ret1 = $ret1[0];
+
+        // records
+        $filter['status'] = 0;
+
+        $m2 = M('v_article');
+        $ret2 = $m2->where($filter)->select();
+
+        if (!$ret2) $ret2 = array();
+
+        $ret['name'] = $ret1['name'];
+        $ret['rows'] = $ret2;
+
+        return $ret;
+    }
+
+    public static function get_article($vid) {
+        $filter['vid'] = $vid;
+        $filter['status'] = 0;
+
+        $m = M('v_article');
+        $ret = $m->where($filter)->select();
+
+        // check id
+        if (!$ret) return 10005;
+        return $ret[0];
+    }
+
+    public static function exchange_article($id1, $id2) {
+        $m = M('v_article');
+        $f1['vid'] = $id1;
+        $f2['vid'] = $id2;
+
+        $r1 = $m->where($f1)->select();
+        $r2 = $m->where($f2)->select();
+
+        if (!($r1 && $r2)) return 10004;
+
+        $data1 = $r1[0];
+        $data2 = $r2[0];
+        unset($data1['vid']);
+        unset($data2['vid']);
+
+        $r1 = $m->where($f1)->data($data2)->save();
+        $r2 = $m->where($f2)->data($data1)->save();
+
+        if (!($r1 && $r2)) return 10003;
+        return 0;
+    }
+
+    public static function del_article($id) {
+        $m = M('v_article');
+        $filter['vid'] = $id;
+        $data['status'] = 1;
+
+        $ret = $m->where($filter)->data($data)->save();
+        return 0;
+    }
 }
 ?>

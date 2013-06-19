@@ -12,7 +12,8 @@ seajs.config({
         'nav'   : 'md/nav.js',
         'com_e' : 'md/common_event.js',
 
-        'inter_dir'     : 'inter/inter_dir',
-        'inter_infopage': 'inter/inter_infopage'
+        'inter_dir'         : 'inter/inter_dir',
+        'inter_infopage'    : 'inter/inter_infopage',
+        'inter_articlepage' : 'inter/inter_articlepage'
     }
 });
