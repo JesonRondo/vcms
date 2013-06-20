@@ -3,7 +3,9 @@ define(function(require, exports, module) {
 
     var did = '';
 
-    var line_fields = ['title', 'author'];
+    var line_fields = ['title', 'author', 'extra1', 'extra2', 'extra3', 'extra4', 'extra5'];
+
+    var editor;
 
     var articleCtrl = {
         exchange: function(id1, id2) {
@@ -33,13 +35,156 @@ define(function(require, exports, module) {
                 }
             });
         },
-        closeEditBox: function() {
+        openEditBox: function(method, vid) { // method: add, edit (when method === edit has vid param)
+            var methods = ['add', 'edit'];
 
+            if (method === undefined && $.inArray(method, methods) === -1)
+                method = 'add';
+
+            require.async('/tpl/mbox/article_editbox.html', function(tpl) {
+                $('#page').append(tpl);
+                $('#article_editbox').addClass('d_box_show');
+
+                // event
+                $('#article_editbox_close_btn').off('click').on('click', articleCtrl.closeEditBox);
+                $('#article_editbox_cancel_btn').off('click').on('click', articleCtrl.closeEditBox);
+
+                // load editor
+                require.async('ueditor_config', function() {
+                    require.async('ueditor_all', function() {
+                        editor = new UE.ui.Editor();
+                        var id = 'myEditor' + parseInt(Math.random() * 10000, 10);
+                        var content = '';
+                
+                        switch(method) {
+                            case 'add':
+                                $('#editor').html('<textarea name="text" id="' + id + '">' + content + '</textarea>');
+                                editor.render(id);
+
+                                $('#article_editbox_ok_btn').off('click').on('click', function() {
+                                    articleCtrl.addSubmit();
+                                });
+                                break;
+                            case 'edit':
+                                $.ajax({
+                                    url: '/v/get_article',
+                                    data: {
+                                        vid: vid
+                                    },
+                                    success: function(json) {
+                                        if (json.status === 0) {
+                                            var data = json.data;
+
+                                            $('#title').val(data.title);
+                                            $('#author').val(data.author);
+                                            $('#summary').val(data.summary);
+                                            $('#extra1').val(data.extra1);
+                                            $('#extra2').val(data.extra2);
+                                            $('#extra3').val(data.extra3);
+                                            $('#extra4').val(data.extra4);
+                                            $('#extra5').val(data.extra5);
+
+                                            content = data.text;
+                                            $('#editor').html('<textarea name="text" id="' + id + '">' + content + '</textarea>');
+                                            editor.render(id);
+
+                                            $('#article_editbox_ok_btn').off('click').on('click', function() {
+                                                articleCtrl.editSubmit(vid);
+                                            });
+                                        }
+                                    }
+                                });
+                                break;
+                        }
+                    });
+                });
+            });
+        },
+        closeEditBox: function() {
+            var $editbox = $('#article_editbox');
+            if ($editbox.length === 0) return;
+
+            $editbox.addClass('d_box_close');
+            setTimeout(function() {
+                $editbox.remove();
+            }, 400);
+        },
+        addSubmit: function() {
+            var data = {};
+            
+            data['did'] = did;
+            data['title'] = $('#title').val();
+            data['author'] = $('#author').val();
+            data['summary'] = $('#summary').val();
+            data['text'] = editor.getContent();
+            data['extra1'] = $('#extra1').val();
+            data['extra2'] = $('#extra2').val();
+            data['extra3'] = $('#extra3').val();
+            data['extra4'] = $('#extra4').val();
+            data['extra5'] = $('#extra5').val();
+
+            // params check
+            if (data['title'] === '') {
+                $('#title').addClass('m_text_error').focus();
+                return false;
+            }
+
+            $.ajax({
+                url: '/v/add_article',
+                data: data,
+                type: 'POST',
+                success: function(json) {
+                    if (json.status === 0) {
+                        articleCtrl.closeEditBox();
+                        initPage();
+                    }
+                }
+            });
+        },
+        editSubmit: function(vid) {
+            var data = {};
+            
+            data['vid'] = vid;
+            data['title'] = $('#title').val();
+            data['author'] = $('#author').val();
+            data['summary'] = $('#summary').val();
+            data['text'] = editor.getContent();
+            data['extra1'] = $('#extra1').val();
+            data['extra2'] = $('#extra2').val();
+            data['extra3'] = $('#extra3').val();
+            data['extra4'] = $('#extra4').val();
+            data['extra5'] = $('#extra5').val();
+
+            // params check
+            if (data['title'] === '') {
+                $('#title').addClass('m_text_error').focus();
+                return false;
+            }
+
+            $.ajax({
+                url: '/v/edit_article',
+                data: data,
+                type: 'POST',
+                success: function(json) {
+                    if (json.status === 0) {
+                        articleCtrl.closeEditBox();
+                        initPage();
+                    }
+                }
+            });
         }
     };
 
     var btnEvent = function() {
+        $('#add_btn').off('click').on('click', function() {
+            articleCtrl.openEditBox();
+        });
+
         $('#info_rows').off('click')
+            .on('click', '.s_edit', function() {
+                var vid = $(this).parent().attr('data-vid');
+                articleCtrl.openEditBox('edit', vid);
+            })
             .on('click', '.s_up', function() {
                 var $thisNode = $(this).parent();
 

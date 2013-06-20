@@ -426,6 +426,10 @@ a {
     border: 1px solid #999;
 }
 
+.m_editor {
+    margin-top: 5px 0 10px 0;
+}
+
 .hr_line {
     display: block;
     margin: 30px 0;
@@ -465,9 +469,28 @@ a {
     z-index: 1;
 }
 
+.d_box_max {
+    right: -860px;
+    width: 860px;
+}
+
 @-webkit-keyframes d_box_show {
     0% {
         right: -300px;
+    }
+    
+    60% {
+        right: 0;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@-webkit-keyframes d_box_show_max {
+    0% {
+        right: -860px;
     }
     
     60% {
@@ -489,14 +512,34 @@ a {
     }
 }
 
+@-webkit-keyframes d_box_close_max {
+    0% {
+        right: 0;
+    }
+    
+    100% {
+        right: -860px;
+    }
+}
+
 .d_box_show {
     right: 0;
     -webkit-animation: d_box_show 1s ease-out;
 }
 
+.d_box_max.d_box_show {
+    right: 0;
+    -webkit-animation: d_box_show_max 1s ease-out;
+}
+
 .d_box_close {
     right: -300px;
     -webkit-animation: d_box_close .3s ease-in-out;
+}
+
+.d_box_max.d_box_close {
+    right: -860px;
+    -webkit-animation: d_box_close_max .3s ease-in-out;
 }
 
 .d_box_inner {
@@ -656,6 +699,7 @@ a {
 .h1_edit:hover {
     cursor: pointer;
 }
+
 .h1_edit:hover:after {
     content: '';
 }

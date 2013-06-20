@@ -14,6 +14,9 @@ seajs.config({
 
         'inter_dir'         : 'inter/inter_dir',
         'inter_infopage'    : 'inter/inter_infopage',
-        'inter_articlepage' : 'inter/inter_articlepage'
+        'inter_articlepage' : 'inter/inter_articlepage',
+
+        'ueditor_config': '/plugin/ueditor/ueditor.config.js',
+        'ueditor_all'   : '/plugin/ueditor/ueditor.all.min.js'
     }
 });

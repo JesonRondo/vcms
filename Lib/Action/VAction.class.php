@@ -137,14 +137,14 @@ class VAction extends Action {
 
     public function get_article() {
         $data = $_REQUEST;
-        $needed_params = array('id');
+        $needed_params = array('vid');
 
         if (!Util::check_params($data, $needed_params)) {
             $ret_code = 10001;
             $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
         }
 
-        $data = VHelper::get_article($data['id']);
+        $data = VHelper::get_article($data['vid']);
 
         if (gettype($data) === 'integer') { // error code
             $code = $data;
@@ -177,6 +177,52 @@ class VAction extends Action {
         }
 
         $code = VHelper::exchange_article($data['vid1'], $data['vid2']);
+        $this->ajaxReturn(null, $this->codes[$code], $code);
+    }
+
+    public function add_article() {
+        $data = $_REQUEST;
+        $needed_params = array('did', 'title');
+
+        $data['title']   = htmlspecialchars($data['title']);
+        $data['author']  = htmlspecialchars($data['author']);
+        $data['summary'] = htmlspecialchars($data['summary']);
+        $data['text']    = htmlspecialchars($data['text']);
+        $data['extra1']  = htmlspecialchars($data['extra1']);
+        $data['extra2']  = htmlspecialchars($data['extra2']);
+        $data['extra3']  = htmlspecialchars($data['extra3']);
+        $data['extra4']  = htmlspecialchars($data['extra4']);
+        $data['extra5']  = htmlspecialchars($data['extra5']);
+
+        if (!Util::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $code = VHelper::add_article($data);
+        $this->ajaxReturn(null, $this->codes[$code], $code);
+    }
+
+    public function edit_article() {
+        $data = $_REQUEST;
+        $needed_params = array('vid', 'title');
+
+        $data['title']   = htmlspecialchars($data['title']);
+        $data['author']  = htmlspecialchars($data['author']);
+        $data['summary'] = htmlspecialchars($data['summary']);
+        $data['text']    = htmlspecialchars($data['text']);
+        $data['extra1']  = htmlspecialchars($data['extra1']);
+        $data['extra2']  = htmlspecialchars($data['extra2']);
+        $data['extra3']  = htmlspecialchars($data['extra3']);
+        $data['extra4']  = htmlspecialchars($data['extra4']);
+        $data['extra5']  = htmlspecialchars($data['extra5']);
+
+        if (!Util::check_params($data, $needed_params)) {
+            $ret_code = 10001;
+            $this->ajaxReturn(null, $this->codes[$ret_code], $ret_code);
+        }
+
+        $code = VHelper::edit_article($data);
         $this->ajaxReturn(null, $this->codes[$code], $code);
     }
 }

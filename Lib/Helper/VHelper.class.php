@@ -209,5 +209,29 @@ class VHelper {
         $ret = $m->where($filter)->data($data)->save();
         return 0;
     }
+
+    public static function add_article($data) {
+        $m = M('v_article');
+        $data['status'] = 0;
+        $time = Date('Y-m-d H:i:s', time());
+        $data['createtime'] = $time;
+        $data['updatetime'] = $time;
+
+        $id = $m->data($data)->add();
+
+        if (!$id) return 10003;
+
+        return 0;
+    }
+
+    public static function edit_article($data) {
+        $m = M('v_article');
+
+        $filter['vid'] = $data['vid'];
+        unset($data['vid']);
+
+        $ret = $m->where($filter)->data($data)->save();
+        return 0;
+    }
 }
 ?>
