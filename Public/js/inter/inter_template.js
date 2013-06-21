@@ -1,13 +1,11 @@
 define(function(require, exports, module) {
     var $ = require('jquery');
 
-    var editor;
-
     var templateCtrl = {
         editSubmit: function(filename) {
             var data = {
                 filename: filename,
-                content: editor.getContent()
+                content: $('#m_code_editor').val()
             };
             $.ajax({
                 url: '/tpl/editfile',
@@ -75,31 +73,23 @@ define(function(require, exports, module) {
                 $('#tpl_editbox_close_btn').off('click').on('click', templateCtrl.closeEditBox);
                 $('#tpl_editbox_cancel_btn').off('click').on('click', templateCtrl.closeEditBox);
 
-                // load editor
-                require.async('ueditor_config', function() {
-                    require.async('ueditor_all', function() {
-                        editor = new UE.ui.Editor();
-                        var id = 'myEditor' + parseInt(Math.random() * 10000, 10);
-                        var content = '';
-                
-                        $.ajax({
-                            url: '/tpl/getfile',
-                            data: {
-                                filename: filename
-                            },
-                            success: function(json) {
-                                if (json.status === 0) {
-                                    var content = json.data;
-                                    $('#editor').html('<textarea name="text" id="' + id + '">' + content + '</textarea>');
-                                    editor.render(id);
+                var content = '';
+        
+                $.ajax({
+                    url: '/tpl/getfile',
+                    data: {
+                        filename: filename
+                    },
+                    success: function(json) {
+                        if (json.status === 0) {
+                            var content = json.data;
+                            $('#m_code_editor').val(content);
 
-                                    $('#tpl_editbox_ok_btn').off('click').on('click', function() {
-                                        templateCtrl.editSubmit(filename);
-                                    });
-                                }
-                            }
-                        });
-                    });
+                            $('#tpl_editbox_ok_btn').off('click').on('click', function() {
+                                templateCtrl.editSubmit(filename);
+                            });
+                        }
+                    }
                 });
             });
         },

@@ -13,13 +13,12 @@ class TplHelper {
 
     public static function getFile($filename) {
         $realname = C('tpl_folder') . $filename;
-
         if (!file_exists($realname))
             return '';
 
         $file_handle = fopen($realname, 'r');
         while (!feof($file_handle)) {
-           $line[] = htmlspecialchars(fgets($file_handle));
+           $line[] = fgets($file_handle);
         }
         fclose($file_handle);
         return join('', $line);
