@@ -184,7 +184,7 @@
                 'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
                 'indent', '|',
                 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
-                'insertimage', 'insertcode', '|',
+                'insertimage', '|',
                 'horizontal', '|',
                 'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
                 'searchreplace']
