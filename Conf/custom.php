@@ -16,5 +16,8 @@ return array(
 
     // template folder
     'tpl_folder' => APP_PATH . 'Templates/',
+
+    // deploy folder
+    'deploy_folder' => APP_PATH . 'vicbeta/',
 );
 ?>

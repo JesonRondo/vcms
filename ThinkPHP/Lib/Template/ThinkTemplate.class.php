@@ -240,7 +240,7 @@ class  ThinkTemplate {
         // 解析布局
         $content    =   $this->parseLayout($content);
         // 读取模板中的include标签
-        $find       =   preg_match_all('/'.$this->config['taglib_begin'].'include\s(.+?)\s*?\/'.$this->config['taglib_end'].'/is',$content,$matches);
+        $find       =   preg_match_all('/'.$this->config['taglib_begin'].'zinclude\s(.+?)\s*?\/'.$this->config['taglib_end'].'/is',$content,$matches);
         if($find) {
             for($i=0;$i<$find;$i++) {
                 $include    =   $matches[1][$i];
