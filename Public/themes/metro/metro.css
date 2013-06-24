@@ -382,6 +382,10 @@ a {
     border: 1px solid #999;
 }
 
+.m_term {
+    height: 300px;
+}
+
 .m_select {
     display: block;
     margin: 5px 0;

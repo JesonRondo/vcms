@@ -33,6 +33,13 @@ define(function(require, exports, module) {
             case '#settings':
                 sildeContain('/tpl/settings.html');
                 break;
+            case '#deploy':
+                sildeContain('/tpl/deploy.html', function() {
+                    require.async('inter_deploy', function(inter_deploy) {
+                        inter_deploy.init();
+                    });
+                });
+                break;
             case '#template':
                 sildeContain('/tpl/template.html', function() {
                     require.async('inter_template', function(inter_template) {
