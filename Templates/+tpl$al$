@@ -1,0 +1,15 @@
+---
+did=2,3
+per_page_len=3
+---
+<p>back{{$did}}</p>
+<ul>
+<zvolist name="articles" id="vo" offset="$offset" length="$per_page_len">
+<li>{{$vo.vid}} | {{$vo.title}} | {{$vo.createtime}}</li>
+</zvolist>
+</ul>
+
+<p>offset: {{$offset}}</p>
+<p>per_page_len: {{$per_page_len}}</p>
+<p>current_page: {{$current_page}}</p>
+<p>total_page: {{$total_page}}</p>
