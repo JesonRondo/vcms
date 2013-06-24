@@ -422,7 +422,7 @@ class TagLibCx extends TagLib {
 
     /**
      * zempty标签解析
-     * 如果某个变量为empty 则输出内容
+     * 如果某个变量为zempty 则输出内容
      * 格式： <zempty name="" >content</zempty>
      * @access public
      * @param string $attr 标签属性

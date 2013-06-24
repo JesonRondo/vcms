@@ -1,5 +1,18 @@
 <?php
 class VHelper {
+    public static function get_all_infos() {
+        $dids = M('dir_info')->getField('did', TRUE);
+        $m = M('v_info');
+        foreach ($dids as $did) {
+            $ret = $m->where(array(
+                'did' => $did,
+                'status' => 0
+            ))->select();
+            $infos[$did] = $ret === null ? array() : $ret;
+        }
+        return $infos;
+    }
+
     public static function get_info($id, $type = null) {
         $filter['did'] = $id;
 
