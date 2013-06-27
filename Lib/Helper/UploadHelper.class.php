@@ -1,15 +1,15 @@
 <?php
 class UploadHelper {
-	public static function uploadFile($filename, $destination) {
-		if (move_uploaded_file($filename, $destination)) {
+    public static function uploadFile($filename, $destination) {
+        if (move_uploaded_file($filename, $destination)) {
             return 0;
         } else {
             return 10009;
         }
-	}
+    }
 
-	public static function getFiles() {
-		$handler = opendir(C('upload_folder'));
+    public static function getFiles() {
+        $handler = opendir(C('upload_folder'));
         while (($filename = readdir($handler)) !== false) {
             if ($filename !== '.' && $filename !== '..') {
                 $files[] = C('preview_index') . $filename; 
@@ -21,7 +21,7 @@ class UploadHelper {
     }
 
     public static function delFile($filename) {
-    	$file = C('upload_folder') . $filename;
+        $file = C('public_folder') . substr($filename, 1);
 
         if (!file_exists($file))
             return 10007;

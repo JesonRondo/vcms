@@ -15,6 +15,9 @@ return array(
         10009 => 'upload file failed',
     ),
 
+    // public folder
+    'public_folder' => APP_PATH . 'Public/',
+
     // template folder
     'tpl_folder' => APP_PATH . 'Templates/',
 

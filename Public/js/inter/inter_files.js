@@ -50,16 +50,22 @@ define(function(require, exports, module) {
         // del btn
         $('#filebox').on('click', '.filebox_del', function() {
             var $this = $(this);
-            var file = $this.attr('data-file');
-            $.ajax({
-                url: '/upload/del',
-                data: {filename: file},
-                success: function(json) {
-                    if (json.status === 0) {
-                        $this.parent().parent().remove();   // remove this item
+            if ($this.hasClass('filebox_deling')) {
+                var file = $this.attr('data-file');
+                $.ajax({
+                    url: '/upload/del',
+                    data: {filename: file},
+                    success: function(json) {
+                        if (json.status === 0) {
+                            $this.parent().parent().remove();   // remove this item
+                        }
                     }
-                }
-            });
+                });
+            } else {
+                $this.addClass('filebox_deling');
+            }
+        }).on('mouseleave', '.filebox_item', function() {
+            $(this).find('.filebox_deling').removeClass('filebox_deling');
         });
     };
 
