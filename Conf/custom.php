@@ -15,9 +15,6 @@ return array(
         10009 => 'upload file failed',
     ),
 
-    // public folder
-    'public_folder' => APP_PATH . 'Public/',
-
     // template folder
     'tpl_folder' => APP_PATH . 'Templates/',
 
@@ -27,5 +24,6 @@ return array(
     // upload folder
     'upload_folder' => APP_PATH . 'Public/' . 'vicbeta/upload/',
     'preview_index' => '/vicbeta/upload/',
+    'upload_www' => 'http://vicbeta.com/upload/',
 );
 ?>

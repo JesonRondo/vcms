@@ -34,7 +34,12 @@ class UploadAction extends Action {
      */
     public function get() {
         $files = UploadHelper::getFiles();
-        $this->ajaxReturn($files, $this->codes[0], 0);
+        $data = array(
+            'preview_index' => C('preview_index'),
+            'upload_www' => C('upload_www'),
+            'files' => $files
+        );
+        $this->ajaxReturn($data, $this->codes[0], 0);
     }
 
     /**

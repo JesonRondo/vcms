@@ -9,18 +9,20 @@ define(function(require, exports, module) {
             data: null,
             success: function(json) {
                 if (json.status === 0) {
-                    var files = json.data;
+                    var files = json.data.files;
+                    var preview_index = json.data.preview_index;
                     var $list = [];
                     for (var i = 0, len = files.length; i < len; i++) {
-                        var match = /\.([\w]*)/.exec(files);
+                        var match = /\.([\w]*)/.exec(files[i]);
                         var ext = match && match[1] ? match[1] : '';
+                        ext = ext.toLowerCase();
                         switch(ext) {
                             case 'jpg':
                             case 'jpeg':
                             case 'gif':
                             case 'png':
                                 $list.push('<li><a href="javascript:;" class="filebox_item">');
-                                $list.push('<img src="' + files[i] + '" />');
+                                $list.push('<img src="' + preview_index + files[i] + '" />');
                                 $list.push('<span class="filebox_del" data-file="' + files[i] + '"></span>');
                                 $list.push('</a></li>');
                                 break;

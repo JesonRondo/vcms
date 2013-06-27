@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-06-24 17:43:39
+Date: 2013-06-27 19:03:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -163,8 +163,8 @@ INSERT INTO `v_info` VALUES ('5', '7', '1', 'fromaction', null, null, null, null
 INSERT INTO `v_info` VALUES ('6', '7', '1', 'fromaction', 'fromhelper', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `v_info` VALUES ('7', '28', '0', '擦', '啊', '哦', '厄', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO `v_info` VALUES ('8', '7', '1', 'test1', 'test3', '测试', '测试2', '测试3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `v_info` VALUES ('9', '7', '0', '测试', '再来一条', '再来一罐', '再来一瓶', '加一个', '卡不卡', '还行把', '啊', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
-INSERT INTO `v_info` VALUES ('10', '7', '0', '中午', '上午', '词啊无', '下午', '啊啊啊', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `v_info` VALUES ('9', '7', '0', '中午', '上午', '词啊无', '下午', '啊啊啊', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `v_info` VALUES ('10', '7', '0', '测试', '再来一条', '再来一罐', '再来一瓶', '加一个', '卡不卡', '还行把', '啊', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO `v_info` VALUES ('11', '28', '0', '牛X', '傻X', '2b', '3b', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO `v_info` VALUES ('12', '28', '0', 'yes', 'no', '2b', 'come on', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
@@ -207,7 +207,7 @@ CREATE TABLE `v_info_alias` (
   `field29` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field29',
   `field30` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field30',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of v_info_alias
@@ -221,3 +221,4 @@ INSERT INTO `v_info_alias` VALUES ('6', '10', '4', '文案', '链接', '图片',
 INSERT INTO `v_info_alias` VALUES ('7', '0', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
 INSERT INTO `v_info_alias` VALUES ('8', '17', '30', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
 INSERT INTO `v_info_alias` VALUES ('9', '28', '4', '大婶', '大婶的大叔', '小吉吉', '菊花', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
+INSERT INTO `v_info_alias` VALUES ('10', '29', '3', '海哥', 'sea brother', 'sea sister', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');

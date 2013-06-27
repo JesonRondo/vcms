@@ -12,7 +12,7 @@ class UploadHelper {
         $handler = opendir(C('upload_folder'));
         while (($filename = readdir($handler)) !== false) {
             if ($filename !== '.' && $filename !== '..') {
-                $files[] = C('preview_index') . $filename; 
+                $files[] = $filename; 
             }
         }
         closedir($handler);
@@ -21,8 +21,7 @@ class UploadHelper {
     }
 
     public static function delFile($filename) {
-        $file = C('public_folder') . substr($filename, 1);
-
+        $file = C('upload_folder') . $filename;
         if (!file_exists($file))
             return 10007;
 
