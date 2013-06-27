@@ -12,12 +12,17 @@ return array(
         10006 => 'file exist',
         10007 => 'file not exist',
         10008 => 'file control failed',
+        10009 => 'upload file failed',
     ),
 
     // template folder
     'tpl_folder' => APP_PATH . 'Templates/',
 
     // deploy folder
-    'deploy_folder' => APP_PATH . 'vicbeta/',
+    'deploy_folder' => APP_PATH . 'Public/' . 'vicbeta/',
+
+    // upload folder
+    'upload_folder' => APP_PATH . 'Public/' . 'vicbeta/upload/',
+    'preview_index' => '/vicbeta/upload/',
 );
 ?>

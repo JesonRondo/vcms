@@ -720,3 +720,46 @@ a {
 .h1_edit:hover:after {
     content: '';
 }
+.filebox {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.filebox li {
+    position: relative;
+    display: inline-block;
+}
+
+.filebox_item {
+    display: table-cell;
+    padding: 0 20px 20px 0;
+    width: 128px;
+    height: 128px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.filebox_item img {
+    max-width: 128px;
+    max-height: 128px;
+    transition: box-shadow .3s ease-in-out;
+}
+
+.filebox_item:hover img {
+    box-shadow: 0 0 15px rgba(0, 0, 0, .9);
+}
+
+.filebox_del {
+    opacity: 0;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXUlEQVR42u2SwQoAIAhD88vVLy8KBlaS0i1oJwP3piGVg0Skmpq8HjqZrWl9uwCbGAmwKYGZs/6iqgMyAdJuM8W2QmYKpLt/0AG9ASCv/oAnANd3AEjmAlFT1BypAV+PnRH5YehvAAAAAElFTkSuQmCC);
+    bottom: 20px;
+    right: 20px;
+    transition: opacity .3s ease-in-out;
+}
+
+.filebox_item:hover .filebox_del {
+    opacity: 1;
+}

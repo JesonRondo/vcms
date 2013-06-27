@@ -4,6 +4,10 @@ seajs.config({
         'jquery': {
             src: 'lib/jquery.min.js',
             exports: 'jQuery'
+        },
+        'ajaxupload': {
+            src: 'lib/ajaxupload.js',
+            exports: 'ajaxupload'
         }
     },
     alias: {
@@ -17,6 +21,7 @@ seajs.config({
         'inter_articlepage' : 'inter/inter_articlepage',
         'inter_template'    : 'inter/inter_template',
         'inter_deploy'      : 'inter/inter_deploy',
+        'inter_files'       : 'inter/inter_files',
 
         'ueditor_config': '/plugin/ueditor/ueditor.config.js',
         'ueditor_all'   : '/plugin/ueditor/ueditor.all.min.js'

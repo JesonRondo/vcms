@@ -28,7 +28,11 @@ define(function(require, exports, module) {
                 sildeContain('/tpl/index.html');
                 break;
             case '#files':
-                sildeContain('/tpl/files.html');
+                sildeContain('/tpl/files.html', function() {
+                    require.async('inter_files', function(inter_files) {
+                        inter_files.init();
+                    });
+                });
                 break;
             case '#settings':
                 sildeContain('/tpl/settings.html');
@@ -88,7 +92,16 @@ define(function(require, exports, module) {
         }
     };
 
+    var clearPlugin = function() {
+        // upload plugin
+        var $upload = $('#upload');
+        if ($upload.length !== 0) {
+            $upload.parent().remove();
+        }
+    };
+
     exports.paint = function(hash) {
+        clearPlugin();
         randerPage(hash);
     };
 
