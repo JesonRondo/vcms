@@ -17,7 +17,7 @@ define(function(require, exports, module) {
                     var upload_www = data.upload_www;
                     var preview_index = data.preview_index;
                     for (var i = 0; i < len; i++) {
-                        $list.push('<li><a href="javascript:;" class="attachmentlist_item">');
+                        $list.push('<li><a href="javascript:;" class="attachmentlist_item" data-path="' + upload_www + files[i] + '">');
                         $list.push('<img src="' + preview_index + files[i] + '" />');
                         $list.push('</a></li>');
                     }
@@ -74,6 +74,35 @@ define(function(require, exports, module) {
                 default:
                     break;
             }
+        });
+
+        // attachment box
+        var $attachmentbox = $('#attachmentbox');
+        var $attachmentlist = $('#attachmentlist');
+        $('#attachmentbox_close').on('click', function() {
+            $attachmentbox.removeClass('attachmentbox_open').removeClass('attachmentbox_showinfo');
+            $attachmentlist.html('');
+        });
+        $attachmentlist.on('click', '.attachmentlist_item', function() {
+            var $this = $(this);
+            if ($this.hasClass('attachmentlist_item_select')) {
+                return;
+            } else {
+                $attachmentlist.find('.attachmentlist_item_select').removeClass('attachmentlist_item_select');
+                $this.addClass('attachmentlist_item_select');
+            }
+
+            if (!$attachmentbox.hasClass('attachmentbox_showinfo'))
+                $attachmentbox.addClass('attachmentbox_showinfo');
+
+            var path = $this.attr('data-path');
+            var src = $this.find('img').attr('src');
+            
+            var img = new Image();
+            img.src = src;
+
+            $('#attachmentbox_info_path').html(path);
+            $('#attachmentbox_info_size').html(img.width + ' * ' + img.height);
         });
     };
 
