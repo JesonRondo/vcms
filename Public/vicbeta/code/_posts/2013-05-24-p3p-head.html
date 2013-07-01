@@ -1,0 +1,15 @@
+
+---
+layout: article
+title: P3P解决IE cookie安全问题
+---
+<h1>{{ page.title }}</h1>
+
+<p>IE下iframe由于安全问题，会禁止iframe里面页面的cookie操作。解决此类问题，需加上P3P的程序头部，nginx为例：</p>
+
+<pre class="prettyprint linenums">
+add_header P3P 'policyref="/w3c/p3p.xml", CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT", CP="CAO PSA OUR"'
+</pre>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

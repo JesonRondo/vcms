@@ -35,7 +35,7 @@ class DeployAction extends Action {
                             // default
                             // $output[] = $this->publish2static($tpl_paths[$k], $dep_paths[$k] . $article['vid'] . '.html');
                             // custom
-                            $output[] = $this->publish2static($tpl_paths[$k], $dep_paths[$k] . $article['field1'] . '.html');
+                            $output[] = $this->publish2static($tpl_paths[$k], $dep_paths[$k] . $article['extra1'] . '.html');
                         }
 
                     }

@@ -1,0 +1,74 @@
+
+---
+layout: article
+title: 手机浏览器input撑出body
+---
+<h1>{{ page.title }}</h1>
+
+<p>手机web开发资料少，原创解决方案Mark。</p>
+
+<p>手机页面遇到一个横竖屏切换时出现的问题。为满足不同分辨率下正常显示，页面的input元素宽度需要撑满整个父级元素，而父级元素则是占满整行的，由于input元素有padding间距，所以使用box-sizing来保持宽度不超出父元素，代码如下：</p>
+
+<pre class="prettyprint linenums">
+&lt;input type="text" class="text_input w_100" name="phone" id="phone" /&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+.text_input {
+    box-sizing: border-box;
+    padding: .8em;
+    border: 1px solid #E2E2E3;
+    background: #FFF;
+    font: normal 16px/1 'SimHei';
+    border-radius: 3px;
+    outline: none;
+}
+.w_100 {
+    width: 100%;
+}
+</pre>
+
+<p>竖屏打开时页面显示正常 <img src="http://vicbeta.com/upload/201307011834026322.png" alt="竖屏打开"></p>
+
+<p>切换成横屏时，input元素也保持正常布局 <img src="http://vicbeta.com/upload/201307011834053803.png" alt="横屏切换"></p>
+
+<p>最后切回竖屏时，向左滑动页面，发现页面多出一截空白的可滚动区域 <img src="http://vicbeta.com/upload/201307011834064703.png" alt="切回竖屏"></p>
+
+<p>由于横屏时，宽度100%的input元素会占据更多的横屏像素，此时body元素宽度也随横屏变大，然而切换回竖屏时，虽然元素布局都恢复正常，但浏览器解析的页面宽度却保持在横屏时的宽度，即横屏时input元素100%所达到的宽度，此时右边就多出了一截未还原的空白区域。</p>
+
+<p>为了解决上述问题，需要取消100%的宽度限制，又要达到铺满整行的效果。</p>
+
+<p>需要把input设置成block元素占满整行的效果，但是直接设置block，在input上并没起到相应的作用。考虑到css3的display: box属性，为input元素创建一个外层父元素，把父元素分割成box布局，然后input元素设置box-flex：1，代码如下：</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="text_input_outer"&gt;
+    &lt;input type="text" class="text_input" name="phone" id="phone" /&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+.text_input_outer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: box;
+}
+.text_input {
+    display: block;
+    padding: .8em;
+    border: 1px solid #E2E2E3;
+    background: #FFF;
+    font: normal 16px/1 'SimHei';
+    border-radius: 3px;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    outline: none;
+}
+</pre>
+
+<p>此时发现在没设置width：100%的情况下，也达到了input元素铺满整行的目的，并且横竖屏时完美显示，没有出现空白区域。</p>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

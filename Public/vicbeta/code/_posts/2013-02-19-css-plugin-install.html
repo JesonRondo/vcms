@@ -1,0 +1,54 @@
+
+---
+layout: article
+title: CSSCheckStyle install
+---
+<h1>{{ page.title }}</h1>
+
+<p>CSSCheckStyle是有人人网FED提供的一个CSS的解析、检查、修复和压缩插件</p>
+
+<p>安装方法：</p>
+
+<p>1. Python环境搭建（win64）</p>
+
+<p>下载<a href="http://python.org/download/" target="_blank">Python</a>，安装并配置PATH变量</p>
+
+<p>2. 修复win64注册表信息</p>
+
+<p>用记事本存成python27WOWFix.reg。然后双击导入即可。内容如下：</p>
+
+<pre class="prettyprint linenums">
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python\PythonCore]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python\PythonCore\2.7]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python\PythonCore\2.7\Help]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python\PythonCore\2.7\Help\Main Python Documentation]
+@="C:\\Python27\\Doc\\python273.chm"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python\PythonCore\2.7\InstallPath]
+@="C:\\Python27\\"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python\PythonCore\2.7\InstallPath\InstallGroup]
+@="Python 2.7"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python\PythonCore\2.7\Modules]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Python\PythonCore\2.7\PythonPath]
+@="C:\\Python27\\Lib;C:\\Python27\\DLLs;C:\\Python27\\Lib\\lib-tk"
+</pre>
+
+<p>3. 安装Python包管理</p>
+
+<p>下载对应版本的<a href="https://pypi.python.org/pypi/setuptools#downloads" target="_blank">setuptools</a>并安装，确保Python27/Scripts/easy_install可使用</p>
+
+<p>4. 安装CSSCheckStyle</p>
+
+<pre class="prettyprint linenums">
+easy_install https://github.com/wangjeaf/CSSCheckStyle/archive/master.tar.gz
+</pre>
+
+<p>5. 安装Sublime2插件</p>
+
+<p>将 <code>fixstyle_for_sublime_text_2.zip</code> 内的内容解压缩到插件目录下即可</p>
+
+<p>参考资料：<a href="http://fed.renren.com/archives/1427" target="_blank">CSSCheckStyle - CSS的解析、检查、修复和压缩</a></p>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

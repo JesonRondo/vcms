@@ -1,0 +1,15 @@
+-----
+did=2
+-----
+---
+layout: article
+title: {{$article.title}}
+
+---
+<h1>{{ page.title }}</h1>
+
+{{$article.text}}
+
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

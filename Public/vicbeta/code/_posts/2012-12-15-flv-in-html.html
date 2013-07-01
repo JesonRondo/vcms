@@ -1,0 +1,39 @@
+
+---
+layout: article
+title: Flash视频的插入
+---
+<h1>{{ page.title }}</h1>
+
+<p>在页面中使用Flash视频时容易遇到兼容性问题。在HTML中插入Flash的代码量巨大，而大多冗余，在IE中会出现虚线框，还有被IE拦截等等问题，使得Flash的使用显得十分繁琐。</p>
+
+<p>目前比较简单的方法是使用脚本插入Flash，各种判断都交给脚本去处理，只关心关键参数的设定。</p>
+
+<p>常用脚本<a href="https://code.google.com/p/swfobject/" target="_blank">swfobject</a>。使用方法：</p>
+
+<p>1、在DOM中创建一个元素，待后面脚本替换成Flash</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="player" id="mycontent"&gt;演示视频&lt;/div&gt;
+</pre>
+
+<p>2、设定参数，调用swfobject插入Flash</p>
+
+<pre class="prettyprint linenums">
+var flashvars = {
+     vcastr_file: [flv path],    // flv视频路径
+     width: '600',
+     height: '470'
+};
+var params = {};
+var attributes = {};
+var so = new swfobject.embedSWF([swf player path], 
+    "mycontent", 
+    "600", "470", "9.0.0", 
+    true, flashvars, params, attributes);
+</pre>
+
+<p>更多参数详见<a href="http://code.google.com/p/swfobject/wiki/documentation" target="_blank">Documentation</a></p>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

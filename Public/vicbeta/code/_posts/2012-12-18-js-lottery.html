@@ -1,0 +1,55 @@
+
+---
+layout: article
+title: jQuery抽奖显示插件
+---
+<h1>{{ page.title }}</h1>
+
+<p>不想投入过多Flash的学习，遇到摇奖转盘这类需求时，用JS做个通用的摇奖动画显示插件就显得十分有用。避开了Flash，插件的原理也是采用逐帧动画，所以不只适用于摇奖，类似的图标逐帧动画都可以使用这个插件。</p>
+
+<p>插件主页<a href="https://github.com/JesonRondo/lottery" target="_blank">jquery.lottery.js</a>，提供两个对外方法，一个用来初始化显示图片，所有的图片资源都将在调用初始化时绑定在内部变量中，并进行预加载，另一个用来确定停留状态，0为默认状态，不包含在抽奖结果中（可理解为转盘未开始时，全部熄灭的状态），1为除默认状态外的第一帧，即第一个奖品对应的图片，以此类推。</p>
+
+<p>调用方法:</p>
+
+<p>初始化函数</p>
+
+<pre class="prettyprint linenums">
+$('#lotbox').lotteryInit({
+    process_img: [
+        'images/1.jpg',
+        'images/2.jpg',
+        'images/3.jpg',
+        'images/4.jpg',
+        'images/5.jpg',
+        'images/6.jpg'
+    ]
+});
+</pre>
+
+<p>选择绑定的DOM元素，插件会在id为lotbox的元素中插入img标签，函数的参数是一个option，完整可配参数如下</p>
+
+<pre class="prettyprint linenums">
+option = {
+    frap: 12,           // animate frap            
+    continuance: 5000,  // continue time
+    process_img: []     // process images, first one is default status
+}
+/**
+ * frap:        匀速时的动画显示帧数（可选）
+ * continuance: 匀速切换持续时间（可选）
+ * process_img: 状态图片数组，第一个为默认状态
+ */
+</pre>
+
+<p>启动动画函数</p>
+
+<pre class="prettyprint linenums">
+$.lotteryStart(2);
+</pre>
+
+<p>参数2代表最后停留第二个状态，即抽中第二个奖品。</p>
+
+<p>此插件实现了简单的逐帧动画，没用到强大的CSS3动画，也避免了无语义的Flash元素DOM，通过图片的切换，还是具有一定的实用性和良好的兼容性。</p>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

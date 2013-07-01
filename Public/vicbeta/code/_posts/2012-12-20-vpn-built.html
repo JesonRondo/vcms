@@ -1,0 +1,151 @@
+
+---
+layout: article
+title: VPN搭建
+---
+<h1>{{ page.title }}</h1>
+
+<p>新弄了个vps，果断先搭好vpn，环境是centOS6.3，参考教程搭建成功。<a href="http://www.lvtao.net/html/2236.html" target="_blank">原帖地址</a></p>
+
+<p>首先需要验证是否开启了ppp，一般只有VPS才需要验证，自己的服务器肯定是开启的。</p>
+
+<pre class="prettyprint linenums">
+# cat /dev/ppp
+cat: /dev/ppp: No such device or address
+</pre>
+
+<p>如果出现以上提示则说明ppp是开启的，可以正常架设pptp服务，若出现Permission denied等其他提示，你需要先去VPS面板里看看有没有enable ppp的功能开关，如果没有则需要发个ticket给你的提供商，让他们帮你开通，否则就不必要看下去了，100%无法成功配置PPTP。</p>
+
+<p>修改内核，使其支持包转发</p>
+
+<pre class="prettyprint linenums">
+# vi /etc/sysctl.conf
+</pre>
+
+<p>将net.ipv4.ip_forward的值从0改为1，否则服务器将不会进行包转发操作</p>
+
+<pre class="prettyprint linenums">
+# sysctl -p
+</pre>
+
+<p>使内核配置生效</p>
+
+<p>安装PPP和iptables</p>
+
+<pre class="prettyprint linenums">
+# yum -y install ppp iptables
+</pre>
+
+<p>如果你需要用户连接到你的服务器后可以访问外网，则iptables是必要的，它主要用来做地址转换，将内网IP转换成公网IP（NAT），从而实现上网。否则用户只能访问你服务器上的内网。</p>
+
+<p>安装pptp</p>
+
+<pre class="prettyprint linenums">
+# rpm -ivh http://poptop.sourceforge.net/yum/stable/packages/pptpd-1.3.4-2.el6.i686.rpm
+</pre>
+
+<p>64位系统用以下命令安装，上面针对32位用户</p>
+
+<pre class="prettyprint linenums">
+# rpm -ivh http://poptop.sourceforge.net/yum/stable/packages/pptpd-1.3.4-2.el6.x86_64.rpm
+</pre>
+
+<p>由于yum源中没有pptpd这个包，所以这种安装方式是必要的，你也可以自己去寻找软件包，注意32位系统和64位系统需要选择各自的软件包</p>
+
+<p>配置pptp</p>
+
+<pre class="prettyprint linenums">
+# vi /etc/pptpd.conf
+</pre>
+
+<p>打开配置文件后，在最下面找到</p>
+
+<pre class="prettyprint linenums">
+#localip 192.168.0.1
+#remoteip 192.168.0.234-238,192.168.0.245
+</pre>
+
+<p>将注释去掉，并改成你自己想要设置的IP段，localip就是指定你服务器的内网IP地址，其实即便网卡没有配置成这个地址也无所谓，remoteip就是用户连接到你的服务器后，服务器为用户分配的ip地址范围，注意格式。</p>
+
+<pre class="prettyprint linenums">
+localip 172.16.32.1
+remoteip 172.16.32.2-200
+</pre>
+
+<p>配置options.pptpd文件</p>
+
+<pre class="prettyprint linenums">
+# vi /etc/ppp/options.pptpd
+</pre>
+
+<p>打开后，找到下面字段，去掉注释，并修改成你想要为用户分配的dns服务器，一般指定google的即可</p>
+
+<pre class="prettyprint linenums">
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+</pre>
+
+<p>配置iptables转发规则</p>
+
+<pre class="prettyprint linenums">
+# iptables -t nat -A POSTROUTING -s 172.16.32.1/24 -j SNAT --to-source 202.141.50.76
+</pre>
+
+<p>以上命令的作用就是让172.16.32.1这个段的ip地址，可以通过202.141.50.76这个公网地址上网。</p>
+
+<p>你需要将172.16.32.1/24替换成你在pptp.conf中设置的ip段和子网掩码，将202.141.50.76替换成你服务器自己的公网ip地址，否则拨上来的用户是没有办法上网的。</p>
+
+<pre class="prettyprint linenums">
+# service iptables save
+</pre>
+
+<p>将新增的转发规则写入文件保存，不执行此命令，服务器重启后上面的转发规则就没了</p>
+
+<p>清空iptables转发规则</p>
+
+<pre class="prettyprint linenums">
+# iptables -F -t nat
+# iptables -X -t nat
+# iptables -Z -t nat
+</pre>
+
+<p>如果不小心配置了错误的转发规则可以使用以上三条命令清空</p>
+
+<pre class="prettyprint linenums">
+# service iptables save
+</pre>
+
+<p>清空后别忘了再次使用保存命令将清空后的配置写入文件，否则重启后上次配置的转发规则又回恢复。</p>
+
+<p>添加VPN账号密码，以上配置完成后，我们就可以添加VPN账号密码进行测试了</p>
+
+<pre class="prettyprint linenums">
+# vi /etc/ppp/chap-secrets
+</pre>
+
+<p>需要添加的4个字段分别为用户名，服务，密码，ip地址（如果为<em>，则表示随机分配，范围即为你在pptp.conf中的设置），保存以后我们就可以启动相关服务进行测试了。</em></p>
+
+<p>启动相关服务</p>
+
+<pre class="prettyprint linenums">
+# service pptpd start
+# service iptables start
+</pre>
+
+<p>此时就可以在另一台机器上建立VPN来测试了</p>
+
+<p>将服务配置为开机自动启动</p>
+
+<pre class="prettyprint linenums">
+# chkconfig pptpd on
+# chkconfig iptables on
+</pre>
+
+<p>PS:</p>
+<pre class="prettyprint linenums">
+-- iptables restorecon: command not found
+yum install policycoreutils
+</pre>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

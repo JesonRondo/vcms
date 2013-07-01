@@ -1,0 +1,39 @@
+---
+layout: index
+title: Vic' Blog
+---
+
+<div class="main">
+    {% for post in paginator.posts %}
+    <div class="article">{{ post.content }}</div>
+    {% endfor %}
+</div>
+<div class="aside">
+    <h5>Level</h5>
+    <ul>
+        {% for post in site.posts limit:10 %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span class="date">{{ post.date | date_to_string }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<ul class="pages clearfix">
+    <li class="page">
+    {% if paginator.page == 1 %}
+        <span class="current-page">1</span>
+    {% else %}
+        <a href="/">1</a>
+    {% endif %}
+    </li>
+    {% for count in (2..paginator.total_pages) %}
+    <li class="page">
+        {% if count == paginator.page %}
+        <span class="current-page">{{ count }}</span>
+        {% else %}
+        <a href="/page{{ count }}">{{ count }}</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>

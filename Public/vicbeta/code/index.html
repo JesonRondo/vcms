@@ -1,0 +1,21 @@
+---
+layout: index
+title: Vic - 扣德
+---
+
+<div class="main">
+    {% for post in site.categories['code'] %}
+    <div class="article">{{ post.content }}</div>
+    {% endfor %}
+</div>
+<div class="aside">
+    <h5>Level</h5>
+    <ul>
+        {% for post in site.categories['code'] limit:10 %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span class="date">{{ post.date | date_to_string }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vic - IE6 JSONP回调执行失败</title>
+    <link rel="stylesheet" href="/themes/vdouban/style.css" />
+</head>
+<body onload="prettyPrint();">
+    <div class="wrap clearfix">
+        <div class="header clearfix">
+            <a href="javascript:void(0);" class="logo">vic</a>
+            <p class="desc">要小清新，不要技术宅</p>
+            <ul class="nav clearfix">
+            
+                <li>
+                    <a href="/">首页</a>
+                </li>
+            
+                <li>
+                    <a href="/code">扣德</a>
+                </li>
+            
+                <li>
+                    <a href="/travel">足迹</a>
+                </li>
+            
+                <li>
+                    <a href="/misc">杂谈</a>
+                </li>
+            
+                <li>
+                    <a href="/about">关于</a>
+                </li>
+            
+            </ul>
+        </div>
+        <div class="detail">
+            <a href="/" class="back">返回</a>
+            <div class="article">
+                <h1>IE6 JSONP回调执行失败</h1>
+
+<p>问题现象：</p>
+
+<p>IE6下浏览器的点击事件执行顺序默认阻止了JSONP回调函数的执行</p>
+
+<p>解决方案：</p>
+
+<p>在点击事件的最后阻止浏览器默认事件的执行</p>
+
+<pre class="prettyprint linenums">
+event.preventDefault();
+</pre>
+<blockquote>
+    <p>22 Mar 2013</p>
+</blockquote>
+            </div>
+            <a href="/misc/2013/04/22/coffee-stomach.html" class="next">
+                胃病表乱喝咖啡呀
+            </a>
+            <a href="/travel/2013/03/16/zh-latest.html" class="prev">
+                TO Do List in Zhuhai
+            </a>
+        </div>
+        <div class="footer">
+            LongZhou's Blog&copy;2012 By Vic
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/prettify.js"></script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fdcfa320f3848c24822c7ca668c9467b6' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</body>
+</html>

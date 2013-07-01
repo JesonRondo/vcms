@@ -1,0 +1,21 @@
+
+---
+layout: article
+title: IE6 JSONP回调执行失败
+---
+<h1>{{ page.title }}</h1>
+
+<p>问题现象：</p>
+
+<p>IE6下浏览器的点击事件执行顺序默认阻止了JSONP回调函数的执行</p>
+
+<p>解决方案：</p>
+
+<p>在点击事件的最后阻止浏览器默认事件的执行</p>
+
+<pre class="prettyprint linenums">
+event.preventDefault();
+</pre>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

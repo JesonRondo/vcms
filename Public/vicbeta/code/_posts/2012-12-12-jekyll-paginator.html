@@ -1,0 +1,36 @@
+
+---
+layout: article
+title: Jekyll中分页的应用
+---
+<h1>{{ page.title }}</h1>
+
+<p>Jekyll支持分页，但仅限于在首页index.html和子目录如/misc/index.html中使用，关键对象是Paginator。</p>
+
+<p>在使用Paginator对象前先要在_config.yml中配置分页的参数:</p>
+
+<pre class="prettyprint linenums">
+pageinate: 3	          // 每页包含的文章数
+</pre>
+
+<p>Paginator对象属性:</p>
+
+<pre class="prettyprint linenums">
+paginator.per_page        // 每页包含的文章数（读取）
+paginator.posts           // 本页的文章对象
+paginator.total_posts     // 文章总数
+paginator.total_pages     // 总页数
+paginator.page            // 当前页数
+paginator.preious_page    // 上一页页数
+paginator.next_page       // 下一页页数
+</pre>
+
+<p>在使用时链接可通过对象的当前值拼接出来，例如首页为http://domain，则第二页为http://domain/page2。链接特例，第一页并不是http://domain/page1而是根目录即首页，所以在输出模板时需要判断是否为第一页，第一页的链接不用拼接，直接指为根即可。</p>
+
+<p>Paginator除了在首页使用之外还可以在子目录首页使用，但是在我博客的分类目录实验后发现paginator.posts取得的文章还是所有文章，并不是由类别区分的文章，这里并不满足设计需求，还有待研究。</p>
+
+<p>参考资料：</p>
+<a href="https://github.com/mojombo/jekyll/wiki/Template-Data" target="_blank">Jekyll Template Data</a>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

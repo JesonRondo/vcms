@@ -1,0 +1,14 @@
+baseurl: /
+description: '要小清新，不要技术宅'
+nav:
+    - name: '首页'
+      link: /
+    - name: '扣德'
+      link: /code
+    - name: '足迹'
+      link: /travel
+    - name: '杂谈'
+      link: /misc
+    - name: '关于'
+      link: /about
+paginate: 3

@@ -186,8 +186,8 @@ class VAction extends Action {
 
         $data['title']   = htmlspecialchars($data['title']);
         $data['author']  = htmlspecialchars($data['author']);
-        $data['summary'] = htmlspecialchars($data['summary']);
-        $data['text']    = htmlspecialchars($data['text']);
+        $data['summary'] = $data['summary'];
+        $data['text']    = $data['text'];
         $data['extra1']  = htmlspecialchars($data['extra1']);
         $data['extra2']  = htmlspecialchars($data['extra2']);
         $data['extra3']  = htmlspecialchars($data['extra3']);
@@ -209,8 +209,8 @@ class VAction extends Action {
 
         $data['title']   = htmlspecialchars($data['title']);
         $data['author']  = htmlspecialchars($data['author']);
-        $data['summary'] = htmlspecialchars($data['summary']);
-        $data['text']    = htmlspecialchars($data['text']);
+        $data['summary'] = $data['summary'];
+        $data['text']    = $data['text'];
         $data['extra1']  = htmlspecialchars($data['extra1']);
         $data['extra2']  = htmlspecialchars($data['extra2']);
         $data['extra3']  = htmlspecialchars($data['extra3']);

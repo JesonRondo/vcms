@@ -1,6 +1,9 @@
 define(function(require, exports, module) {
     var $ = require('jquery');
 
+    // use editor
+    var use_editor = false;
+
     var did = '';
 
     var line_fields = ['title', 'author', 'extra1', 'extra2', 'extra3', 'extra4', 'extra5'];
@@ -49,55 +52,99 @@ define(function(require, exports, module) {
                 $('#article_editbox_close_btn').off('click').on('click', articleCtrl.closeEditBox);
                 $('#article_editbox_cancel_btn').off('click').on('click', articleCtrl.closeEditBox);
 
-                // load editor
-                require.async('ueditor_config', function() {
-                    require.async('ueditor_all', function() {
-                        editor = new UE.ui.Editor();
-                        var id = 'myEditor' + parseInt(Math.random() * 10000, 10);
-                        var content = '';
-                
-                        switch(method) {
-                            case 'add':
-                                $('#editor').html('<textarea name="text" id="' + id + '">' + content + '</textarea>');
-                                editor.render(id);
+                if (use_editor) {
+                    // load editor
+                    require.async('ueditor_config', function() {
+                        require.async('ueditor_all', function() {
+                            editor = new UE.ui.Editor();
+                            var id = 'myEditor' + parseInt(Math.random() * 10000, 10);
+                            var content = '';
+                    
+                            switch(method) {
+                                case 'add':
+                                    $('#editor').html('<textarea name="text" id="' + id + '">' + content + '</textarea>');
+                                    editor.render(id);
 
-                                $('#article_editbox_ok_btn').off('click').on('click', function() {
-                                    articleCtrl.addSubmit();
-                                });
-                                break;
-                            case 'edit':
-                                $.ajax({
-                                    url: '/v/get_article',
-                                    data: {
-                                        vid: vid
-                                    },
-                                    success: function(json) {
-                                        if (json.status === 0) {
-                                            var data = json.data;
+                                    $('#article_editbox_ok_btn').off('click').on('click', function() {
+                                        articleCtrl.addSubmit();
+                                    });
+                                    break;
+                                case 'edit':
+                                    $.ajax({
+                                        url: '/v/get_article',
+                                        data: {
+                                            vid: vid
+                                        },
+                                        success: function(json) {
+                                            if (json.status === 0) {
+                                                var data = json.data;
 
-                                            $('#title').val(data.title);
-                                            $('#author').val(data.author);
-                                            $('#summary').val(data.summary);
-                                            $('#extra1').val(data.extra1);
-                                            $('#extra2').val(data.extra2);
-                                            $('#extra3').val(data.extra3);
-                                            $('#extra4').val(data.extra4);
-                                            $('#extra5').val(data.extra5);
+                                                $('#title').val(data.title);
+                                                $('#author').val(data.author);
+                                                $('#summary').val(data.summary);
+                                                $('#extra1').val(data.extra1);
+                                                $('#extra2').val(data.extra2);
+                                                $('#extra3').val(data.extra3);
+                                                $('#extra4').val(data.extra4);
+                                                $('#extra5').val(data.extra5);
 
-                                            content = data.text;
-                                            $('#editor').html('<textarea name="text" id="' + id + '">' + content + '</textarea>');
-                                            editor.render(id);
+                                                content = data.text;
+                                                $('#editor').html('<textarea name="text" id="' + id + '">' + content + '</textarea>');
+                                                editor.render(id);
 
-                                            $('#article_editbox_ok_btn').off('click').on('click', function() {
-                                                articleCtrl.editSubmit(vid);
-                                            });
+                                                $('#article_editbox_ok_btn').off('click').on('click', function() {
+                                                    articleCtrl.editSubmit(vid);
+                                                });
+                                            }
                                         }
+                                    });
+                                    break;
+                            }
+                        });
+                    }); // load editor end
+                } else {
+                    var id = 'text';
+                    var content = '';
+            
+                    switch(method) {
+                        case 'add':
+                            $('#editor').html('<textarea name="text" class="m_code_editor m_term" id="' + id + '">' + content + '</textarea>');
+                            
+                            $('#article_editbox_ok_btn').off('click').on('click', function() {
+                                articleCtrl.addSubmit();
+                            });
+                            break;
+                        case 'edit':
+                            $.ajax({
+                                url: '/v/get_article',
+                                data: {
+                                    vid: vid
+                                },
+                                success: function(json) {
+                                    if (json.status === 0) {
+                                        var data = json.data;
+
+                                        $('#title').val(data.title);
+                                        $('#author').val(data.author);
+                                        $('#summary').val(data.summary);
+                                        $('#extra1').val(data.extra1);
+                                        $('#extra2').val(data.extra2);
+                                        $('#extra3').val(data.extra3);
+                                        $('#extra4').val(data.extra4);
+                                        $('#extra5').val(data.extra5);
+
+                                        content = data.text;
+                                        $('#editor').html('<textarea name="text" class="m_code_editor m_term" id="' + id + '">' + content + '</textarea>');
+                                        
+                                        $('#article_editbox_ok_btn').off('click').on('click', function() {
+                                            articleCtrl.editSubmit(vid);
+                                        });
                                     }
-                                });
-                                break;
-                        }
-                    });
-                });
+                                }
+                            });
+                            break;
+                    }
+                }
             });
         },
         closeEditBox: function() {
@@ -116,7 +163,7 @@ define(function(require, exports, module) {
             data['title'] = $('#title').val();
             data['author'] = $('#author').val();
             data['summary'] = $('#summary').val();
-            data['text'] = editor.getContent();
+            data['text'] = use_editor ? editor.getContent() : $('#text').val();
             data['extra1'] = $('#extra1').val();
             data['extra2'] = $('#extra2').val();
             data['extra3'] = $('#extra3').val();
@@ -148,7 +195,7 @@ define(function(require, exports, module) {
             data['title'] = $('#title').val();
             data['author'] = $('#author').val();
             data['summary'] = $('#summary').val();
-            data['text'] = editor.getContent();
+            data['text'] = use_editor ? editor.getContent() : $('#text').val();
             data['extra1'] = $('#extra1').val();
             data['extra2'] = $('#extra2').val();
             data['extra3'] = $('#extra3').val();

@@ -1,0 +1,14 @@
+
+---
+layout: article
+title: goagent 证书导入
+---
+<h1>{{ page.title }}</h1>
+
+<pre class="prettyprint linenums">
+sudo apt-get install libnss3-tools
+certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n GoAgent -i ~/Downloads/goagent/local/CA.crt
+</pre>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>
