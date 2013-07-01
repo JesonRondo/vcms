@@ -32,7 +32,10 @@ class DeployAction extends Action {
                         for ($j = 0, $l = count($articles); $j < $l; $j++) {
                             $article = $articles[$j];
                             $this->assign('article', $article);
-                            $output[] = $this->publish2static($tpl_paths[$k], $dep_paths[$k] . $article['vid'] . '.html');
+                            // default
+                            // $output[] = $this->publish2static($tpl_paths[$k], $dep_paths[$k] . $article['vid'] . '.html');
+                            // custom
+                            $output[] = $this->publish2static($tpl_paths[$k], $dep_paths[$k] . $article['field1'] . '.html');
                         }
 
                     }
