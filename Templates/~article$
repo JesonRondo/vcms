@@ -1,6 +1,6 @@
----
+-----
 did=2,3
----
+-----
 <p>{{$article.title}}</p>
 <p>{{$article.author}}</p>
 <p>{{$article.summary}}</p>

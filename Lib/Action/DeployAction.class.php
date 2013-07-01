@@ -20,7 +20,7 @@ class DeployAction extends Action {
                 $dep_paths[$k] = C('deploy_folder') . $vpath;
 
                 $tpl_content = file_get_contents($tpl_paths[$k]);
-                preg_match('/-{3}([^-]*)-{3}/', $tpl_content, $matches);
+                preg_match('/-{5}([^-]*)-{5}/', $tpl_content, $matches);
                 if ($matches[1]) {
                     parse_str(trim($matches[1]), $tpl_param);
                     $tpl_dids = explode(',', $tpl_param['did']);
@@ -43,7 +43,7 @@ class DeployAction extends Action {
                 $dep_paths[$k] = C('deploy_folder') . $vpath;
 
                 $tpl_content = file_get_contents($tpl_paths[$k]);
-                preg_match('/-{3}([^-]*)-{3}/', $tpl_content, $matches);
+                preg_match('/-{5}([^-]*)-{5}/', $tpl_content, $matches);
                 if ($matches[1]) {
                     $tpl_params = explode('
 ', $matches[1]);
@@ -87,7 +87,7 @@ class DeployAction extends Action {
     function publish2static($tpl_path, $dep_path) {
         $content = $this->fetch($tpl_path);
         $content = str_replace('<?zphp', '<?php', $content);
-        $content = preg_replace('/-{3}([^-]*)-{3}/', '', $content);
+        $content = preg_replace('/-{5}([^-]*)-{5}/', '', $content);
         $dep_path = str_replace('$', '/', $dep_path);
 
         $dep_file_folder = substr($dep_path, 0, strripos($dep_path, '/') + 1);
