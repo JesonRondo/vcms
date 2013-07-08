@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-07-01 18:54:50
+Date: 2013-07-08 14:33:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -49,7 +49,7 @@ CREATE TABLE `dir_info` (
   `children` varchar(5000) COLLATE utf8_unicode_ci NOT NULL,
   `status` int(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`did`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of dir_info
