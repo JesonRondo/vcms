@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-07-08 14:33:58
+Date: 2013-07-16 15:24:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -76,7 +76,7 @@ CREATE TABLE `v_article` (
   `extra4` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `extra5` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`vid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of v_article
@@ -101,6 +101,7 @@ INSERT INTO `v_article` VALUES ('17', '2', '0', 'Ubuntu unity图形重装', '<p>
 INSERT INTO `v_article` VALUES ('18', '2', '0', 'P3P解决IE cookie安全问题', '<p>IE下iframe由于安全问题，会禁止iframe里面页面的cookie操作。解决此类问题，需加上P3P的程序头部，nginx为例：</p>\n\n<pre class=\"prettyprint linenums\">\nadd_header P3P \'policyref=\"/w3c/p3p.xml\", CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\", CP=\"CAO PSA OUR\"\'\n</pre>', '', '2013-07-01 18:37:48', '2013-07-01 18:37:48', 'Vic', '2013-05-24-p3p-head', '', '', '', '');
 INSERT INTO `v_article` VALUES ('19', '3', '0', '慕田峪长城', '<p>因为雾霾懒了一周，这周总算出发慕田峪了，为了兑现…我不懒！！！</p>\n\n<p>心情不好，可以见见大山大水，或者…长城？也行吧。什么时候从City控变大自然控了，一定是毕业后的工作生活改变了我。</p>\n\n<p><img src=\"http://vicbeta.com/upload/201307011838584747.JPG\" alt=\"烽火台\"></p>\n\n<p>慕田峪，没有八达岭多人，山也比较秀丽。这里周围大多都会是外国人，说不定很偶尔看到的黑头发黄皮肤，会给你说一句안녕하세요，随后拗口的中文‘能给我们在这拍个照片吗’。</p>\n\n<p><img src=\"http://vicbeta.com/upload/201307011839013897.JPG\" alt=\"城墙\"></p>\n\n<p>这里的城墙没有八达岭新，也不如箭扣长城的原汁原味，但是对于一个初到长城的人来说，这里不会太危险，城墙也很真实，风景还特优美。</p>\n\n<p><img src=\"http://vicbeta.com/upload/201307011839034128.JPG\" alt=\"窗台\"></p>\n\n<p>烽火台，虽然成为了休息和贩卖小货品的地方，在烈日下，进入烽火台带来的是清凉的感觉，随处找个口，可以眺望远处的箭扣，可以享受清风，可以好久好久…</p>\n\n<p><img src=\"http://vicbeta.com/upload/201307011839056507.JPG\" alt=\"留言\"></p>\n\n<p>给人的感觉，这段长城真是为外国人开放的，但是这样也使得这段长城远离中国式“旅游胜地”的壮观景象，更亲近人一些。</p>\n\n<p><img src=\"http://vicbeta.com/upload/201307011839087720.JPG\" alt=\"长城\"></p>\n\n<p>特色…可能要数忠于XXX吧，慕田峪的不同之处。</p>\n\n<p><img src=\"http://vicbeta.com/upload/201307011839116246.JPG\" alt=\"长城\"></p>\n\n<p>正当花开的季节，这里山清可惜没水秀。</p>\n\n<p><img src=\"http://vicbeta.com/upload/201307011839131433.JPG\" alt=\"长城\"></p>\n\n<p>第二面国旗处的大妈，到了要下山的时段，冰棍还没卖完，却免费借给上来照相的小盆友小国旗，还帮助这对跨国夫妇拍照留恋，用当地生意人的英语：one…two…three</p>\n\n<p>没能登顶，时间不早了，so，下山回京，走你。</p>', '', '2013-07-01 18:41:07', '2013-07-01 18:41:07', 'Vic', '2013-05-25-great-wall', '', '', '', '');
 INSERT INTO `v_article` VALUES ('20', '2', '0', 'goagent 证书导入', '<pre class=\"prettyprint linenums\">\nsudo apt-get install libnss3-tools\ncertutil -d sql:$HOME/.pki/nssdb -A -t \"C,,\" -n GoAgent -i ~/Downloads/goagent/local/CA.crt\n</pre>', '', '2013-07-01 18:42:01', '2013-07-01 18:42:01', 'Vic', '2013-06-08-ubuntu-goagent-crt', '', '', '', '');
+INSERT INTO `v_article` VALUES ('21', '2', '0', 'Grunt前端发布自动化', '<p>静态项目发布包括静态资源文件的合并、压缩、测试等繁琐流程，发布工作的重复性很高，有时为了方便，可能脚本未经过处理就上线，然而空格回车、长变量名、注释等对于线上环境是毫无意义的，却会浪费大量网络流量。</p>\n\n<p>超过三次以上的重复操作需考虑将其自动化，而Grunt正是自动化前端发布流程的利器。</p>\n\n<p>Grunt由许多小工具组成，如uglify, cssmin, etc. 这些工具能帮你完成特定的任务。但是如果把压缩后的文件都以min扩展命名，那发布后从开发环境切换到正式环境需要更改资源引用的路径，这可能又是一个不小而且容易出错的工作。</p>\n\n<p>如何组织项目目录结构，以便更方便的管理流程自动化，参考seajs的官方示例，可通过在url增加dev标识来区分开发和正式环境。</p>\n\n<pre class=\"prettyprint linenums\">\nif (location.href.indexOf(\'?dev\') > 0) {\n    var static_path = \'dev/\';\n} else {\n    var static_path = \'online/\';\n}\n</pre>\n\n<p>通过动态加载脚本来加载不同环境的静态资源（css不建议动态加载，避免页面重绘）。</p>\n\n<pre class=\"prettyprint linenums\">\nvar load_scripts = [\'http://libs.baidu.com/jquery/1.9.1/jquery.min.js\'];\nLoader.load(load_scripts, function() {\n    Loader.css(static_path + \'css/reset.css\', function() {\n        $(\'body\').append(\'css loaded\');\n    });\n    Loader.js(static_path + \'js/index.js\');\n});\n</pre>\n\n<p>开发源码在dev目录，通过Grunt编译后的文件放在对应的online目录下。目录组织如下：</p>\n\n<pre class=\"prettyprint linenums\">\n/spath\n    |-- dev [ develop environment ]\n    |    |-- css\n    |    `-- js\n    |-- online [ online environment ]\n    |    |-- css\n    |    `-- js\n    `-- index.html\n</pre>\n\n<p>这样通过访问不同url链接来切换开发环境与测试环境，而整个发布流程只需执行grunt即可得到最终外网压缩代码。</p>\n\n<p>PS：本例只考虑代码压缩，合并需另外自己手动配置</p>\n\n<p>spath：<a href=\"https://github.com/JesonRondo/spath\" target=\"_blank\">快到碗里来</a></p>', '', '2013-07-16 14:31:54', '2013-07-16 14:31:54', 'Vic', '2013-07-16-spath-by-grunt', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for v_info
