@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-07-16 15:24:28
+Date: 2013-07-20 17:53:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -49,12 +49,13 @@ CREATE TABLE `dir_info` (
   `children` varchar(5000) COLLATE utf8_unicode_ci NOT NULL,
   `status` int(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`did`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of dir_info
 -- ----------------------------
-INSERT INTO `dir_info` VALUES ('0', 'root', 'root', '0', '', '0');
+INSERT INTO `dir_info` VALUES ('0', 'root', 'root', '0', '1', '0');
+INSERT INTO `dir_info` VALUES ('1', 'Links', 'links', '0', '', '0');
 
 -- ----------------------------
 -- Table structure for v_article
@@ -142,11 +143,16 @@ CREATE TABLE `v_info` (
   `field29` text COLLATE utf8_unicode_ci,
   `field30` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`vid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of v_info
 -- ----------------------------
+INSERT INTO `v_info` VALUES ('1', '1', '0', 'Travis', '专注前端30年, kss, fuckphp', 'http://travisup.com/', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `v_info` VALUES ('2', '1', '0', '热干面', '热干面', 'http://www.cnblogs.com/Deasel-s-magic-box/', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `v_info` VALUES ('3', '1', '0', 'TantraMind', 'Rolling on the ground like a pig……', 'http://www.tntrmid.com/', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `v_info` VALUES ('4', '1', '0', 'Hugh', 'Hack Anything | Hugh\'s Blog', 'http://free-will.me/', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `v_info` VALUES ('5', '1', '0', 'IDEA', 'life for ideas', 'http://blog.satikey.com/', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for v_info_alias
@@ -187,9 +193,10 @@ CREATE TABLE `v_info_alias` (
   `field29` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field29',
   `field30` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'field30',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of v_info_alias
 -- ----------------------------
 INSERT INTO `v_info_alias` VALUES ('1', '0', '30', 'fiAAAA', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
+INSERT INTO `v_info_alias` VALUES ('2', '1', '3', 'Blog', '标题', '链接', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18', 'field19', 'field20', 'field21', 'field22', 'field23', 'field24', 'field25', 'field26', 'field27', 'field28', 'field29', 'field30');
