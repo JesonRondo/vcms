@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1
+Source Server         : local
 Source Server Version : 50528
 Source Host           : localhost:3306
 Source Database       : vcms
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-07-20 17:53:02
+Date: 2013-08-03 19:30:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -56,6 +56,22 @@ CREATE TABLE `dir_info` (
 -- ----------------------------
 INSERT INTO `dir_info` VALUES ('0', 'root', 'root', '0', '1', '0');
 INSERT INTO `dir_info` VALUES ('1', 'Links', 'links', '0', '', '0');
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(50) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('1', 'pancnlz@gmail.com', 'f4a1c22a8e49802635404f01d34368b3');
 
 -- ----------------------------
 -- Table structure for v_article

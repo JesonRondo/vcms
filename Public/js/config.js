@@ -22,6 +22,7 @@ seajs.config({
         'inter_template'    : 'inter/inter_template',
         'inter_deploy'      : 'inter/inter_deploy',
         'inter_files'       : 'inter/inter_files',
+        'inter_settings'    : 'inter/inter_settings',
 
         'ueditor_config': '/plugin/ueditor/ueditor.config.js',
         'ueditor_all'   : '/plugin/ueditor/ueditor.all.min.js'

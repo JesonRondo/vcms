@@ -13,6 +13,8 @@ return array(
         10007 => 'file not exist',
         10008 => 'file control failed',
         10009 => 'upload file failed',
+        10100 => 'user or password error',
+        10101 => 'unlogin',
     ),
 
     // template folder
@@ -25,5 +27,9 @@ return array(
     'upload_folder' => APP_PATH . 'Public/' . 'vicbeta/upload/',
     'preview_index' => '/vicbeta/upload/',
     'upload_www' => 'http://vicbeta.com/upload/',
+
+    // page
+    'index_page' => 'http://zombie.com',
+    'login_page' => 'http://zombie.com/login',
 );
 ?>

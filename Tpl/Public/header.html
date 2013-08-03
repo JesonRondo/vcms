@@ -6,12 +6,12 @@
     </span>
     <span class="user_c" id="user_home">
         <a href="javascript:;" class="user_c_u">
-            Vic
-            <img src="/themes/metro/images/nga_87011.jpg" class="user_c_u_avatar" width="20" height="20" alt="" />
+            {{$user.username}}
+            <img src="{{$user.avatar}}" class="user_c_u_avatar" width="20" height="20" alt="" />
         </a>
         <ul class="user_menu" id="user_menu">
             <li><a href="javascript:;" class="user_menu_item" data-fun="attachment">Attachment</a></li>
-            <li><a href="javascript:;" class="user_menu_item" data-fun="logout">Logout</a></li>
+            <li><a href="/login/logout" class="user_menu_item">Logout</a></li>
         </ul>
     </span>
 </header>

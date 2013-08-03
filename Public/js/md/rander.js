@@ -35,7 +35,11 @@ define(function(require, exports, module) {
                 });
                 break;
             case '#settings':
-                sildeContain('/tpl/settings.html');
+                sildeContain('/tpl/settings.html', function() {
+                    require.async('inter_settings', function(inter_settings) {
+                        inter_settings.init();
+                    });
+                });
                 break;
             case '#deploy':
                 sildeContain('/tpl/deploy.html', function() {

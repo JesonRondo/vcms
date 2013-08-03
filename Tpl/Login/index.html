@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zombile</title>
+    <link rel="stylesheet" href="__PUBLIC__/themes/metro/metro.css" />
+</head>
+<body>
+    <div class="main login-box">
+        <div class="login-box-panel">
+            <form action="" method="post">
+                <img src="{{$ls_avatar}}" width="150" height="150" alt="" class="login-avatar" />
+
+                <input type="text" name="pp" class="m_text m_text_full" placeholder="UserName" value="{{$ls_username}}" />
+                <input type="password" name="pwd" class="m_text m_text_full" placeholder="PassWord" value="" />
+
+                <p class="login-error">{{$error}}</p>
+
+                <input type="submit" class="m_btn login-loginbtn" value="Login" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>
