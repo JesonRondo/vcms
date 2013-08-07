@@ -24,6 +24,7 @@ git push -u origin master
 echo "--- cms push ---"
 
 ###
+rm -fr $DEP_ROOT/*
 cp -f -r $WWW_ROOT/_site/* $DEP_ROOT
 cd $DEP_ROOT
 git pull
