@@ -28,7 +28,6 @@ rm -fr $DEP_ROOT/*
 cp -f -r $WWW_ROOT/_site/* $DEP_ROOT
 cd $DEP_ROOT
 git pull
-git status -s|awk '{print $2}'|xargs git add
-git commit -m "cms shell update"
+git commit -a -m "cms shell update"
 git push -u origin master
 echo "--- cp finish ---"
