@@ -25,4 +25,9 @@ echo "--- cms push ---"
 
 ###
 cp -f -r $WWW_ROOT/* $DEP_ROOT
+cd $DEF_ROOT
+git pull
+git status -s|awk '{print $2}'|xargs git add
+git commit -m "cms shell update"
+git push -u origin master
 echo "--- cp finish ---"
