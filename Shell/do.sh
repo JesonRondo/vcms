@@ -24,7 +24,7 @@ git push -u origin master
 echo "--- cms push ---"
 
 ###
-cp -f -r $WWW_ROOT/* $DEP_ROOT
+cp -f -r $WWW_ROOT/_site/* $DEP_ROOT
 cd $DEP_ROOT
 git pull
 git status -s|awk '{print $2}'|xargs git add
