@@ -1,43 +1,9 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Vic - P3P解决IE cookie安全问题</title>
-    <link rel="stylesheet" href="/themes/vdouban/style.css" />
-</head>
-<body>
-    <div class="wrap clearfix">
-        <div class="header clearfix">
-            <a href="javascript:void(0);" class="logo">vic</a>
-            <p class="desc">要小清新，不要技术宅</p>
-            <ul class="nav clearfix">
-            
-                <li>
-                    <a href="/">首页</a>
-                </li>
-            
-                <li>
-                    <a href="/code">扣德</a>
-                </li>
-            
-                <li>
-                    <a href="/travel">足迹</a>
-                </li>
-            
-                <li>
-                    <a href="/misc">杂谈</a>
-                </li>
-            
-                <li>
-                    <a href="/about">关于</a>
-                </li>
-            
-            </ul>
-        </div>
-        <div class="detail">
-            <a href="/" class="back">返回</a>
-            <div class="article">
-                <h1>P3P解决IE cookie安全问题</h1>
+
+---
+layout: article
+title: P3P解决IE cookie安全问题
+---
+<h1>P3p Head</h1>
 
 <p>IE下iframe由于安全问题，会禁止iframe里面页面的cookie操作。解决此类问题，需加上P3P的程序头部，nginx为例：</p>
 
@@ -47,28 +13,3 @@ add_header P3P 'policyref="/w3c/p3p.xml", CP="IDC DSP COR ADM DEVi TAIi PSA PSD 
 <blockquote>
     <p>24 May 2013</p>
 </blockquote>
-            </div>
-            <a href="/travel/2013/05/25/great-wall.html" class="next">
-                慕田峪长城
-            </a>
-            <a href="/code/2013/05/17/ubuntu-shut-down-down.html" class="prev">
-                Ubuntu unity图形重装
-            </a>
-        </div>
-        <div class="footer">
-            LongZhou's Blog&copy;2012 By Vic
-        </div>
-    </div>
-    <script type="text/javascript" src="/js/prettify.js"></script>
-    <script type="text/javascript">prettyPrint();</script>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?dcfa320f3848c24822c7ca668c9467b6";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-</body>
-</html>

@@ -36,7 +36,56 @@
         </div>
         <div class="main">
     
-    <div class="article"><h1>P3P解决IE cookie安全问题</h1>
+    <div class="article">
+---
+layout: article
+title: 慕田峪长城
+---
+<h1>Great Wall</h1>
+
+<p>因为雾霾懒了一周，这周总算出发慕田峪了，为了兑现…我不懒！！！</p>
+
+<p>心情不好，可以见见大山大水，或者…长城？也行吧。什么时候从City控变大自然控了，一定是毕业后的工作生活改变了我。</p>
+
+<p><img src="http://vicbeta.com/upload/201307011838584747.JPG" alt="烽火台"></p>
+
+<p>慕田峪，没有八达岭多人，山也比较秀丽。这里周围大多都会是外国人，说不定很偶尔看到的黑头发黄皮肤，会给你说一句안녕하세요，随后拗口的中文‘能给我们在这拍个照片吗’。</p>
+
+<p><img src="http://vicbeta.com/upload/201307011839013897.JPG" alt="城墙"></p>
+
+<p>这里的城墙没有八达岭新，也不如箭扣长城的原汁原味，但是对于一个初到长城的人来说，这里不会太危险，城墙也很真实，风景还特优美。</p>
+
+<p><img src="http://vicbeta.com/upload/201307011839034128.JPG" alt="窗台"></p>
+
+<p>烽火台，虽然成为了休息和贩卖小货品的地方，在烈日下，进入烽火台带来的是清凉的感觉，随处找个口，可以眺望远处的箭扣，可以享受清风，可以好久好久…</p>
+
+<p><img src="http://vicbeta.com/upload/201307011839056507.JPG" alt="留言"></p>
+
+<p>给人的感觉，这段长城真是为外国人开放的，但是这样也使得这段长城远离中国式“旅游胜地”的壮观景象，更亲近人一些。</p>
+
+<p><img src="http://vicbeta.com/upload/201307011839087720.JPG" alt="长城"></p>
+
+<p>特色…可能要数忠于XXX吧，慕田峪的不同之处。</p>
+
+<p><img src="http://vicbeta.com/upload/201307011839116246.JPG" alt="长城"></p>
+
+<p>正当花开的季节，这里山清可惜没水秀。</p>
+
+<p><img src="http://vicbeta.com/upload/201307011839131433.JPG" alt="长城"></p>
+
+<p>第二面国旗处的大妈，到了要下山的时段，冰棍还没卖完，却免费借给上来照相的小盆友小国旗，还帮助这对跨国夫妇拍照留恋，用当地生意人的英语：one…two…three</p>
+
+<p>没能登顶，时间不早了，so，下山回京，走你。</p>
+<blockquote>
+    <p>25 May 2013</p>
+</blockquote></div>
+    
+    <div class="article">
+---
+layout: article
+title: P3P解决IE cookie安全问题
+---
+<h1>P3p Head</h1>
 
 <p>IE下iframe由于安全问题，会禁止iframe里面页面的cookie操作。解决此类问题，需加上P3P的程序头部，nginx为例：</p>
 
@@ -47,7 +96,12 @@ add_header P3P 'policyref="/w3c/p3p.xml", CP="IDC DSP COR ADM DEVi TAIi PSA PSD 
     <p>24 May 2013</p>
 </blockquote></div>
     
-    <div class="article"><h1>Ubuntu unity图形重装</h1>
+    <div class="article">
+---
+layout: article
+title: Ubuntu unity图形重装
+---
+<h1>Ubuntu Shut Down Down</h1>
 
 <p>不小心被强制重启有木有，图形又挂了有木有，果断重装unity，重装。。。</p>
 
@@ -66,129 +120,59 @@ sudo apt-get install ubuntu-desktop
     <p>17 May 2013</p>
 </blockquote></div>
     
-    <div class="article"><h1>手机浏览器input撑出body</h1>
-
-<p>手机web开发资料少，原创解决方案Mark。</p>
-
-<p>手机页面遇到一个横竖屏切换时出现的问题。为满足不同分辨率下正常显示，页面的input元素宽度需要撑满整个父级元素，而父级元素则是占满整行的，由于input元素有padding间距，所以使用box-sizing来保持宽度不超出父元素，代码如下：</p>
-
-<pre class="prettyprint linenums">
-&lt;input type="text" class="text_input w_100" name="phone" id="phone" /&gt;
-</pre>
-
-<pre class="prettyprint linenums">
-.text_input {
-    box-sizing: border-box;
-    padding: .8em;
-    border: 1px solid #E2E2E3;
-    background: #FFF;
-    font: normal 16px/1 'SimHei';
-    border-radius: 3px;
-    outline: none;
-}
-.w_100 {
-    width: 100%;
-}
-</pre>
-
-<p>竖屏打开时页面显示正常 <img src="http://vicbeta.com/upload/201307011834026322.png" alt="竖屏打开"></p>
-
-<p>切换成横屏时，input元素也保持正常布局 <img src="http://vicbeta.com/upload/201307011834053803.png" alt="横屏切换"></p>
-
-<p>最后切回竖屏时，向左滑动页面，发现页面多出一截空白的可滚动区域 <img src="http://vicbeta.com/upload/201307011834064703.png" alt="切回竖屏"></p>
-
-<p>由于横屏时，宽度100%的input元素会占据更多的横屏像素，此时body元素宽度也随横屏变大，然而切换回竖屏时，虽然元素布局都恢复正常，但浏览器解析的页面宽度却保持在横屏时的宽度，即横屏时input元素100%所达到的宽度，此时右边就多出了一截未还原的空白区域。</p>
-
-<p>为了解决上述问题，需要取消100%的宽度限制，又要达到铺满整行的效果。</p>
-
-<p>需要把input设置成block元素占满整行的效果，但是直接设置block，在input上并没起到相应的作用。考虑到css3的display: box属性，为input元素创建一个外层父元素，把父元素分割成box布局，然后input元素设置box-flex：1，代码如下：</p>
-
-<pre class="prettyprint linenums">
-&lt;div class="text_input_outer"&gt;
-    &lt;input type="text" class="text_input" name="phone" id="phone" /&gt;
-&lt;/div&gt;
-</pre>
-
-<pre class="prettyprint linenums">
-.text_input_outer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -o-box;
-    display: box;
-}
-.text_input {
-    display: block;
-    padding: .8em;
-    border: 1px solid #E2E2E3;
-    background: #FFF;
-    font: normal 16px/1 'SimHei';
-    border-radius: 3px;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -o-box-flex: 1;
-    box-flex: 1;
-    outline: none;
-}
-</pre>
-
-<p>此时发现在没设置width：100%的情况下，也达到了input元素铺满整行的目的，并且横竖屏时完美显示，没有出现空白区域。</p>
-<blockquote>
-    <p>24 Apr 2013</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
     <ul>
         
         <li>
-            <a href="/code/2013/07/16/spath-by-grunt.html">Grunt前端发布自动化</a>
+            <a href="/misc/2013/08/12/cleanup.html">Cleanup</a>
+            <span class="date">12 Aug 2013</span>
+        </li>
+        
+        <li>
+            <a href="/code/2013/07/16/spath-by-grunt.html">Spath By Grunt</a>
             <span class="date">16 Jul 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/06/08/ubuntu-goagent-crt.html">goagent 证书导入</a>
+            <a href="/code/2013/06/08/ubuntu-goagent-crt.html">Ubuntu Goagent Crt</a>
             <span class="date">08 Jun 2013</span>
         </li>
         
         <li>
-            <a href="/travel/2013/05/25/great-wall.html">慕田峪长城</a>
+            <a href="/travel/2013/05/25/great-wall.html">Great Wall</a>
             <span class="date">25 May 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/05/24/p3p-head.html">P3P解决IE cookie安全问题</a>
+            <a href="/code/2013/05/24/p3p-head.html">P3p Head</a>
             <span class="date">24 May 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/05/17/ubuntu-shut-down-down.html">Ubuntu unity图形重装</a>
+            <a href="/code/2013/05/17/ubuntu-shut-down-down.html">Ubuntu Shut Down Down</a>
             <span class="date">17 May 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/04/24/phone-over-width.html">手机浏览器input撑出body</a>
+            <a href="/code/2013/04/24/phone-over-width.html">Phone Over Width</a>
             <span class="date">24 Apr 2013</span>
         </li>
         
         <li>
-            <a href="/misc/2013/04/22/coffee-stomach.html">胃病表乱喝咖啡呀</a>
+            <a href="/misc/2013/04/22/coffee-stomach.html">Coffee Stomach</a>
             <span class="date">22 Apr 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/03/22/ie6-jsonp-hack.html">IE6 JSONP回调执行失败</a>
+            <a href="/code/2013/03/22/ie6-jsonp-hack.html">Ie6 Jsonp Hack</a>
             <span class="date">22 Mar 2013</span>
         </li>
         
         <li>
-            <a href="/travel/2013/03/16/zh-latest.html">TO Do List in Zhuhai</a>
+            <a href="/travel/2013/03/16/zh-latest.html">Zh Latest</a>
             <span class="date">16 Mar 2013</span>
-        </li>
-        
-        <li>
-            <a href="/code/2013/02/19/css-plugin-install.html">CSSCheckStyle install</a>
-            <span class="date">19 Feb 2013</span>
         </li>
         
     </ul>
@@ -236,6 +220,12 @@ sudo apt-get install ubuntu-desktop
     <li class="page">
         
         <a href="/page7">7</a>
+        
+    </li>
+    
+    <li class="page">
+        
+        <a href="/page8">8</a>
         
     </li>
     

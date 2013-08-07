@@ -36,7 +36,34 @@
         </div>
         <div class="main">
     
-    <div class="article"><h1>再会，广州</h1>
+    <div class="article">
+---
+layout: article
+title: 几款方便插件
+---
+<h1>Collect Plugin</h1>
+
+<p>1、jquert.ktip.js <a href="https://github.com/JesonRondo/Ktip" target="_blank">view</a></p>
+
+<p>tip显示插件，支持一些简单配置 <img src="http://vicbeta.com/upload/201307011819176914.jpg" alt="ktip"></p>
+
+<p>2、jquery.toast.js <a href="https://github.com/JesonRondo/toast" target="_blank">view</a></p>
+
+<p>toast信息提示 <img src="http://vicbeta.com/upload/201307011819197140.jpg" alt="toast"></p>
+
+<p>3、jquery.calendar.js <a href="https://github.com/JesonRondo/calendar" target="_blank">view</a></p>
+
+<p>日历插件 <img src="http://vicbeta.com/upload/201307011819154035.jpg" alt="calendar"></p>
+<blockquote>
+    <p>08 Jan 2013</p>
+</blockquote></div>
+    
+    <div class="article">
+---
+layout: article
+title: 再会，广州
+---
+<h1>Gz Newyear</h1>
 
 <p>新的一年来临了，再次回到广州和朋友们小聚一回，我们不全是同学，也不全是同事，但是我们一起度过了一段没落的时期。一年前为了工作一起努力迎接各种校招，每当我们中有人拿下心仪的offer，就会一同祝福他，然后也暗暗担忧着自己。</p>
 
@@ -47,7 +74,12 @@
     <p>03 Jan 2013</p>
 </blockquote></div>
     
-    <div class="article"><h1>VPN搭建</h1>
+    <div class="article">
+---
+layout: article
+title: VPN搭建
+---
+<h1>Vpn Built</h1>
 
 <p>新弄了个vps，果断先搭好vpn，环境是centOS6.3，参考教程搭建成功。<a href="http://www.lvtao.net/html/2236.html" target="_blank">原帖地址</a></p>
 
@@ -194,110 +226,59 @@ yum install policycoreutils
     <p>20 Dec 2012</p>
 </blockquote></div>
     
-    <div class="article"><h1>jQuery抽奖显示插件</h1>
-
-<p>不想投入过多Flash的学习，遇到摇奖转盘这类需求时，用JS做个通用的摇奖动画显示插件就显得十分有用。避开了Flash，插件的原理也是采用逐帧动画，所以不只适用于摇奖，类似的图标逐帧动画都可以使用这个插件。</p>
-
-<p>插件主页<a href="https://github.com/JesonRondo/lottery" target="_blank">jquery.lottery.js</a>，提供两个对外方法，一个用来初始化显示图片，所有的图片资源都将在调用初始化时绑定在内部变量中，并进行预加载，另一个用来确定停留状态，0为默认状态，不包含在抽奖结果中（可理解为转盘未开始时，全部熄灭的状态），1为除默认状态外的第一帧，即第一个奖品对应的图片，以此类推。</p>
-
-<p>调用方法:</p>
-
-<p>初始化函数</p>
-
-<pre class="prettyprint linenums">
-$('#lotbox').lotteryInit({
-    process_img: [
-        'images/1.jpg',
-        'images/2.jpg',
-        'images/3.jpg',
-        'images/4.jpg',
-        'images/5.jpg',
-        'images/6.jpg'
-    ]
-});
-</pre>
-
-<p>选择绑定的DOM元素，插件会在id为lotbox的元素中插入img标签，函数的参数是一个option，完整可配参数如下</p>
-
-<pre class="prettyprint linenums">
-option = {
-    frap: 12,           // animate frap            
-    continuance: 5000,  // continue time
-    process_img: []     // process images, first one is default status
-}
-/**
- * frap:        匀速时的动画显示帧数（可选）
- * continuance: 匀速切换持续时间（可选）
- * process_img: 状态图片数组，第一个为默认状态
- */
-</pre>
-
-<p>启动动画函数</p>
-
-<pre class="prettyprint linenums">
-$.lotteryStart(2);
-</pre>
-
-<p>参数2代表最后停留第二个状态，即抽中第二个奖品。</p>
-
-<p>此插件实现了简单的逐帧动画，没用到强大的CSS3动画，也避免了无语义的Flash元素DOM，通过图片的切换，还是具有一定的实用性和良好的兼容性。</p>
-<blockquote>
-    <p>18 Dec 2012</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
     <ul>
         
         <li>
-            <a href="/code/2013/07/16/spath-by-grunt.html">Grunt前端发布自动化</a>
+            <a href="/misc/2013/08/12/cleanup.html">Cleanup</a>
+            <span class="date">12 Aug 2013</span>
+        </li>
+        
+        <li>
+            <a href="/code/2013/07/16/spath-by-grunt.html">Spath By Grunt</a>
             <span class="date">16 Jul 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/06/08/ubuntu-goagent-crt.html">goagent 证书导入</a>
+            <a href="/code/2013/06/08/ubuntu-goagent-crt.html">Ubuntu Goagent Crt</a>
             <span class="date">08 Jun 2013</span>
         </li>
         
         <li>
-            <a href="/travel/2013/05/25/great-wall.html">慕田峪长城</a>
+            <a href="/travel/2013/05/25/great-wall.html">Great Wall</a>
             <span class="date">25 May 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/05/24/p3p-head.html">P3P解决IE cookie安全问题</a>
+            <a href="/code/2013/05/24/p3p-head.html">P3p Head</a>
             <span class="date">24 May 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/05/17/ubuntu-shut-down-down.html">Ubuntu unity图形重装</a>
+            <a href="/code/2013/05/17/ubuntu-shut-down-down.html">Ubuntu Shut Down Down</a>
             <span class="date">17 May 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/04/24/phone-over-width.html">手机浏览器input撑出body</a>
+            <a href="/code/2013/04/24/phone-over-width.html">Phone Over Width</a>
             <span class="date">24 Apr 2013</span>
         </li>
         
         <li>
-            <a href="/misc/2013/04/22/coffee-stomach.html">胃病表乱喝咖啡呀</a>
+            <a href="/misc/2013/04/22/coffee-stomach.html">Coffee Stomach</a>
             <span class="date">22 Apr 2013</span>
         </li>
         
         <li>
-            <a href="/code/2013/03/22/ie6-jsonp-hack.html">IE6 JSONP回调执行失败</a>
+            <a href="/code/2013/03/22/ie6-jsonp-hack.html">Ie6 Jsonp Hack</a>
             <span class="date">22 Mar 2013</span>
         </li>
         
         <li>
-            <a href="/travel/2013/03/16/zh-latest.html">TO Do List in Zhuhai</a>
+            <a href="/travel/2013/03/16/zh-latest.html">Zh Latest</a>
             <span class="date">16 Mar 2013</span>
-        </li>
-        
-        <li>
-            <a href="/code/2013/02/19/css-plugin-install.html">CSSCheckStyle install</a>
-            <span class="date">19 Feb 2013</span>
         </li>
         
     </ul>
@@ -345,6 +326,12 @@ $.lotteryStart(2);
     <li class="page">
         
         <a href="/page7">7</a>
+        
+    </li>
+    
+    <li class="page">
+        
+        <a href="/page8">8</a>
         
     </li>
     
