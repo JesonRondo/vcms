@@ -6,7 +6,7 @@ WWW_ROOT=/data/app/vcms/Public/vicbeta
 CMS_ROOT=/data/app/vcms
 DEP_ROOT=/data/app/jesonrondo.github.com
 
-echo "--- start ---"
+echo "[" + $(date +%Y-%m-%d\ %H:%M:%S) + "] start"
 
 ###
 mysqldump -uroot -ppazzword zombie > $SQL_FILE
