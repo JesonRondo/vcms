@@ -780,7 +780,7 @@ a {
 }
 
 .h1_edit:hover:after {
-    content: '';
+    content: '☺';
 }
 .filebox {
     width: 100%;

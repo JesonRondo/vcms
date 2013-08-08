@@ -31,5 +31,8 @@ return array(
     // page
     'index_page' => 'http://zombie.com',
     'login_page' => 'http://zombie.com/login',
+
+    // project root
+    'APP_ROOT' => '/data/app/vcms/',
 );
 ?>

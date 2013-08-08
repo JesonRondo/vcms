@@ -90,7 +90,7 @@ class DeployAction extends Action {
     function publish2static($tpl_path, $dep_path) {
         $content = $this->fetch($tpl_path);
         $content = str_replace('<?zphp', '<?php', $content);
-        $content = preg_replace('/-{5}([^-]*)-{5}/', '', $content);
+        $content = preg_replace('/-{5}([^-]*)-{5}\n/', '', $content);
         $dep_path = str_replace('$', '/', $dep_path);
 
         $dep_file_folder = substr($dep_path, 0, strripos($dep_path, '/') + 1);
@@ -106,6 +106,14 @@ class DeployAction extends Action {
             'dep_file_folder' => $dep_file_folder,
             'st' => $st,
         );
+    }
+
+    function runsh() {
+        $shell = C('APP_ROOT') . 'Shell/do.sh';
+        $cmd = "sh {$shell}";
+//        exec($cmd);
+
+        $this->ajaxReturn($cmd, $this->codes[0], 0);
     }
 }
 ?>
