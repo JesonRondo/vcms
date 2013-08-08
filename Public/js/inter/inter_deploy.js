@@ -21,6 +21,23 @@ define(function(require, exports, module) {
                 }
             });
         });
+        
+        $('#outer_btn').on('click', function() {
+            $term = $('#term');
+            $term.val('Waiting...');
+            $.ajax({
+                url: '/deploy/runsh',
+                data: null,
+                success: function(json) {
+                    var data = json.data;
+                    if (json.status === 0) {
+                        $term.val(json.data + '\nLook result after a while.');
+                    } else {
+                        $term.val('error: ' + json.status);
+                    }
+                }
+            });
+        });
     };
 
     exports.init = function() {
