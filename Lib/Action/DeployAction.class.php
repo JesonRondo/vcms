@@ -110,8 +110,9 @@ class DeployAction extends Action {
 
     function runsh() {
         $shell = C('APP_ROOT') . 'Shell/do.sh';
-        $cmd = "sh {$shell}";
-//        exec($cmd);
+        $log = C('LOG_ROOT') . 'vcms_deploy.log';
+        $cmd = "sh {$shell} >> {$log} 2>&1 &";
+        exec($cmd);
 
         $this->ajaxReturn($cmd, $this->codes[0], 0);
     }

@@ -32,7 +32,8 @@ return array(
     'index_page' => 'http://zombie.com',
     'login_page' => 'http://zombie.com/login',
 
-    // project root
+    // root
     'APP_ROOT' => '/data/app/vcms/',
+    'LOG_ROOT' => '/data/log/vcms/',
 );
 ?>
