@@ -113,7 +113,7 @@ class DeployAction extends Action {
         $log = C('LOG_ROOT') . 'vcms_deploy.log';
         $cmd = "/bin/sh {$shell} >> {$log} 2>&1 &";
         exec($cmd);
-
+        
         $this->ajaxReturn($cmd, $this->codes[0], 0);
     }
 }
