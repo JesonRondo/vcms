@@ -36,6 +36,38 @@
         </div>
         <div class="main">
     
+    <div class="article"><h1>Jekyll中分页的应用</h1>
+
+<p>Jekyll支持分页，但仅限于在首页index.html和子目录如/misc/index.html中使用，关键对象是Paginator。</p>
+
+<p>在使用Paginator对象前先要在_config.yml中配置分页的参数:</p>
+
+<pre class="prettyprint linenums">
+pageinate: 3	          // 每页包含的文章数
+</pre>
+
+<p>Paginator对象属性:</p>
+
+<pre class="prettyprint linenums">
+paginator.per_page        // 每页包含的文章数（读取）
+paginator.posts           // 本页的文章对象
+paginator.total_posts     // 文章总数
+paginator.total_pages     // 总页数
+paginator.page            // 当前页数
+paginator.preious_page    // 上一页页数
+paginator.next_page       // 下一页页数
+</pre>
+
+<p>在使用时链接可通过对象的当前值拼接出来，例如首页为http://domain，则第二页为http://domain/page2。链接特例，第一页并不是http://domain/page1而是根目录即首页，所以在输出模板时需要判断是否为第一页，第一页的链接不用拼接，直接指为根即可。</p>
+
+<p>Paginator除了在首页使用之外还可以在子目录首页使用，但是在我博客的分类目录实验后发现paginator.posts取得的文章还是所有文章，并不是由类别区分的文章，这里并不满足设计需求，还有待研究。</p>
+
+<p>参考资料：</p>
+<a href="https://github.com/mojombo/jekyll/wiki/Template-Data" target="_blank">Jekyll Template Data</a>
+<blockquote>
+    <p>12 Dec 2012</p>
+</blockquote></div>
+    
     <div class="article"><h1>Jekyll博客搭建</h1>
 
 <p>参考了很多同事的意见，也实验安装了wordpress，最终还是选择了jekyll来搭建bolg。</p>
@@ -138,17 +170,6 @@ title: Vic' Blog
     <p>04 Dec 2012</p>
 </blockquote></div>
     
-    <div class="article"><h1>A域名咯</h1>
-
-<p>总算有域名了，由于国内的审核比较恶心，最终还是选择了<a href="http://www.godaddy.com/" target="_blank">狗粑粑</a>，以防不小心发表***的言语然后被干掉。</p>
-
-<p>域名用的名字加beta，苦逼的程序猿表露无疑。其实不想这样，想象中应该是有一些比较文艺的色彩参与进来，但是没想到什么更合适的，beta至少含有着对自己还有所期待的意思。</p>
-
-<p>平台基本算搭好了，接下来该给我裸体的博客加个皮了…</p>
-<blockquote>
-    <p>29 Nov 2012</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
@@ -157,6 +178,11 @@ title: Vic' Blog
         <li>
             <a href="/misc/2013/08/12/cleanup.html">Placeholder</a>
             <span class="date">12 Aug 2013</span>
+        </li>
+        
+        <li>
+            <a href="/misc/2013/08/08/cleanup.html">See U Friends</a>
+            <span class="date">08 Aug 2013</span>
         </li>
         
         <li>
@@ -197,11 +223,6 @@ title: Vic' Blog
         <li>
             <a href="/code/2013/03/22/ie6-jsonp-hack.html">IE6 JSONP回调执行失败</a>
             <span class="date">22 Mar 2013</span>
-        </li>
-        
-        <li>
-            <a href="/travel/2013/03/16/zh-latest.html">TO Do List in Zhuhai</a>
-            <span class="date">16 Mar 2013</span>
         </li>
         
     </ul>
