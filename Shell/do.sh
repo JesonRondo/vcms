@@ -22,7 +22,7 @@ cd $CMS_ROOT
 echo "[$(date +%Y-%m-%d\ %H:%M:%S)] vcms push start"
 git pull
 git status -s|awk '{print $2}'|xargs git add
-git commit -m "cms shell update"
+git commit -a -m "cms shell update"
 git push -u origin master
 echo "[$(date +%Y-%m-%d\ %H:%M:%S)] vcms push finish"
 
@@ -35,6 +35,6 @@ cd $DEP_ROOT
 echo "[$(date +%Y-%m-%d\ %H:%M:%S)] push bolg start"
 git pull
 git status -s|awk '{print $2}'|xargs git add
-git commit -m "cms shell update"
+git commit -a -m "cms shell update"
 git push -u origin master
 echo "[$(date +%Y-%m-%d\ %H:%M:%S)] push bolg finish"
