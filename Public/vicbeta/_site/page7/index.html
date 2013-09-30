@@ -36,6 +36,41 @@
         </div>
         <div class="main">
     
+    <div class="article"><h1>Flash视频的插入</h1>
+
+<p>在页面中使用Flash视频时容易遇到兼容性问题。在HTML中插入Flash的代码量巨大，而大多冗余，在IE中会出现虚线框，还有被IE拦截等等问题，使得Flash的使用显得十分繁琐。</p>
+
+<p>目前比较简单的方法是使用脚本插入Flash，各种判断都交给脚本去处理，只关心关键参数的设定。</p>
+
+<p>常用脚本<a href="https://code.google.com/p/swfobject/" target="_blank">swfobject</a>。使用方法：</p>
+
+<p>1、在DOM中创建一个元素，待后面脚本替换成Flash</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="player" id="mycontent"&gt;演示视频&lt;/div&gt;
+</pre>
+
+<p>2、设定参数，调用swfobject插入Flash</p>
+
+<pre class="prettyprint linenums">
+var flashvars = {
+     vcastr_file: [flv path],    // flv视频路径
+     width: '600',
+     height: '470'
+};
+var params = {};
+var attributes = {};
+var so = new swfobject.embedSWF([swf player path], 
+    "mycontent", 
+    "600", "470", "9.0.0", 
+    true, flashvars, params, attributes);
+</pre>
+
+<p>更多参数详见<a href="http://code.google.com/p/swfobject/wiki/documentation" target="_blank">Documentation</a></p>
+<blockquote>
+    <p>15 Dec 2012</p>
+</blockquote></div>
+    
     <div class="article"><h1>Jekyll中分页的应用</h1>
 
 <p>Jekyll支持分页，但仅限于在首页index.html和子目录如/misc/index.html中使用，关键对象是Paginator。</p>
@@ -137,43 +172,15 @@ title: Vic' Blog
     <p>08 Dec 2012</p>
 </blockquote></div>
     
-    <div class="article"><h1>渡假阳朔</h1>
-
-<p>随公司渡假旅行游阳朔，这也是2012年唯一一次增加我在地图上足迹的旅行。对山水并不感冒的我对此行也并未过多的期待，渡假放松便成了主要目的。</p>
-
-<p><img src="http://vicbeta.com/upload/201307011542456987.jpg" alt="酒店街景"/></p>
-
-<p>晚上11点到达酒店，9小时的车程使大家都倍感疲倦。阳朔的在夜色中并无过多诱人之处，唯一能够彰显独特的是属于桂林一带那奇特的山丘。夜晚的街道也很安静，酒店在西街附近，随意逛了一圈便结束了一天疲惫的旅程。</p>
-
-<p><img src="http://vicbeta.com/upload/201307011543055173.jpg" alt="银子岩倒影"/></p>
-
-<p>第二天上午的目的地是银子岩，其实和很多类似的岩洞一样，钟乳石加灯光效果。这是我见过的第三个岩洞，本应有的惊奇反而并没那么突出，只是走马观花大致略过。唯有一处的景色确实令人惊叹，山石映在浅浅的水中仿佛万丈深渊，确实很是奇特，可惜在镜头下景色并不能真实还原，有点遗憾。</p>
-
-<p><img src="http://vicbeta.com/upload/201307011543179555.jpg" alt="漓江"/></p>
-
-<p>下午的行程是游漓江，这是最具桂林山水特点的景色。也许是商业气氛浓重后，原本的景色有了变化，水面并没有像课文中清澈见底、平静如镜，反而是像大多数水域一样普普通通。也许我本就不爱山水，给不出“甲天下”的评价，不过这一处的景色倒是有着桂林独有的韵味。</p>
-
-<p><img src="http://vicbeta.com/upload/201307011543146685.jpg" alt="世外桃源"/></p>
-
-<p>“晋太原中，武陵人捕鱼为业”，“武陵”这一地名，最早出现在西汉初年。西汉武陵郡治，历来有二说。一曰治索县，二曰治义陵。（<a href="http://baike.baidu.com/view/437165.htm" target="_blank">百度百科</a>）。第三天来到了传说中的世外桃源，桂林阳朔并不所属于武陵郡，所以我一开始定义了这儿为山寨的地儿，进门入口处的《桃花源记》第一句断句也有问题（不知道是不是有其他断句方式，至少与常见的不符），使得我更肯定这一个处山寨的程度。出人意料的是，这里还原了陶渊明当时所幻想出的生活，所以说依据《桃花源记》来建造比“山寨”一词应该更贴切。虽然依旧有着商业气氛，但是这里呈现的景色确实有着文中的意境。这里不是桃花源而是世外桃源，或许这里的建设被重视，许多地方早已超出原创地桃花源。</p>
-
-<p><img src="http://vicbeta.com/upload/201307011543019842.jpg" alt="鉴山寺"/></p>
-
-<p>我本是天朝无信仰的小民，来到这里参经拜佛却是出于意愿，并非我突然信奉我佛，而是我想拥有在天朝所禁的信仰，可以是释迦摩尼，也可以是耶稣基督，这些并不代表迷信，而是象征自由。第三日下午，鉴山寺之行。</p>
-
-<p><img src="http://vicbeta.com/upload/201307011543101937.jpg" alt="明园咖啡"/></p>
-
-<p>明园咖啡，她身处喧闹的西街中，却又坐落在一个很安静的角落里。在这里，你会平复在歌剧舞曲宁静中，陶醉在醇香浓郁的咖啡里，她会让你忘掉紧凑的生活节奏，放松心情，去感受你不曾有过的生活。这里是个有故事的地方，明园心情记事簿记载了许多过客的不同生活，有欢喜、甜蜜，也有忧愁、悲伤，我把迷茫的我写在第45本里，希望能有机会再去翻阅，而那时的我没有了现在的烦恼。</p>
-
-<p>阳朔也许并不完美，但是还是有着它自己的特色，也许我不爱山水，但我爱上这里的咖啡厅，爱上这里的故事，也便爱上了阳朔。</p>
-<blockquote>
-    <p>04 Dec 2012</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
     <ul>
+        
+        <li>
+            <a href="/code/2013/09/30/yaya-css.html">牙牙 Css Version</a>
+            <span class="date">30 Sep 2013</span>
+        </li>
         
         <li>
             <a href="/travel/2013/09/20/hz-mid-autumn.html">上有天堂，下有...嗯痕</a>
@@ -218,11 +225,6 @@ title: Vic' Blog
         <li>
             <a href="/misc/2013/04/22/coffee-stomach.html">胃病表乱喝咖啡呀</a>
             <span class="date">22 Apr 2013</span>
-        </li>
-        
-        <li>
-            <a href="/code/2013/03/22/ie6-jsonp-hack.html">IE6 JSONP回调执行失败</a>
-            <span class="date">22 Mar 2013</span>
         </li>
         
     </ul>

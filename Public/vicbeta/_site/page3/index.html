@@ -36,6 +36,17 @@
         </div>
         <div class="main">
     
+    <div class="article"><h1>P3P解决IE cookie安全问题</h1>
+
+<p>IE下iframe由于安全问题，会禁止iframe里面页面的cookie操作。解决此类问题，需加上P3P的程序头部，nginx为例：</p>
+
+<pre class="prettyprint linenums">
+add_header P3P 'policyref="/w3c/p3p.xml", CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT", CP="CAO PSA OUR"'
+</pre>
+<blockquote>
+    <p>24 May 2013</p>
+</blockquote></div>
+    
     <div class="article"><h1>Ubuntu unity图形重装</h1>
 
 <p>不小心被强制重启有木有，图形又挂了有木有，果断重装unity，重装。。。</p>
@@ -125,27 +136,15 @@ sudo apt-get install ubuntu-desktop
     <p>24 Apr 2013</p>
 </blockquote></div>
     
-    <div class="article"><h1>胃病表乱喝咖啡呀</h1>
-
-<p>可以喝咖啡，但要注意喝的方法与时间：</p>
-
-<p>1. 不要空腹喝，要在吃过饭以后再喝。</p>
-
-<p>2. 不要喝清咖啡，不要用奶精之类的伴侣，而是选择用新鲜的纯牛奶和方糖，牛奶会减少咖啡对肠胃的刺激，会使咖啡变得温和。</p>
-
-<p>3. 不要喝太浓的咖啡，不要喝隔夜或是放置时间太久的咖啡。</p>
-
-<p>4. 切记切记，不要喝速溶咖啡。</p>
-
-<p>5. 夏天不是万不得已，不要喝冰咖啡。</p>
-<blockquote>
-    <p>22 Apr 2013</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
     <ul>
+        
+        <li>
+            <a href="/code/2013/09/30/yaya-css.html">牙牙 Css Version</a>
+            <span class="date">30 Sep 2013</span>
+        </li>
         
         <li>
             <a href="/travel/2013/09/20/hz-mid-autumn.html">上有天堂，下有...嗯痕</a>
@@ -190,11 +189,6 @@ sudo apt-get install ubuntu-desktop
         <li>
             <a href="/misc/2013/04/22/coffee-stomach.html">胃病表乱喝咖啡呀</a>
             <span class="date">22 Apr 2013</span>
-        </li>
-        
-        <li>
-            <a href="/code/2013/03/22/ie6-jsonp-hack.html">IE6 JSONP回调执行失败</a>
-            <span class="date">22 Mar 2013</span>
         </li>
         
     </ul>
