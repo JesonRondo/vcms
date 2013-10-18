@@ -1,0 +1,31 @@
+---
+layout: article
+title: 生命在于减少代码
+---
+<h1>{{ page.title }}</h1>
+
+<p>写代码得偷偷懒</p>
+
+<p>1、获取js时间戳</p>
+
+<pre class="prettyprint linenums">
++new Date
+</pre>
+
+<p>2、去尾取整</p>
+
+<pre class="prettyprint linenums">
+~~3.1415926535897932384626433832
+</pre>
+
+<p>3、IE检测</p>
+
+<pre class="prettyprint linenums">
+/* 比这个更短的写法通不过JS Hint */
+if (!+'\v1') {
+    // IE
+}
+</pre>
+<blockquote>
+    <p>{{ page.date | date_to_string }}</p>
+</blockquote>

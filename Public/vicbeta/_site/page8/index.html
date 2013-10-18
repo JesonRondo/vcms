@@ -36,6 +36,75 @@
         </div>
         <div class="main">
     
+    <div class="article"><h1>Jekyll博客搭建</h1>
+
+<p>参考了很多同事的意见，也实验安装了wordpress，最终还是选择了jekyll来搭建bolg。</p>
+
+<p>如果需要搭建一个轻量级bolg，jekyll是非常好的选择，没有wordpress的厚重，不需要后台发布系统，把markdown或者静态页面git上服务器即可发布文章。jekyll最终发布的是静态页面，加载速度十分理想，没有过多的后台代码处理，对于以文章为主的blog来说很合适。Github Page本身是支持jekyll的，所以可以直接用github来做免费空间。</p>
+
+<p>目录结构对于jekyll搭建的blog来说比较重要，blog的文章和层级结构基本是根据存放目录来定的。</p>
+
+<p>我的blog目前采用是这样的结构:</p>
+
+<pre class="prettyprint linenums">
+/jesonrondo.github.com
+    |-- _layouts
+    |    |-- about.html
+    |    |-- article.html
+    |    `-- index.html
+    |-- _site
+    |    `-- ...
+    |-- themes
+    |    |-- vdouban
+    |    |    |-- images
+    |    |    `-- style.css
+    |-- travel
+    |    |-- _posts
+    |    |    `-- 2012-12-04-back-from-ys.md
+    |    |-- index.html
+    |-- misc
+    |    |-- _posts
+    |    |    |-- 2012-11-27-blog-by-mk.md
+    |    |    `-- 2012-11-29-a-domain.md
+    |    |-- index.html
+    |-- about
+    |    `-- index.html
+    |-- CNAME
+    |-- _config.yml
+    `-- index.html
+
+_config.yml: 用于存放一些全部变量，能通过site对象调用
+_layouts:    用于存放模板的目录
+_site:       编译后的静态文件，可以不用管
+_posts:      文章目录，文章可以为html或者markdown，编译后jekyll会读取所有_posts下的文件作为文章
+themes:      静态文件夹，用于存放主题样式
+travel:      文章分类目录，里面包含_posts文件夹和index.html分类首页
+misc:        同上
+about:       同上
+CNAME:       用于指向域名
+</pre>
+
+<p>文章和页面都可以指定所套用的模板文件，示例如下:</p>
+
+<pre class="prettyprint linenums">
+---
+layout: index
+title: Vic' Blog
+---
+&lt;h1&gt;Hello&lt;/h1&gt;
+</pre>
+
+<p>这个页面采用index模板，title变量会存在与page对象中，可通过page来调用。jekyll中含有一些默认对象，page、site都是包含各种信息的对象。jekyll采用的Liquid模板语言，更多变量详见<a href="https://github.com/mojombo/jekyll/wiki/Template-Data" target="_blank">我是文档</a>。</p>
+
+<p>参考资料：</p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">搭建一个免费的，无限流量的Blog—-github Pages和Jekyll入门</a></p>
+
+<p><a href="http://taberh.me/2011/12/26/use-Jekyll-build-Blog-on-Github.html" target="_blank">使用Jekyll在Github上搭建博客</a></p>
+<blockquote>
+    <p>08 Dec 2012</p>
+</blockquote></div>
+    
     <div class="article"><h1>渡假阳朔</h1>
 
 <p>随公司渡假旅行游阳朔，这也是2012年唯一一次增加我在地图上足迹的旅行。对山水并不感冒的我对此行也并未过多的期待，渡假放松便成了主要目的。</p>
@@ -80,19 +149,15 @@
     <p>29 Nov 2012</p>
 </blockquote></div>
     
-    <div class="article"><h1>Hello Markdown</h1>
-
-<p>Article by Markdown.</p>
-
-<p>Runing in github…</p>
-<blockquote>
-    <p>27 Nov 2012</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
     <ul>
+        
+        <li>
+            <a href="/code/2013/10/18/safe-life.html">生命在于减少代码</a>
+            <span class="date">18 Oct 2013</span>
+        </li>
         
         <li>
             <a href="/code/2013/09/30/yaya-css.html">牙牙 Css Version</a>
@@ -137,11 +202,6 @@
         <li>
             <a href="/code/2013/04/24/phone-over-width.html">手机浏览器input撑出body</a>
             <span class="date">24 Apr 2013</span>
-        </li>
-        
-        <li>
-            <a href="/misc/2013/04/22/coffee-stomach.html">胃病表乱喝咖啡呀</a>
-            <span class="date">22 Apr 2013</span>
         </li>
         
     </ul>
@@ -195,6 +255,12 @@
     <li class="page">
         
         <span class="current-page">8</span>
+        
+    </li>
+    
+    <li class="page">
+        
+        <a href="/page9">9</a>
         
     </li>
     

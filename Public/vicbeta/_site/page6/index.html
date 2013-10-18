@@ -36,6 +36,23 @@
         </div>
         <div class="main">
     
+    <div class="article"><h1>几款方便插件</h1>
+
+<p>1、jquert.ktip.js <a href="https://github.com/JesonRondo/Ktip" target="_blank">view</a></p>
+
+<p>tip显示插件，支持一些简单配置 <img src="http://vicbeta.com/upload/201307011819176914.jpg" alt="ktip"></p>
+
+<p>2、jquery.toast.js <a href="https://github.com/JesonRondo/toast" target="_blank">view</a></p>
+
+<p>toast信息提示 <img src="http://vicbeta.com/upload/201307011819197140.jpg" alt="toast"></p>
+
+<p>3、jquery.calendar.js <a href="https://github.com/JesonRondo/calendar" target="_blank">view</a></p>
+
+<p>日历插件 <img src="http://vicbeta.com/upload/201307011819154035.jpg" alt="calendar"></p>
+<blockquote>
+    <p>08 Jan 2013</p>
+</blockquote></div>
+    
     <div class="article"><h1>再会，广州</h1>
 
 <p>新的一年来临了，再次回到广州和朋友们小聚一回，我们不全是同学，也不全是同事，但是我们一起度过了一段没落的时期。一年前为了工作一起努力迎接各种校招，每当我们中有人拿下心仪的offer，就会一同祝福他，然后也暗暗担忧着自己。</p>
@@ -194,61 +211,15 @@ yum install policycoreutils
     <p>20 Dec 2012</p>
 </blockquote></div>
     
-    <div class="article"><h1>jQuery抽奖显示插件</h1>
-
-<p>不想投入过多Flash的学习，遇到摇奖转盘这类需求时，用JS做个通用的摇奖动画显示插件就显得十分有用。避开了Flash，插件的原理也是采用逐帧动画，所以不只适用于摇奖，类似的图标逐帧动画都可以使用这个插件。</p>
-
-<p>插件主页<a href="https://github.com/JesonRondo/lottery" target="_blank">jquery.lottery.js</a>，提供两个对外方法，一个用来初始化显示图片，所有的图片资源都将在调用初始化时绑定在内部变量中，并进行预加载，另一个用来确定停留状态，0为默认状态，不包含在抽奖结果中（可理解为转盘未开始时，全部熄灭的状态），1为除默认状态外的第一帧，即第一个奖品对应的图片，以此类推。</p>
-
-<p>调用方法:</p>
-
-<p>初始化函数</p>
-
-<pre class="prettyprint linenums">
-$('#lotbox').lotteryInit({
-    process_img: [
-        'images/1.jpg',
-        'images/2.jpg',
-        'images/3.jpg',
-        'images/4.jpg',
-        'images/5.jpg',
-        'images/6.jpg'
-    ]
-});
-</pre>
-
-<p>选择绑定的DOM元素，插件会在id为lotbox的元素中插入img标签，函数的参数是一个option，完整可配参数如下</p>
-
-<pre class="prettyprint linenums">
-option = {
-    frap: 12,           // animate frap            
-    continuance: 5000,  // continue time
-    process_img: []     // process images, first one is default status
-}
-/**
- * frap:        匀速时的动画显示帧数（可选）
- * continuance: 匀速切换持续时间（可选）
- * process_img: 状态图片数组，第一个为默认状态
- */
-</pre>
-
-<p>启动动画函数</p>
-
-<pre class="prettyprint linenums">
-$.lotteryStart(2);
-</pre>
-
-<p>参数2代表最后停留第二个状态，即抽中第二个奖品。</p>
-
-<p>此插件实现了简单的逐帧动画，没用到强大的CSS3动画，也避免了无语义的Flash元素DOM，通过图片的切换，还是具有一定的实用性和良好的兼容性。</p>
-<blockquote>
-    <p>18 Dec 2012</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
     <ul>
+        
+        <li>
+            <a href="/code/2013/10/18/safe-life.html">生命在于减少代码</a>
+            <span class="date">18 Oct 2013</span>
+        </li>
         
         <li>
             <a href="/code/2013/09/30/yaya-css.html">牙牙 Css Version</a>
@@ -293,11 +264,6 @@ $.lotteryStart(2);
         <li>
             <a href="/code/2013/04/24/phone-over-width.html">手机浏览器input撑出body</a>
             <span class="date">24 Apr 2013</span>
-        </li>
-        
-        <li>
-            <a href="/misc/2013/04/22/coffee-stomach.html">胃病表乱喝咖啡呀</a>
-            <span class="date">22 Apr 2013</span>
         </li>
         
     </ul>
@@ -351,6 +317,12 @@ $.lotteryStart(2);
     <li class="page">
         
         <a href="/page8">8</a>
+        
+    </li>
+    
+    <li class="page">
+        
+        <a href="/page9">9</a>
         
     </li>
     

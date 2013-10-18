@@ -36,6 +36,57 @@
         </div>
         <div class="main">
     
+    <div class="article"><h1>jQuery抽奖显示插件</h1>
+
+<p>不想投入过多Flash的学习，遇到摇奖转盘这类需求时，用JS做个通用的摇奖动画显示插件就显得十分有用。避开了Flash，插件的原理也是采用逐帧动画，所以不只适用于摇奖，类似的图标逐帧动画都可以使用这个插件。</p>
+
+<p>插件主页<a href="https://github.com/JesonRondo/lottery" target="_blank">jquery.lottery.js</a>，提供两个对外方法，一个用来初始化显示图片，所有的图片资源都将在调用初始化时绑定在内部变量中，并进行预加载，另一个用来确定停留状态，0为默认状态，不包含在抽奖结果中（可理解为转盘未开始时，全部熄灭的状态），1为除默认状态外的第一帧，即第一个奖品对应的图片，以此类推。</p>
+
+<p>调用方法:</p>
+
+<p>初始化函数</p>
+
+<pre class="prettyprint linenums">
+$('#lotbox').lotteryInit({
+    process_img: [
+        'images/1.jpg',
+        'images/2.jpg',
+        'images/3.jpg',
+        'images/4.jpg',
+        'images/5.jpg',
+        'images/6.jpg'
+    ]
+});
+</pre>
+
+<p>选择绑定的DOM元素，插件会在id为lotbox的元素中插入img标签，函数的参数是一个option，完整可配参数如下</p>
+
+<pre class="prettyprint linenums">
+option = {
+    frap: 12,           // animate frap            
+    continuance: 5000,  // continue time
+    process_img: []     // process images, first one is default status
+}
+/**
+ * frap:        匀速时的动画显示帧数（可选）
+ * continuance: 匀速切换持续时间（可选）
+ * process_img: 状态图片数组，第一个为默认状态
+ */
+</pre>
+
+<p>启动动画函数</p>
+
+<pre class="prettyprint linenums">
+$.lotteryStart(2);
+</pre>
+
+<p>参数2代表最后停留第二个状态，即抽中第二个奖品。</p>
+
+<p>此插件实现了简单的逐帧动画，没用到强大的CSS3动画，也避免了无语义的Flash元素DOM，通过图片的切换，还是具有一定的实用性和良好的兼容性。</p>
+<blockquote>
+    <p>18 Dec 2012</p>
+</blockquote></div>
+    
     <div class="article"><h1>Flash视频的插入</h1>
 
 <p>在页面中使用Flash视频时容易遇到兼容性问题。在HTML中插入Flash的代码量巨大，而大多冗余，在IE中会出现虚线框，还有被IE拦截等等问题，使得Flash的使用显得十分繁琐。</p>
@@ -103,79 +154,15 @@ paginator.next_page       // 下一页页数
     <p>12 Dec 2012</p>
 </blockquote></div>
     
-    <div class="article"><h1>Jekyll博客搭建</h1>
-
-<p>参考了很多同事的意见，也实验安装了wordpress，最终还是选择了jekyll来搭建bolg。</p>
-
-<p>如果需要搭建一个轻量级bolg，jekyll是非常好的选择，没有wordpress的厚重，不需要后台发布系统，把markdown或者静态页面git上服务器即可发布文章。jekyll最终发布的是静态页面，加载速度十分理想，没有过多的后台代码处理，对于以文章为主的blog来说很合适。Github Page本身是支持jekyll的，所以可以直接用github来做免费空间。</p>
-
-<p>目录结构对于jekyll搭建的blog来说比较重要，blog的文章和层级结构基本是根据存放目录来定的。</p>
-
-<p>我的blog目前采用是这样的结构:</p>
-
-<pre class="prettyprint linenums">
-/jesonrondo.github.com
-    |-- _layouts
-    |    |-- about.html
-    |    |-- article.html
-    |    `-- index.html
-    |-- _site
-    |    `-- ...
-    |-- themes
-    |    |-- vdouban
-    |    |    |-- images
-    |    |    `-- style.css
-    |-- travel
-    |    |-- _posts
-    |    |    `-- 2012-12-04-back-from-ys.md
-    |    |-- index.html
-    |-- misc
-    |    |-- _posts
-    |    |    |-- 2012-11-27-blog-by-mk.md
-    |    |    `-- 2012-11-29-a-domain.md
-    |    |-- index.html
-    |-- about
-    |    `-- index.html
-    |-- CNAME
-    |-- _config.yml
-    `-- index.html
-
-_config.yml: 用于存放一些全部变量，能通过site对象调用
-_layouts:    用于存放模板的目录
-_site:       编译后的静态文件，可以不用管
-_posts:      文章目录，文章可以为html或者markdown，编译后jekyll会读取所有_posts下的文件作为文章
-themes:      静态文件夹，用于存放主题样式
-travel:      文章分类目录，里面包含_posts文件夹和index.html分类首页
-misc:        同上
-about:       同上
-CNAME:       用于指向域名
-</pre>
-
-<p>文章和页面都可以指定所套用的模板文件，示例如下:</p>
-
-<pre class="prettyprint linenums">
----
-layout: index
-title: Vic' Blog
----
-&lt;h1&gt;Hello&lt;/h1&gt;
-</pre>
-
-<p>这个页面采用index模板，title变量会存在与page对象中，可通过page来调用。jekyll中含有一些默认对象，page、site都是包含各种信息的对象。jekyll采用的Liquid模板语言，更多变量详见<a href="https://github.com/mojombo/jekyll/wiki/Template-Data" target="_blank">我是文档</a>。</p>
-
-<p>参考资料：</p>
-
-<p><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">搭建一个免费的，无限流量的Blog—-github Pages和Jekyll入门</a></p>
-
-<p><a href="http://taberh.me/2011/12/26/use-Jekyll-build-Blog-on-Github.html" target="_blank">使用Jekyll在Github上搭建博客</a></p>
-<blockquote>
-    <p>08 Dec 2012</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
     <ul>
+        
+        <li>
+            <a href="/code/2013/10/18/safe-life.html">生命在于减少代码</a>
+            <span class="date">18 Oct 2013</span>
+        </li>
         
         <li>
             <a href="/code/2013/09/30/yaya-css.html">牙牙 Css Version</a>
@@ -220,11 +207,6 @@ title: Vic' Blog
         <li>
             <a href="/code/2013/04/24/phone-over-width.html">手机浏览器input撑出body</a>
             <span class="date">24 Apr 2013</span>
-        </li>
-        
-        <li>
-            <a href="/misc/2013/04/22/coffee-stomach.html">胃病表乱喝咖啡呀</a>
-            <span class="date">22 Apr 2013</span>
         </li>
         
     </ul>
@@ -278,6 +260,12 @@ title: Vic' Blog
     <li class="page">
         
         <a href="/page8">8</a>
+        
+    </li>
+    
+    <li class="page">
+        
+        <a href="/page9">9</a>
         
     </li>
     
