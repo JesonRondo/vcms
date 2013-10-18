@@ -15,10 +15,18 @@ title: 生命在于减少代码
 <p>2、去尾取整</p>
 
 <pre class="prettyprint linenums">
-~~3.1415926535897932384626433832
+3.1415926535897932384626433832>>>0
+// result: 3
 </pre>
 
-<p>3、IE检测</p>
+<p>3、四舍五入</p>
+
+<pre class="prettyprint linenums">
+var num = 5.56789;
+var n = num.toFixed(2);
+// result: 5.57
+</pre>
+<p>4、IE检测</p>
 
 <pre class="prettyprint linenums">
 /* 比这个更短的写法通不过JS Hint */
