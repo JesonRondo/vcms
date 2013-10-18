@@ -65,9 +65,12 @@ event.preventDefault();
             LongZhou's Blog&copy;2012 By Vic
         </div>
     </div>
-    <script type="text/javascript" src="/js/prettify.js"></script>
-    <script type="text/javascript">prettyPrint();</script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/echo.min.js"></script>
     <script>
+        prettyPrint();
+        Echo.init('[data-echo]', 1000);
+        
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
