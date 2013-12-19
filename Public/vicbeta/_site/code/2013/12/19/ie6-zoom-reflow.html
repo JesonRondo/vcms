@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Vic - IE6 zoom1情况下reflow BUG</title>
+    <title>Vic - IE6 zoom1时reflow BUG</title>
     <link rel="stylesheet" href="/themes/vdouban/style.css" />
 </head>
 <body>
@@ -37,7 +37,7 @@
         <div class="detail">
             <a href="/" class="back">返回</a>
             <div class="article">
-                <h1>IE6 zoom1情况下reflow BUG</h1>
+                <h1>IE6 zoom1时reflow BUG</h1>
 
 <p>为了ie6的clearfix，zoom1来触发haslayout，但是出现了一个坑爹的问题，对dom操作引起浏览器重绘时，wrap的底部莫名出现了高度。</p>
 
@@ -60,8 +60,7 @@
 <p>like this:</p>
 <img src="http://vicbeta.com/upload/201312191616182637.jpg" alt="toast">
 
-<p>呵呵，哭了。。。</p>
-<p>But，发现了什么，下面多出来的高度和上面padding是一样的80px，改一下看看，发现确实是shit ie6把上面的padding复制到了下面，嗯，问题找到啦，骂ie什么的已经没兴趣了。乖乖把padding-top换成margin-top，问题就这么解决了。艾</p>
+<p>呵呵，哭了。。。But，发现了什么，下面多出来的高度和上面padding是一样的80px，改一下看看，发现确实是shit ie6把上面的padding复制到了下面，嗯，问题找到啦，骂ie什么的已经没兴趣了。乖乖把padding-top换成margin-top，问题就这么解决了。艾</p>
 
 <p>summary: 之前一直以为padding兼容性比margin好，但是当它出现问题的时候，就果断被虐了。。clearfix的zoom1虽然能实现clearfix，但是带来的问题也不止这一个，要随时做好被虐的准备（ ＴДＴ）</p>
 <blockquote>
