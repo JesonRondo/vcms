@@ -36,6 +36,37 @@
         </div>
         <div class="main">
     
+    <div class="article"><h1>IE6 zoom1情况下reflow BUG</h1>
+
+<p>为了ie6的clearfix，zoom1来触发haslayout，但是出现了一个坑爹的问题，对dom操作引起浏览器重绘时，wrap的底部莫名出现了高度。</p>
+
+<p>HTML:</p>
+<pre class="prettyprint linenums">
+<div class="re_main clearfix">
+    <div class="re_sidebox fl"></div>
+    <div class="re_cntbox fl"></div>
+</div>
+</pre>
+
+<p>CSS:</p>
+<pre class="prettyprint linenums">
+.clearfix {*zoom: 1;}
+.re_main {padding-top: 80px; background: green;}
+.re_sidebox {width: 250px; background: blue;}
+.re_cntbox {width: 646px; background: yellow;}
+</pre>
+
+<p>like this:</p>
+<img src="http://vicbeta.com/upload/201312191616182637.jpg" alt="toast">
+
+<p>呵呵，哭了。。。</p>
+<p>But，发现了什么，下面多出来的高度和上面padding是一样的80px，改一下看看，发现确实是shit ie6把上面的padding复制到了下面，嗯，问题找到啦，骂ie什么的已经没兴趣了。乖乖把padding-top换成margin-top，问题就这么解决了。艾</p>
+
+<p>summary: 之前一直以为padding兼容性比margin好，但是当它出现问题的时候，就果断被虐了。。clearfix的zoom1虽然能实现clearfix，但是带来的问题也不止这一个，要随时做好被虐的准备（ ＴДＴ）</p>
+<blockquote>
+    <p>19 Dec 2013</p>
+</blockquote></div>
+    
     <div class="article"><h1>生命在于减少代码</h1>
 
 <p>写代码得偷偷懒</p>
@@ -881,6 +912,11 @@ title: Vic' Blog
     <ul>
         
         <li>
+            <a href="/code/2013/12/19/ie6-zoom-reflow.html">IE6 zoom1情况下reflow BUG</a>
+            <span class="date">19 Dec 2013</span>
+        </li>
+        
+        <li>
             <a href="/code/2013/10/18/safe-life.html">生命在于减少代码</a>
             <span class="date">18 Oct 2013</span>
         </li>
@@ -923,11 +959,6 @@ title: Vic' Blog
         <li>
             <a href="/code/2013/02/19/css-plugin-install.html">CSSCheckStyle install</a>
             <span class="date">19 Feb 2013</span>
-        </li>
-        
-        <li>
-            <a href="/code/2013/02/12/web-front-level.html">前端优化之路</a>
-            <span class="date">12 Feb 2013</span>
         </li>
         
     </ul>
