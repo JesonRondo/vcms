@@ -36,6 +36,52 @@
         </div>
         <div class="main">
     
+    <div class="article"><h1>生命在于减少代码</h1>
+
+<p>写代码得偷偷懒</p>
+
+<p>1、获取js时间戳</p>
+
+<pre class="prettyprint linenums">
++new Date
+</pre>
+
+<p>2、去尾取整</p>
+
+<pre class="prettyprint linenums">
+3.1415926535897932384626433832>>>0
+// result: 3
+</pre>
+
+<p>3、四舍五入</p>
+
+<pre class="prettyprint linenums">
+var num = 5.56789;
+var n = num.toFixed(2);
+// result: 5.57
+</pre>
+<p>4、IE检测</p>
+
+<pre class="prettyprint linenums">
+/* 比这个更短的写法通不过JSHint */
+if (!+'\v1') {
+    // IE
+}
+</pre>
+
+<p>5、参数判空</p>
+
+<pre class="prettyprint linenums">
+(function a(param) {
+    if (param == null) {
+        console.log('empty');
+    }
+}());
+</pre>
+<blockquote>
+    <p>18 Oct 2013</p>
+</blockquote></div>
+    
     <div class="article"><h1>牙牙 Css Version</h1>
 
 <style>
@@ -157,24 +203,15 @@
     <p>20 Sep 2013</p>
 </blockquote></div>
     
-    <div class="article"><h1>See U Friends</h1>
-
-<p>老大、老大的老大</p>
-<p>都不能理解我为什么这样决定</p>
-<p>其实我哪有考虑那么多</p>
-<p>当然非常舍不得兄弟们</p>
-<p>只是这次</p>
-<p>我想自己过得开心点</p>
-<p>想做自己想去做的事</p>
-<p>仅此而已</p>
-<blockquote>
-    <p>08 Aug 2013</p>
-</blockquote></div>
-    
 </div>
 <div class="aside">
     <h5>Level</h5>
     <ul>
+        
+        <li>
+            <a href="/travel/2014/03/23/back2zhuhai.html">回去玩耍撒</a>
+            <span class="date">23 Mar 2014</span>
+        </li>
         
         <li>
             <a href="/misc/2013/12/31/sail-again.html">生存以上，生活不急</a>
@@ -219,11 +256,6 @@
         <li>
             <a href="/travel/2013/05/25/great-wall.html">慕田峪长城</a>
             <span class="date">25 May 2013</span>
-        </li>
-        
-        <li>
-            <a href="/code/2013/05/24/p3p-head.html">P3P解决IE cookie安全问题</a>
-            <span class="date">24 May 2013</span>
         </li>
         
     </ul>
@@ -283,6 +315,12 @@
     <li class="page">
         
         <a href="/page9">9</a>
+        
+    </li>
+    
+    <li class="page">
+        
+        <a href="/page10">10</a>
         
     </li>
     
