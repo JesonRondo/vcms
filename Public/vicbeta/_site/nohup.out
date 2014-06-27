@@ -17,3 +17,61 @@ http://209.141.50.76:4000/ -> /js/echo.min.js
 http://209.141.50.76:4000/ -> /themes/vdouban/images/logo.png
 123.157.222.178 - - [26/Jun/2014:23:55:59 PDT] "GET /favicon.ico HTTP/1.1" 200 4286
 - -> /favicon.ico
+localhost.localdomain - - [27/Jun/2014:00:07:09 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:08:07 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:08:36 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:09:12 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:09:12 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:09:13 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:09:31 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:10:11 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:10:36 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:11:09 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:12:07 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:12:11 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:12:11 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:12:31 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:12:39 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:13:10 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:14:06 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:14:35 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:15:09 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:15:09 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:15:14 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:15:32 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
+localhost.localdomain - - [27/Jun/2014:00:15:40 PDT] "GET /code/2013/12/19/ie6-zoom-reflow.html HTTP/1.0" 200 3317
+http://vicbeta.com/ -> /code/2013/12/19/ie6-zoom-reflow.html
+localhost.localdomain - - [27/Jun/2014:00:15:41 PDT] "GET /themes/vdouban/style.css HTTP/1.0" 200 4296
+http://vicbeta.com/code/2013/12/19/ie6-zoom-reflow.html -> /themes/vdouban/style.css
+localhost.localdomain - - [27/Jun/2014:00:15:41 PDT] "GET /upload/201312191616182637.jpg HTTP/1.0" 200 119000
+http://vicbeta.com/code/2013/12/19/ie6-zoom-reflow.html -> /upload/201312191616182637.jpg
+localhost.localdomain - - [27/Jun/2014:00:15:41 PDT] "GET /js/prettify.js HTTP/1.0" 200 13632
+http://vicbeta.com/code/2013/12/19/ie6-zoom-reflow.html -> /js/prettify.js
+localhost.localdomain - - [27/Jun/2014:00:15:41 PDT] "GET /js/echo.min.js HTTP/1.0" 200 858
+http://vicbeta.com/code/2013/12/19/ie6-zoom-reflow.html -> /js/echo.min.js
+localhost.localdomain - - [27/Jun/2014:00:15:41 PDT] "GET /themes/vdouban/images/logo.png HTTP/1.0" 200 1867
+http://vicbeta.com/code/2013/12/19/ie6-zoom-reflow.html -> /themes/vdouban/images/logo.png
+localhost.localdomain - - [27/Jun/2014:00:16:10 PDT] "GET / HTTP/1.0" 200 26945
+- -> /
