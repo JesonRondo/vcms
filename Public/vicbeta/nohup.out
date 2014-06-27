@@ -5520,3 +5520,447 @@ localhost.localdomain - - [27/Jun/2014:03:05:03 PDT] "GET / HTTP/1.0" 200 26945
 - -> /
 localhost.localdomain - - [27/Jun/2014:03:05:12 PDT] "GET / HTTP/1.0" 200 26945
 - -> /
+localhost.localdomain - - [27/Jun/2014:03:05:38 PDT] "GET / HTTP/1.0" 200 24280
+http://vicbeta.com/misc/ -> /
+localhost.localdomain - - [27/Jun/2014:03:05:39 PDT] "GET /themes/vdouban/style.css HTTP/1.0" 200 4296
+http://vicbeta.com/ -> /themes/vdouban/style.css
+localhost.localdomain - - [27/Jun/2014:03:05:39 PDT] "GET /js/prettify.js HTTP/1.0" 200 13632
+http://vicbeta.com/ -> /js/prettify.js
+localhost.localdomain - - [27/Jun/2014:03:05:39 PDT] "GET /js/echo.min.js HTTP/1.0" 200 858
+http://vicbeta.com/ -> /js/echo.min.js
+localhost.localdomain - - [27/Jun/2014:03:05:39 PDT] "GET /upload/201403222252273318.jpg HTTP/1.0" 200 214875
+http://vicbeta.com/ -> /upload/201403222252273318.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:39 PDT] "GET /themes/vdouban/images/logo.png HTTP/1.0" 200 1867
+http://vicbeta.com/ -> /themes/vdouban/images/logo.png
+localhost.localdomain - - [27/Jun/2014:03:05:45 PDT] "GET / HTTP/1.0" 304 0
+http://vicbeta.com/misc/ -> /
+localhost.localdomain - - [27/Jun/2014:03:05:45 PDT] "GET /themes/vdouban/style.css HTTP/1.0" 304 0
+http://vicbeta.com/ -> /themes/vdouban/style.css
+localhost.localdomain - - [27/Jun/2014:03:05:45 PDT] "GET /upload/201403222243422511.jpg HTTP/1.0" 200 164857
+http://vicbeta.com/ -> /upload/201403222243422511.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:45 PDT] "GET /upload/201403222244083210.jpg HTTP/1.0" 200 149258
+http://vicbeta.com/ -> /upload/201403222244083210.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:45 PDT] "GET /upload/201403222250568210.jpg HTTP/1.0" 200 167788
+http://vicbeta.com/ -> /upload/201403222250568210.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:45 PDT] "GET /upload/201403222244403266.jpg HTTP/1.0" 200 163307
+http://vicbeta.com/ -> /upload/201403222244403266.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:45 PDT] "GET /upload/201403222248133742.jpg HTTP/1.0" 200 186909
+http://vicbeta.com/ -> /upload/201403222248133742.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:45 PDT] "GET /js/prettify.js HTTP/1.0" 304 0
+http://vicbeta.com/ -> /js/prettify.js
+localhost.localdomain - - [27/Jun/2014:03:05:46 PDT] "GET /js/echo.min.js HTTP/1.0" 304 0
+http://vicbeta.com/ -> /js/echo.min.js
+localhost.localdomain - - [27/Jun/2014:03:05:46 PDT] "GET /upload/201403222248139177.jpg HTTP/1.0" 200 285400
+http://vicbeta.com/ -> /upload/201403222248139177.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:46 PDT] "GET /upload/201403222248197064.jpg HTTP/1.0" 200 280348
+http://vicbeta.com/ -> /upload/201403222248197064.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:47 PDT] "GET /upload/201403222248472666.jpg HTTP/1.0" 200 143872
+http://vicbeta.com/ -> /upload/201403222248472666.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:47 PDT] "GET /upload/201403222249247375.jpg HTTP/1.0" 200 214382
+http://vicbeta.com/ -> /upload/201403222249247375.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:47 PDT] "GET /upload/201403222249464139.jpg HTTP/1.0" 200 216566
+http://vicbeta.com/ -> /upload/201403222249464139.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:47 PDT] "GET /upload/201403222249516511.jpg HTTP/1.0" 200 204085
+http://vicbeta.com/ -> /upload/201403222249516511.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:48 PDT] "GET /upload/201403222251034668.jpg HTTP/1.0" 200 149256
+http://vicbeta.com/ -> /upload/201403222251034668.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:48 PDT] "GET /upload/201403222249005748.jpg HTTP/1.0" 200 169700
+http://vicbeta.com/ -> /upload/201403222249005748.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:48 PDT] "GET /upload/201403222250052741.jpg HTTP/1.0" 200 169282
+http://vicbeta.com/ -> /upload/201403222250052741.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:48 PDT] "GET /upload/201403222244259731.jpg HTTP/1.0" 200 211309
+http://vicbeta.com/ -> /upload/201403222244259731.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:48 PDT] "GET /upload/201403222244378315.jpg HTTP/1.0" 200 147431
+http://vicbeta.com/ -> /upload/201403222244378315.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:49 PDT] "GET /upload/201403222252034258.jpg HTTP/1.0" 200 198725
+http://vicbeta.com/ -> /upload/201403222252034258.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:49 PDT] "GET /upload/201403222247475301.jpg HTTP/1.0" 200 130266
+http://vicbeta.com/ -> /upload/201403222247475301.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:49 PDT] "GET /upload/201403222247355143.jpg HTTP/1.0" 200 141282
+http://vicbeta.com/ -> /upload/201403222247355143.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:49 PDT] "GET /upload/201403222251297652.jpg HTTP/1.0" 200 116409
+http://vicbeta.com/ -> /upload/201403222251297652.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:49 PDT] "GET /upload/201403222251402184.jpg HTTP/1.0" 200 140682
+http://vicbeta.com/ -> /upload/201403222251402184.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222250184131.jpg HTTP/1.0" 200 140479
+http://vicbeta.com/ -> /upload/201403222250184131.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222250119784.jpg HTTP/1.0" 200 159231
+http://vicbeta.com/ -> /upload/201403222250119784.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222250296774.jpg HTTP/1.0" 200 142744
+http://vicbeta.com/ -> /upload/201403222250296774.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222250413928.jpg HTTP/1.0" 200 144198
+http://vicbeta.com/ -> /upload/201403222250413928.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222251179391.jpg HTTP/1.0" 200 185937
+http://vicbeta.com/ -> /upload/201403222251179391.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222251495145.jpg HTTP/1.0" 200 134302
+http://vicbeta.com/ -> /upload/201403222251495145.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222252098759.jpg HTTP/1.0" 200 121456
+http://vicbeta.com/ -> /upload/201403222252098759.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222252207862.jpg HTTP/1.0" 200 120056
+http://vicbeta.com/ -> /upload/201403222252207862.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:50 PDT] "GET /upload/201403222252253269.jpg HTTP/1.0" 200 206060
+http://vicbeta.com/ -> /upload/201403222252253269.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:51 PDT] "GET /upload/201403222252273318.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252273318.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:53 PDT] "GET /misc/ HTTP/1.0" 200 8966
+http://vicbeta.com/ -> /misc/
+localhost.localdomain - - [27/Jun/2014:03:05:53 PDT] "GET /themes/vdouban/style.css HTTP/1.0" 304 0
+http://vicbeta.com/misc/ -> /themes/vdouban/style.css
+localhost.localdomain - - [27/Jun/2014:03:05:53 PDT] "GET /js/prettify.js HTTP/1.0" 304 0
+http://vicbeta.com/misc/ -> /js/prettify.js
+localhost.localdomain - - [27/Jun/2014:03:05:53 PDT] "GET /js/echo.min.js HTTP/1.0" 304 0
+http://vicbeta.com/misc/ -> /js/echo.min.js
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET / HTTP/1.0" 304 0
+http://vicbeta.com/misc/ -> /
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /themes/vdouban/style.css HTTP/1.0" 304 0
+http://vicbeta.com/ -> /themes/vdouban/style.css
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222243422511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222243422511.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222244083210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244083210.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222248133742.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248133742.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222250568210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250568210.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222244403266.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244403266.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /js/echo.min.js HTTP/1.0" 304 0
+http://vicbeta.com/ -> /js/echo.min.js
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /js/prettify.js HTTP/1.0" 304 0
+http://vicbeta.com/ -> /js/prettify.js
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222248139177.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248139177.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222248197064.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248197064.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222248472666.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248472666.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222249247375.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249247375.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222249464139.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249464139.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222249516511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249516511.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222251034668.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251034668.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222249005748.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249005748.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222250052741.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250052741.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:56 PDT] "GET /upload/201403222244259731.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244259731.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222244378315.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244378315.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222252034258.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252034258.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222247475301.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222247475301.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222247355143.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222247355143.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222251297652.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251297652.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222251402184.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251402184.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222250184131.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250184131.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222250119784.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250119784.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222250296774.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250296774.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222250413928.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250413928.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222251179391.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251179391.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222251495145.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251495145.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222252098759.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252098759.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222252207862.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252207862.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222252253269.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252253269.jpg
+localhost.localdomain - - [27/Jun/2014:03:05:57 PDT] "GET /upload/201403222252273318.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252273318.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:05 PDT] "GET / HTTP/1.0" 304 0
+- -> /
+localhost.localdomain - - [27/Jun/2014:03:06:05 PDT] "GET /themes/vdouban/style.css HTTP/1.0" 304 0
+http://vicbeta.com/ -> /themes/vdouban/style.css
+localhost.localdomain - - [27/Jun/2014:03:06:05 PDT] "GET /upload/201403222243422511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222243422511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:05 PDT] "GET /upload/201403222244083210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244083210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222248133742.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248133742.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222250568210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250568210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222244403266.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244403266.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /js/prettify.js HTTP/1.0" 304 0
+http://vicbeta.com/ -> /js/prettify.js
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /js/echo.min.js HTTP/1.0" 304 0
+http://vicbeta.com/ -> /js/echo.min.js
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222248139177.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248139177.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222248197064.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248197064.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222248472666.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248472666.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222249247375.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249247375.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /themes/vdouban/images/logo.png HTTP/1.0" 304 0
+http://vicbeta.com/ -> /themes/vdouban/images/logo.png
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222249464139.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249464139.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222249516511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249516511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222251034668.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251034668.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222249005748.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249005748.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222250052741.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250052741.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222244259731.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244259731.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222244378315.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244378315.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222252034258.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252034258.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222247475301.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222247475301.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222247355143.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222247355143.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222251297652.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251297652.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222251402184.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251402184.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222250184131.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250184131.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:06 PDT] "GET /upload/201403222250119784.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250119784.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:07 PDT] "GET /upload/201403222250296774.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250296774.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:07 PDT] "GET /upload/201403222250413928.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250413928.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:07 PDT] "GET /upload/201403222251179391.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251179391.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:07 PDT] "GET /upload/201403222251495145.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251495145.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:07 PDT] "GET /upload/201403222252098759.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252098759.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:07 PDT] "GET /upload/201403222252207862.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252207862.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:07 PDT] "GET /upload/201403222252253269.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252253269.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:07 PDT] "GET /upload/201403222252273318.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252273318.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:11 PDT] "GET /upload/201403222243422511.jpg HTTP/1.0" 200 164857
+http://vicbeta.com/ -> /upload/201403222243422511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:11 PDT] "GET /upload/201403222244083210.jpg HTTP/1.0" 200 149258
+http://vicbeta.com/ -> /upload/201403222244083210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:11 PDT] "GET /upload/201403222248133742.jpg HTTP/1.0" 200 186909
+http://vicbeta.com/ -> /upload/201403222248133742.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:11 PDT] "GET /upload/201403222250568210.jpg HTTP/1.0" 200 167788
+http://vicbeta.com/ -> /upload/201403222250568210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:11 PDT] "GET /upload/201403222244403266.jpg HTTP/1.0" 200 163307
+http://vicbeta.com/ -> /upload/201403222244403266.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:12 PDT] "GET /upload/201403222248139177.jpg HTTP/1.0" 200 285400
+http://vicbeta.com/ -> /upload/201403222248139177.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:12 PDT] "GET /upload/201403222248197064.jpg HTTP/1.0" 200 280348
+http://vicbeta.com/ -> /upload/201403222248197064.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:12 PDT] "GET /upload/201403222248472666.jpg HTTP/1.0" 200 143872
+http://vicbeta.com/ -> /upload/201403222248472666.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:12 PDT] "GET /upload/201403222249247375.jpg HTTP/1.0" 200 214382
+http://vicbeta.com/ -> /upload/201403222249247375.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:13 PDT] "GET /upload/201403222249464139.jpg HTTP/1.0" 200 216566
+http://vicbeta.com/ -> /upload/201403222249464139.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:13 PDT] "GET /upload/201403222249516511.jpg HTTP/1.0" 200 204085
+http://vicbeta.com/ -> /upload/201403222249516511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:13 PDT] "GET / HTTP/1.0" 200 24280
+- -> /
+localhost.localdomain - - [27/Jun/2014:03:06:13 PDT] "GET /upload/201403222251034668.jpg HTTP/1.0" 200 149256
+http://vicbeta.com/ -> /upload/201403222251034668.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:13 PDT] "GET /upload/201403222249005748.jpg HTTP/1.0" 200 169700
+http://vicbeta.com/ -> /upload/201403222249005748.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:14 PDT] "GET /upload/201403222250052741.jpg HTTP/1.0" 200 169282
+http://vicbeta.com/ -> /upload/201403222250052741.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:14 PDT] "GET /upload/201403222244259731.jpg HTTP/1.0" 200 211309
+http://vicbeta.com/ -> /upload/201403222244259731.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:14 PDT] "GET /upload/201403222244378315.jpg HTTP/1.0" 200 147431
+http://vicbeta.com/ -> /upload/201403222244378315.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:14 PDT] "GET /upload/201403222252034258.jpg HTTP/1.0" 200 198725
+http://vicbeta.com/ -> /upload/201403222252034258.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:14 PDT] "GET /upload/201403222247475301.jpg HTTP/1.0" 200 130266
+http://vicbeta.com/ -> /upload/201403222247475301.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:14 PDT] "GET /upload/201403222247355143.jpg HTTP/1.0" 200 141282
+http://vicbeta.com/ -> /upload/201403222247355143.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:15 PDT] "GET /upload/201403222251297652.jpg HTTP/1.0" 200 116409
+http://vicbeta.com/ -> /upload/201403222251297652.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:15 PDT] "GET /upload/201403222251402184.jpg HTTP/1.0" 200 140682
+http://vicbeta.com/ -> /upload/201403222251402184.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:15 PDT] "GET /upload/201403222250184131.jpg HTTP/1.0" 200 140479
+http://vicbeta.com/ -> /upload/201403222250184131.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:15 PDT] "GET /upload/201403222250119784.jpg HTTP/1.0" 200 159231
+http://vicbeta.com/ -> /upload/201403222250119784.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:15 PDT] "GET /upload/201403222250296774.jpg HTTP/1.0" 200 142744
+http://vicbeta.com/ -> /upload/201403222250296774.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:15 PDT] "GET /upload/201403222250413928.jpg HTTP/1.0" 200 144198
+http://vicbeta.com/ -> /upload/201403222250413928.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:16 PDT] "GET /upload/201403222251179391.jpg HTTP/1.0" 200 185937
+http://vicbeta.com/ -> /upload/201403222251179391.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:16 PDT] "GET /upload/201403222251495145.jpg HTTP/1.0" 200 134302
+http://vicbeta.com/ -> /upload/201403222251495145.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:16 PDT] "GET /upload/201403222252098759.jpg HTTP/1.0" 200 121456
+http://vicbeta.com/ -> /upload/201403222252098759.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:16 PDT] "GET /upload/201403222252207862.jpg HTTP/1.0" 200 120056
+http://vicbeta.com/ -> /upload/201403222252207862.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:16 PDT] "GET /upload/201403222252253269.jpg HTTP/1.0" 200 206060
+http://vicbeta.com/ -> /upload/201403222252253269.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:16 PDT] "GET /upload/201403222252273318.jpg HTTP/1.0" 200 214875
+http://vicbeta.com/ -> /upload/201403222252273318.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:17 PDT] "GET /upload/201403222243422511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222243422511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:17 PDT] "GET /upload/201403222244083210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244083210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:17 PDT] "GET /upload/201403222248133742.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248133742.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:17 PDT] "GET /upload/201403222250568210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250568210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:17 PDT] "GET /upload/201403222244403266.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244403266.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:18 PDT] "GET /upload/201403222248139177.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248139177.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:18 PDT] "GET /upload/201403222248197064.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248197064.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:18 PDT] "GET /upload/201403222248472666.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248472666.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:18 PDT] "GET /upload/201403222249247375.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249247375.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:18 PDT] "GET /upload/201403222249464139.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249464139.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:18 PDT] "GET /upload/201403222249516511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249516511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:18 PDT] "GET /upload/201403222251034668.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251034668.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:18 PDT] "GET /upload/201312191616182637.jpg HTTP/1.0" 200 119000
+http://vicbeta.com/code -> /upload/201312191616182637.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222249005748.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249005748.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222250052741.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250052741.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222244259731.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244259731.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222244378315.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244378315.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222252034258.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252034258.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222247475301.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222247475301.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222247355143.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222247355143.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222251297652.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251297652.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222251402184.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251402184.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:19 PDT] "GET /upload/201403222250184131.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250184131.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222243422511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222243422511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222244083210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244083210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222248133742.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248133742.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222250296774.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250296774.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222250119784.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250119784.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222250413928.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250413928.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222251179391.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251179391.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222251495145.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251495145.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222252098759.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252098759.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222252207862.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252207862.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222252253269.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252253269.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:22 PDT] "GET /upload/201403222252273318.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252273318.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:24 PDT] "GET /upload/201312191616182637.jpg HTTP/1.0" 304 0
+http://vicbeta.com/code -> /upload/201312191616182637.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222250568210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250568210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222244403266.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244403266.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222248139177.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248139177.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222248197064.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248197064.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222248472666.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248472666.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222249247375.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249247375.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222249464139.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249464139.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222249516511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249516511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222251034668.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251034668.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222249005748.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222249005748.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222250052741.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250052741.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222244259731.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244259731.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222244378315.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244378315.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222252034258.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252034258.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222247475301.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222247475301.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222247355143.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222247355143.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222251297652.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251297652.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222251402184.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251402184.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:25 PDT] "GET /upload/201403222250184131.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250184131.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222243422511.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222243422511.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222244083210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244083210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222248133742.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222248133742.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222250568210.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250568210.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222244403266.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222244403266.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222250119784.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250119784.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222250296774.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250296774.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222250413928.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222250413928.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222251179391.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251179391.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222251495145.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222251495145.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222252098759.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252098759.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222252207862.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252207862.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222252253269.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252253269.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:30 PDT] "GET /upload/201403222252273318.jpg HTTP/1.0" 304 0
+http://vicbeta.com/ -> /upload/201403222252273318.jpg
+localhost.localdomain - - [27/Jun/2014:03:06:48 PDT] "GET / HTTP/1.0" 200 24280
+- -> /
+localhost.localdomain - - [27/Jun/2014:03:07:11 PDT] "GET / HTTP/1.0" 200 24280
+- -> /
+localhost.localdomain - - [27/Jun/2014:03:07:42 PDT] "GET / HTTP/1.0" 200 24280
+- -> /
+localhost.localdomain - - [27/Jun/2014:03:07:42 PDT] "GET / HTTP/1.0" 200 24280
+- -> /
+localhost.localdomain - - [27/Jun/2014:03:08:02 PDT] "GET / HTTP/1.0" 200 24280
+- -> /
