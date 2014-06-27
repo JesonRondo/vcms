@@ -44,7 +44,7 @@
 
 <p>Web-IM有着比较明显映射的数据模型，前有响应用户的富应用交互模式，后与服务端数据通讯有着多种链接模式，模块结构划分比较明显，MV*的使用可以更好的处理这三者之间的关系。</p>
 
-<img src="http://s13.mogujie.cn/pic/140607/ubzlo_kq2fg3kbkrbf6ssugfjeg5sckzsew_560x346.jpg" width="560" height="346" alt="organize">
+<img src="http://s13.mogujie.cn/pic/140607/ubzlo_kq2fg3kbkrbf6ssugfjeg5sckzsew_560x346.jpg" alt="organize">
 
 <p>数据模块，界面模块这两个必不可少，考虑到与服务端的通讯涉及到flash socket、ajax poll多套链接（将来还可能扩展更多链接方式，如websocket），所以把服务端细化到应用接口层，包括socket的调用接口、回调接口和控制接口操作的socket交互模块，由socket交互模块来实现不同的连接方式，不同连接方式公用调用接口和回调接口，走相同的接口调用，然后加上一个相当于控制器的模块把前面所有模块联系起来，先称其为通知模块，负责模块间的连接，最后再加上前端神级模块util，我们就可以组装起一个基于MV*思想的Web-IM。</p>
 
@@ -122,7 +122,7 @@
 
 <p>为了提供可维护的jsdoc文档，之前把模块都放到一个文件，然后经过一轮一轮的轰炸，我们的代码达到了</p>
 
-<img src="http://s13.mogujie.cn/pic/140607/ubzlo_kq2gk3kbkrbdivtwgfjeg5sckzsew_404x185.jpg" width="404" height="185" alt="line">
+<img src="http://s13.mogujie.cn/pic/140607/ubzlo_kq2gk3kbkrbdivtwgfjeg5sckzsew_404x185.jpg" alt="line">
 
 <p>没错，4702行，呵呵。</p>
 
@@ -207,7 +207,7 @@
 
 <p>由于业务层基本集中于上层界面，只要数据结构不动，相应版本只需建立好链接，然后就可以处理自己的业务相关逻辑，不用再关心如何与服务端通讯，相反的，只要是与服务端做的数据修改，只需在sdk层实现就可以实现多版本同时更新，不用担心代码冗余带来的巨大维护成本。SDK接口调用方式如图</p>
 
-<img src="http://s13.mogujie.cn/pic/140607/ubzlo_kq2eiy2mkrbhgvsugfjeg5sckzsew_516x508.jpg" width="516" height="508" alt="main">
+<img src="http://s13.mogujie.cn/pic/140607/ubzlo_kq2eiy2mkrbhgvsugfjeg5sckzsew_516x508.jpg" alt="main">
 
 <p>这里包括了除SDK listen接口之外的所有接口，listen接口的使用在上图的notice模块中。上面说过数据和消息推送是IM与其他web应用相比特殊性的存在，listen接口正是为了解决推送问题设计的，考虑数据的单向传递和低耦合，jQuery里面的自定义事件正好满足了这两个需求，对自定义事件做一次简单的封装</p>
 

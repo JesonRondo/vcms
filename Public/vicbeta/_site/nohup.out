@@ -1,0 +1,19 @@
+Configuration file: /data/app/vcms/Public/vicbeta/_config.yml
+            Source: /data/app/vcms/Public/vicbeta
+       Destination: /data/app/vcms/Public/vicbeta/_site
+      Generating... done.
+[2014-06-26 23:55:45] INFO  WEBrick 1.3.1
+[2014-06-26 23:55:45] INFO  ruby 1.8.7 (2011-06-30) [i386-linux]
+[2014-06-26 23:55:45] INFO  WEBrick::HTTPServer#start: pid=3832 port=4000
+123.157.222.178 - - [26/Jun/2014:23:55:46 PDT] "GET / HTTP/1.1" 200 26945
+- -> /
+123.157.222.178 - - [26/Jun/2014:23:55:46 PDT] "GET /themes/vdouban/style.css HTTP/1.1" 200 4296
+http://209.141.50.76:4000/ -> /themes/vdouban/style.css
+123.157.222.178 - - [26/Jun/2014:23:55:46 PDT] "GET /js/prettify.js HTTP/1.1" 200 13632
+http://209.141.50.76:4000/ -> /js/prettify.js
+123.157.222.178 - - [26/Jun/2014:23:55:46 PDT] "GET /js/echo.min.js HTTP/1.1" 200 858
+http://209.141.50.76:4000/ -> /js/echo.min.js
+123.157.222.178 - - [26/Jun/2014:23:55:47 PDT] "GET /themes/vdouban/images/logo.png HTTP/1.1" 200 1867
+http://209.141.50.76:4000/ -> /themes/vdouban/images/logo.png
+123.157.222.178 - - [26/Jun/2014:23:55:59 PDT] "GET /favicon.ico HTTP/1.1" 200 4286
+- -> /favicon.ico
