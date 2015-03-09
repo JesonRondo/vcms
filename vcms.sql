@@ -174,7 +174,7 @@ CREATE TABLE `v_info` (
   `field29` text COLLATE utf8_unicode_ci,
   `field30` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`vid`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,7 +183,7 @@ CREATE TABLE `v_info` (
 
 LOCK TABLES `v_info` WRITE;
 /*!40000 ALTER TABLE `v_info` DISABLE KEYS */;
-INSERT INTO `v_info` VALUES (1,1,0,'Travis','专注前端30年, kss, fuckphp','http://travisup.com/','/img/avatar/travisup.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(2,1,0,'热干面','热干面','http://www.cnblogs.com/Deasel-s-magic-box/','/img/avatar/deasel.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(3,1,1,'TantraMind','Rolling on the ground like a pig……','http://www.tntrmid.com/','','','','','','','','','','','','','','','','','','','','','','','','','','',''),(4,1,0,'Hugh','Hack Anything | Hugh\'s Blog','http://free-will.me/','/img/avatar/free-will.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(5,1,0,'IDEA','life for ideas','http://blog.satikey.com/','/img/avatar/satikey.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(6,1,1,'巨牛设计','巨牛设计','http://www.jn47.com/','','','','','','','','','','','','','','','','','','','','','','','','','','',''),(7,1,0,'补丁哥','补丁哥请骚烤','http://budingge.com/','/img/avatar/budingge.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(8,1,0,'玉面小飞鱼','前端风景很美','http://www.liyao.name/','/img/avatar/liyao.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(9,1,0,'小倩','专业划船30年','http://www.xiaoqian.org/','/img/avatar/xiaoqian.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(10,1,0,'一骑绝尘','开着坦克去旅行','http://www.cssoul.com/','/img/avatar/cssoul.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(11,1,0,'松松的博客','我不能定义生命的长度，但我能改变数组的深度','http://xiongsongsong.github.io/','/img/avatar/xiongsongsong.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `v_info` VALUES (1,1,0,'Travis','专注前端30年, kss, fuckphp','http://travisup.com/','/img/avatar/travisup.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(2,1,0,'热干面','热干面','http://www.cnblogs.com/Deasel-s-magic-box/','/img/avatar/deasel.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(3,1,1,'TantraMind','Rolling on the ground like a pig……','http://www.tntrmid.com/','','','','','','','','','','','','','','','','','','','','','','','','','','',''),(4,1,0,'Hugh','Hack Anything | Hugh\'s Blog','http://free-will.me/','/img/avatar/free-will.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(5,1,0,'IDEA','life for ideas','http://blog.satikey.com/','/img/avatar/satikey.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(6,1,1,'巨牛设计','巨牛设计','http://www.jn47.com/','','','','','','','','','','','','','','','','','','','','','','','','','','',''),(7,1,0,'补丁哥','补丁哥请骚烤','http://budingge.com/','/img/avatar/budingge.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(8,1,0,'玉面小飞鱼','前端风景很美','http://www.liyao.name/','/img/avatar/liyao.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(9,1,0,'小倩','专业划船30年','http://www.xiaoqian.org/','/img/avatar/xiaoqian.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(10,1,0,'一骑绝尘','开着坦克去旅行','http://www.cssoul.com/','/img/avatar/cssoul.jpg','','','','','','','','','','','','','','','','','','','','','','','','','',''),(11,1,0,'松松的博客','我不能定义生命的长度，但我能改变数组的深度','http://xiongsongsong.github.io/','/img/avatar/xiongsongsong.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(12,1,0,'Chason','清新设计师一枚','https://dribbble.com/changsheng','/img/avatar/me2.png','','','','','','','','','','','','','','','','','','','','','','','','','','');
 /*!40000 ALTER TABLE `v_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,4 +251,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-09 16:30:26
+-- Dump completed on 2015-03-09 17:46:42
